@@ -1,71 +1,1355 @@
 [
   {
-    "id": 1791550974372,
-    "name": "New product",
-    "url": "products/?slug=new-product",
-    "image": "images/",
-    "price": "₹0",
-    "oldPrice": "",
-    "addId": "1791550974372",
-    "variationId": "",
+    "id": 2507,
+    "name": "2-in-1 Combo",
+    "url": "product.html?slug=2-in-1-combo",
+    "image": "images/1000986245-768x768.jpg",
+    "price": "₹215",
+    "oldPrice": "₹299",
+    "addId": "2507",
+    "variationId": "11517",
+    "markup": "<a class=\"product-media\" href=\"shop/2-in-1-combo/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986245-768x768.jpg\" alt=\"2-in-1 Combo\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/2-in-1-combo/\">2-in-1 Combo</a><div class=\"product-price\">\n<b>₹215</b><span>/mo</span>\n<s>₹299</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/2-in-1-combo/\" data-add-id=\"2507\" data-var-id=\"11517\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add 2-in-1 Combo to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/2-in-1-combo/\">Buy now</a></div></div></div>",
     "category": "subscriptions",
     "collections": [
       "subscriptions"
     ],
-    "slug": "new-product",
-    "originalUrl": "products/?slug=new-product",
-    "detailUrl": "products/?slug=new-product",
-    "description": "",
-    "includes": "",
+    "slug": "2-in-1-combo",
+    "originalUrl": "shop/2-in-1-combo/",
+    "detailUrl": "product.html?slug=2-in-1-combo",
+    "description": "2-in-1 Combo is available through SoftMart at ₹215. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
     "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
     "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
     "options": [
-      "1 Month"
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
     ],
-    "goodToKnow": "",
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
     "planGroups": [
       {
         "title": "PLAN",
         "options": [
           {
             "label": "1 Month",
-            "price": "₹0"
+            "price": "₹215"
           }
         ]
       }
     ]
   },
   {
-    "id": "1791550974372",
-    "name": "New product",
-    "url": "products/?slug=new-product",
-    "image": "images/",
-    "price": "₹0",
-    "oldPrice": "",
-    "addId": "1791550974372",
-    "variationId": "",
+    "id": 2512,
+    "name": "Prime Video 4K",
+    "url": "product.html?slug=prime-video-4k",
+    "image": "images/1000986244-768x768.jpg",
+    "price": "₹99",
+    "oldPrice": "₹199",
+    "addId": "2512",
+    "variationId": "2811",
+    "markup": "<a class=\"product-media\" href=\"shop/prime-video-4k/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986244-768x768.jpg\" alt=\"Prime Video 4K\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/prime-video-4k/\">Prime Video 4K</a><div class=\"product-price\">\n<b>₹99</b><span>/mo</span>\n<s>₹199</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/prime-video-4k/\" data-add-id=\"2512\" data-var-id=\"2811\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Prime Video 4K to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/prime-video-4k/\">Buy now</a></div></div></div>",
     "category": "subscriptions",
     "collections": [
       "subscriptions"
     ],
-    "slug": "new-product",
-    "originalUrl": "products/?slug=new-product",
-    "detailUrl": "products/?slug=new-product",
-    "description": "",
-    "includes": "",
+    "slug": "prime-video-4k",
+    "originalUrl": "shop/prime-video-4k/",
+    "detailUrl": "product.html?slug=prime-video-4k",
+    "description": "Prime Video 4K is a global Prime Video plan with 4K streaming, Prime Originals, movies, shows, and offline viewing.",
+    "includes": "Stunning 4K streaming, Prime Video Originals, movies and shows, offline viewing, and single-screen access.",
     "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
     "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
     "options": [
-      "1 Month"
+      "6 Months — Prime Video + Shopping · On Your Number",
+      "12 Months — Prime Video + Shopping · On Your Number",
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
     ],
-    "goodToKnow": "",
+    "goodToKnow": "This is a shared plan with ads. You receive unique login details and a sign-in code after purchase.",
     "planGroups": [
       {
         "title": "PLAN",
         "options": [
           {
             "label": "1 Month",
-            "price": "₹0"
+            "price": "₹99/mo"
+          },
+          {
+            "label": "3 Months",
+            "price": "₹93/mo"
+          },
+          {
+            "label": "6 Months",
+            "price": "₹67/mo"
+          },
+          {
+            "label": "12 Months",
+            "price": "₹58/mo"
+          }
+        ]
+      },
+      {
+        "title": "PRIME VIDEO + SHOPPING · ON YOUR NUMBER",
+        "options": [
+          {
+            "label": "6 Months",
+            "price": "₹100/mo"
+          },
+          {
+            "label": "12 Months",
+            "price": "₹92/mo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2457,
+    "name": "Hotstar (On Number)",
+    "url": "product.html?slug=jio-hotstar-vipon-ur-number",
+    "image": "images/1000986249-768x768.jpg",
+    "price": "₹99",
+    "oldPrice": "₹199",
+    "addId": "2457",
+    "variationId": "3316",
+    "markup": "<a class=\"product-media\" href=\"shop/jio-hotstar-vipon-ur-number/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986249-768x768.jpg\" alt=\"Hotstar (On Number)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/jio-hotstar-vipon-ur-number/\">Hotstar (On Number)</a><div class=\"product-price\">\n<b>₹99</b><span>/mo</span>\n<s>₹199</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/jio-hotstar-vipon-ur-number/\" data-add-id=\"2457\" data-var-id=\"3316\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Hotstar (On Number) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/jio-hotstar-vipon-ur-number/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "jio-hotstar-vipon-ur-number",
+    "originalUrl": "shop/jio-hotstar-vipon-ur-number/",
+    "detailUrl": "product.html?slug=jio-hotstar-vipon-ur-number",
+    "description": "Hotstar on your own number with Full HD streaming and access activated through the required Jio process.",
+    "includes": "Hotstar access on your number, Full HD streaming, and activation support after order confirmation.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "12 Months 4K",
+      "1 Month",
+      "12 Months"
+    ],
+    "goodToKnow": "Activation is completed through the required Jio process and OTP on the provided number after order confirmation.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹99/mo"
+          },
+          {
+            "label": "12 Months",
+            "price": "₹799/mo"
+          },
+          {
+            "label": "12 Months 4K",
+            "price": "₹999/mo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2658,
+    "name": "Netflix Premium 4K",
+    "url": "product.html?slug=nflix-premium",
+    "image": "images/1000986240-768x768.jpg",
+    "price": "₹139",
+    "oldPrice": "₹199",
+    "addId": "2658",
+    "variationId": "3002",
+    "markup": "<a class=\"product-media\" href=\"shop/nflix-premium/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986240-768x768.jpg\" alt=\"Netflix Premium 4K\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/nflix-premium/\">Netflix Premium 4K</a><div class=\"product-price\">\n<b>₹139</b><span>/mo</span>\n<s>₹199</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/nflix-premium/\" data-add-id=\"2658\" data-var-id=\"3002\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Netflix Premium 4K to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/nflix-premium/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "nflix-premium",
+    "originalUrl": "shop/nflix-premium/",
+    "detailUrl": "product.html?slug=nflix-premium",
+    "description": "Netflix Premium 4K is available through SoftMart at ₹139. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹139"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2380,
+    "name": "Prime Video 4K (On Mail)",
+    "url": "product.html?slug=prime-video-4k-on-your-mail",
+    "image": "images/1000986244-768x768.jpg",
+    "price": "₹120",
+    "oldPrice": "₹199",
+    "addId": "2380",
+    "variationId": "3272",
+    "markup": "<a class=\"product-media\" href=\"shop/prime-video-4k-on-your-mail/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986244-768x768.jpg\" alt=\"Prime Video 4K (On Mail)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/prime-video-4k-on-your-mail/\">Prime Video 4K (On Mail)</a><div class=\"product-price\">\n<b>₹120</b><span>/mo</span>\n<s>₹199</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/prime-video-4k-on-your-mail/\" data-add-id=\"2380\" data-var-id=\"3272\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Prime Video 4K (On Mail) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/prime-video-4k-on-your-mail/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "prime-video-4k-on-your-mail",
+    "originalUrl": "shop/prime-video-4k-on-your-mail/",
+    "detailUrl": "product.html?slug=prime-video-4k-on-your-mail",
+    "description": "Prime Video 4K (On Mail) is available through SoftMart at ₹120. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹120"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14166,
+    "name": "Zee5 Premium",
+    "url": "product.html?slug=z5",
+    "image": "images/untitled-design-1-768x768.jpeg",
+    "price": "₹75",
+    "oldPrice": "₹99",
+    "addId": "14166",
+    "variationId": "14167",
+    "markup": "<a class=\"product-media\" href=\"shop/z5/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/untitled-design-1-768x768.jpeg\" alt=\"Zee5 Premium\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/z5/\">Zee5 Premium</a><div class=\"product-price\">\n<b>₹75</b><span>/mo</span>\n<s>₹99</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/z5/\" data-add-id=\"14166\" data-var-id=\"14167\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Zee5 Premium to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/z5/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "z5",
+    "originalUrl": "shop/z5/",
+    "detailUrl": "product.html?slug=z5",
+    "description": "Zee5 Premium is available through SoftMart at ₹75. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹75"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2517,
+    "name": "Hotstar 4K",
+    "url": "product.html?slug=hotstar-4k",
+    "image": "images/1000986249-768x768.jpg",
+    "price": "₹99",
+    "oldPrice": "₹199",
+    "addId": "2517",
+    "variationId": "2804",
+    "markup": "<a class=\"product-media\" href=\"shop/hotstar-4k/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986249-768x768.jpg\" alt=\"Hotstar 4K\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/hotstar-4k/\">Hotstar 4K</a><div class=\"product-price\">\n<b>₹99</b><span>/mo</span>\n<s>₹199</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/hotstar-4k/\" data-add-id=\"2517\" data-var-id=\"2804\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Hotstar 4K to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/hotstar-4k/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "hotstar-4k",
+    "originalUrl": "shop/hotstar-4k/",
+    "detailUrl": "product.html?slug=hotstar-4k",
+    "description": "Hotstar 4K is available through SoftMart at ₹99. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹99"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14154,
+    "name": "Anime Premium",
+    "url": "product.html?slug=anime-plan",
+    "image": "images/2238b5da-4b9e-4a5b-af9d-8c1ed1604a00-768x768.jpeg",
+    "price": "₹50",
+    "oldPrice": "₹99",
+    "addId": "14154",
+    "variationId": "14155",
+    "markup": "<a class=\"product-media\" href=\"shop/anime-plan/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/2238b5da-4b9e-4a5b-af9d-8c1ed1604a00-768x768.jpeg\" alt=\"Anime Premium\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/anime-plan/\">Anime Premium</a><div class=\"product-price\">\n<b>₹50</b><span>/mo</span>\n<s>₹99</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/anime-plan/\" data-add-id=\"14154\" data-var-id=\"14155\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Anime Premium to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/anime-plan/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "anime-plan",
+    "originalUrl": "shop/anime-plan/",
+    "detailUrl": "product.html?slug=anime-plan",
+    "description": "Anime Premium is available through SoftMart at ₹50. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹50"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2251,
+    "name": "Apple TV+",
+    "url": "product.html?slug=apple-tv",
+    "image": "images/1000986246-768x768.jpg",
+    "price": "₹45",
+    "oldPrice": "₹99",
+    "addId": "2251",
+    "variationId": "3231",
+    "markup": "<a class=\"product-media\" href=\"shop/apple-tv/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986246-768x768.jpg\" alt=\"Apple TV+\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/apple-tv/\">Apple TV+</a><div class=\"product-price\">\n<b>₹45</b><span>/mo</span>\n<s>₹99</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/apple-tv/\" data-add-id=\"2251\" data-var-id=\"3231\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Apple TV+ to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/apple-tv/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "apple-tv",
+    "originalUrl": "shop/apple-tv/",
+    "detailUrl": "product.html?slug=apple-tv",
+    "description": "Apple TV+ is available through SoftMart at ₹45. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹45"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2429,
+    "name": "Premium VPN 2",
+    "url": "product.html?slug=premium-vpn2",
+    "image": "images/1000986210-768x768.jpg",
+    "price": "₹149",
+    "oldPrice": "₹399",
+    "addId": "2429",
+    "variationId": "3249",
+    "markup": "<a class=\"product-media\" href=\"shop/premium-vpn2/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986210-768x768.jpg\" alt=\"Premium VPN 2\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/premium-vpn2/\">Premium VPN 2</a><div class=\"product-price\">\n<b>₹149</b><span>/mo</span>\n<s>₹399</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/premium-vpn2/\" data-add-id=\"2429\" data-var-id=\"3249\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Premium VPN 2 to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/premium-vpn2/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "premium-vpn2",
+    "originalUrl": "shop/premium-vpn2/",
+    "detailUrl": "product.html?slug=premium-vpn2",
+    "description": "Premium VPN 2 is available through SoftMart at ₹149. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹149"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2576,
+    "name": "Netflix 4K Private",
+    "url": "product.html?slug=nflix-4k-private",
+    "image": "images/1000986240-768x768.jpg",
+    "price": "₹199",
+    "oldPrice": "₹299",
+    "addId": "2576",
+    "variationId": "3171",
+    "markup": "<a class=\"product-media\" href=\"shop/nflix-4k-private/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986240-768x768.jpg\" alt=\"Netflix 4K Private\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/nflix-4k-private/\">Netflix 4K Private</a><div class=\"product-price\">\n<b>₹199</b><span>/mo</span>\n<s>₹299</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/nflix-4k-private/\" data-add-id=\"2576\" data-var-id=\"3171\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Netflix 4K Private to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/nflix-4k-private/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions",
+      "more-plans"
+    ],
+    "slug": "nflix-4k-private",
+    "originalUrl": "shop/nflix-4k-private/",
+    "detailUrl": "product.html?slug=nflix-4k-private",
+    "description": "Netflix 4K Private is available through SoftMart at ₹199. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹199"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2502,
+    "name": "Designer Pro (On Mail)",
+    "url": "product.html?slug=designer",
+    "image": "images/1000986209-768x768.jpg",
+    "price": "₹75",
+    "oldPrice": "₹199",
+    "addId": "2502",
+    "variationId": "3180",
+    "markup": "<a class=\"product-media\" href=\"shop/designer/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986209-768x768.jpg\" alt=\"Designer Pro (On Mail)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/designer/\">Designer Pro (On Mail)</a><div class=\"product-price\">\n<b>₹75</b><span>/mo</span>\n<s>₹199</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/designer/\" data-add-id=\"2502\" data-var-id=\"3180\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Designer Pro (On Mail) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/designer/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "designer",
+    "originalUrl": "shop/designer/",
+    "detailUrl": "product.html?slug=designer",
+    "description": "Designer Pro (On Mail) is available through SoftMart at ₹75. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹75"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2434,
+    "name": "Premium VPN",
+    "url": "product.html?slug=premium-vpn",
+    "image": "images/1000986213-768x768.jpg",
+    "price": "₹145",
+    "oldPrice": "₹299",
+    "addId": "2434",
+    "variationId": "3244",
+    "markup": "<a class=\"product-media\" href=\"shop/premium-vpn/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986213-768x768.jpg\" alt=\"Premium VPN\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/premium-vpn/\">Premium VPN</a><div class=\"product-price\">\n<b>₹145</b><span>/mo</span>\n<s>₹299</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/premium-vpn/\" data-add-id=\"2434\" data-var-id=\"3244\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Premium VPN to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/premium-vpn/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "premium-vpn",
+    "originalUrl": "shop/premium-vpn/",
+    "detailUrl": "product.html?slug=premium-vpn",
+    "description": "Premium VPN is available through SoftMart at ₹145. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹145"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2447,
+    "name": "Sony Liv Premium",
+    "url": "product.html?slug=sony-liv-premium",
+    "image": "images/1000986241-768x768.jpg",
+    "price": "₹99",
+    "oldPrice": "₹199",
+    "addId": "2447",
+    "variationId": "3261",
+    "markup": "<a class=\"product-media\" href=\"shop/sony-liv-premium/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986241-768x768.jpg\" alt=\"Sony Liv Premium\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/sony-liv-premium/\">Sony Liv Premium</a><div class=\"product-price\">\n<b>₹99</b><span>/mo</span>\n<s>₹199</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/sony-liv-premium/\" data-add-id=\"2447\" data-var-id=\"3261\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Sony Liv Premium to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/sony-liv-premium/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "sony-liv-premium",
+    "originalUrl": "shop/sony-liv-premium/",
+    "detailUrl": "product.html?slug=sony-liv-premium",
+    "description": "Sony Liv Premium is available through SoftMart at ₹99. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹99"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14173,
+    "name": "Zee5 (on your number)",
+    "url": "product.html?slug=z5-private",
+    "image": "images/untitled-design-1-768x768.jpeg",
+    "price": "₹699",
+    "oldPrice": "₹999",
+    "addId": "14173",
+    "variationId": "14174",
+    "markup": "<a class=\"product-media\" href=\"shop/z5-private/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/untitled-design-1-768x768.jpeg\" alt=\"Zee5 (on your number)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/z5-private/\">Zee5 (on your number)</a><div class=\"product-price\">\n<b>₹699</b><span>/mo</span>\n<s>₹999</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/z5-private/\" data-add-id=\"14173\" data-var-id=\"14174\" data-var-att=\"{\" attribute_pa_duration\":\"12-months\"}\"=\"\" aria-label=\"Add Zee5 (on your number) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/z5-private/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "z5-private",
+    "originalUrl": "shop/z5-private/",
+    "detailUrl": "product.html?slug=z5-private",
+    "description": "Zee5 (on your number) is available through SoftMart at ₹699. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹699"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2387,
+    "name": "Sony LIV (On Number)",
+    "url": "product.html?slug=sony-liv-4k-on-your-number",
+    "image": "images/1000986241-768x768.jpg",
+    "price": "₹499",
+    "oldPrice": "₹799",
+    "addId": "2387",
+    "variationId": "3678",
+    "markup": "<a class=\"product-media\" href=\"shop/sony-liv-4k-on-your-number/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986241-768x768.jpg\" alt=\"Sony LIV (On Number)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/sony-liv-4k-on-your-number/\">Sony LIV (On Number)</a><div class=\"product-price\">\n<b>₹499</b><span>/mo</span>\n<s>₹799</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/sony-liv-4k-on-your-number/\" data-add-id=\"2387\" data-var-id=\"3678\" data-var-att=\"{\" attribute_pa_duration\":\"6-months\"}\"=\"\" aria-label=\"Add Sony LIV (On Number) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/sony-liv-4k-on-your-number/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "sony-liv-4k-on-your-number",
+    "originalUrl": "shop/sony-liv-4k-on-your-number/",
+    "detailUrl": "product.html?slug=sony-liv-4k-on-your-number",
+    "description": "Sony LIV (On Number) is available through SoftMart at ₹499. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹499"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2377,
+    "name": "Aha Telugu",
+    "url": "product.html?slug=aha-telugu",
+    "image": "images/1000986236-768x768.jpg",
+    "price": "₹75",
+    "oldPrice": "₹99",
+    "addId": "2377",
+    "variationId": "3226",
+    "markup": "<a class=\"product-media\" href=\"shop/aha-telugu/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986236-768x768.jpg\" alt=\"Aha Telugu\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/aha-telugu/\">Aha Telugu</a><div class=\"product-price\">\n<b>₹75</b><span>/mo</span>\n<s>₹99</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/aha-telugu/\" data-add-id=\"2377\" data-var-id=\"3226\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Aha Telugu to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/aha-telugu/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "aha-telugu",
+    "originalUrl": "shop/aha-telugu/",
+    "detailUrl": "product.html?slug=aha-telugu",
+    "description": "Aha Telugu is available through SoftMart at ₹75. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹75"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2373,
+    "name": "Discovery+",
+    "url": "product.html?slug=discovery-plus",
+    "image": "images/1000986214-768x768.jpg",
+    "price": "₹49",
+    "oldPrice": "₹75",
+    "addId": "2373",
+    "variationId": "3300",
+    "markup": "<a class=\"product-media\" href=\"shop/discovery-plus/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986214-768x768.jpg\" alt=\"Discovery+\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/discovery-plus/\">Discovery+</a><div class=\"product-price\">\n<b>₹49</b><span>/mo</span>\n<s>₹75</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/discovery-plus/\" data-add-id=\"2373\" data-var-id=\"3300\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Discovery+ to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/discovery-plus/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "discovery-plus",
+    "originalUrl": "shop/discovery-plus/",
+    "detailUrl": "product.html?slug=discovery-plus",
+    "description": "Discovery+ is available through SoftMart at ₹49. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹49"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2308,
+    "name": "Apple Music (On Mail)",
+    "url": "product.html?slug=apple-music-on-your-mail",
+    "image": "images/1000986229-768x768.jpg",
+    "price": "₹499",
+    "oldPrice": "₹720",
+    "addId": "2308",
+    "variationId": "3223",
+    "markup": "<a class=\"product-media\" href=\"shop/apple-music-on-your-mail/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986229-768x768.jpg\" alt=\"Apple Music (On Mail)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/apple-music-on-your-mail/\">Apple Music (On Mail)</a><div class=\"product-price\">\n<b>₹499</b><span>/mo</span>\n<s>₹720</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/apple-music-on-your-mail/\" data-add-id=\"2308\" data-var-id=\"3223\" data-var-att=\"{\" attribute_pa_duration\":\"6-months\"}\"=\"\" aria-label=\"Add Apple Music (On Mail) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/apple-music-on-your-mail/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions",
+      "music"
+    ],
+    "slug": "apple-music-on-your-mail",
+    "originalUrl": "shop/apple-music-on-your-mail/",
+    "detailUrl": "product.html?slug=apple-music-on-your-mail",
+    "description": "Apple Music (On Mail) is available through SoftMart at ₹499. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹499"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2319,
+    "name": "ShemarooMe",
+    "url": "product.html?slug=shemaroo-me",
+    "image": "images/1000986581-768x768.jpg",
+    "price": "₹60",
+    "oldPrice": "₹75",
+    "addId": "2319",
+    "variationId": "3275",
+    "markup": "<a class=\"product-media\" href=\"shop/shemaroo-me/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986581-768x768.jpg\" alt=\"ShemarooMe\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/shemaroo-me/\">ShemarooMe</a><div class=\"product-price\">\n<b>₹60</b><span>/mo</span>\n<s>₹75</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/shemaroo-me/\" data-add-id=\"2319\" data-var-id=\"3275\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add ShemarooMe to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/shemaroo-me/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "shemaroo-me",
+    "originalUrl": "shop/shemaroo-me/",
+    "detailUrl": "product.html?slug=shemaroo-me",
+    "description": "ShemarooMe is available through SoftMart at ₹60. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹60"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2315,
+    "name": "Hoichoi Premium",
+    "url": "product.html?slug=hoichoi-premium",
+    "image": "images/1000986212-768x768.jpg",
+    "price": "₹70",
+    "oldPrice": "₹99",
+    "addId": "2315",
+    "variationId": "3308",
+    "markup": "<a class=\"product-media\" href=\"shop/hoichoi-premium/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986212-768x768.jpg\" alt=\"Hoichoi Premium\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/hoichoi-premium/\">Hoichoi Premium</a><div class=\"product-price\">\n<b>₹70</b><span>/mo</span>\n<s>₹99</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/hoichoi-premium/\" data-add-id=\"2315\" data-var-id=\"3308\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Hoichoi Premium to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/hoichoi-premium/\">Buy now</a></div></div></div>",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "hoichoi-premium",
+    "originalUrl": "shop/hoichoi-premium/",
+    "detailUrl": "product.html?slug=hoichoi-premium",
+    "description": "Hoichoi Premium is available through SoftMart at ₹70. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹70"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6527,
+    "name": "Apple TV+ (On Mail)",
+    "url": "product.html?slug=apple-tv-onmail",
+    "image": "images/1000986246-768x768.jpg",
+    "price": "₹450",
+    "oldPrice": "₹720",
+    "addId": "6527",
+    "variationId": "6531",
+    "markup": "<a class=\"product-media\" href=\"shop/apple-tv-onmail/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986246-768x768.jpg\" alt=\"Apple TV+ (On Mail)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/apple-tv-onmail/\">Apple TV+ (On Mail)</a><div class=\"product-price\">\n<b>₹450</b><span>/mo</span>\n<s>₹720</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/apple-tv-onmail/\" data-add-id=\"6527\" data-var-id=\"6531\" data-var-att=\"{\" attribute_pa_duration\":\"6-months\"}\"=\"\" aria-label=\"Add Apple TV+ (On Mail) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/apple-tv-onmail/\">Buy now</a></div></div></div></div></div><div class=\"cat-row\" id=\"cat-combo\"><div class=\"cat-row-head\"><h3 class=\"cat-row-title\">Combo Packs</h3>\n<a class=\"cat-row-all\" href=\"plans/combo/\">View all\n<svg viewBox=\"0 0 24 24\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>\n</a></div><div class=\"cat-grid\">",
+    "category": "subscriptions",
+    "collections": [
+      "subscriptions"
+    ],
+    "slug": "apple-tv-onmail",
+    "originalUrl": "shop/apple-tv-onmail/",
+    "detailUrl": "product.html?slug=apple-tv-onmail",
+    "description": "Apple TV+ (On Mail) is available through SoftMart at ₹450. A genuine digital subscription plan with simple delivery and support.",
+    "includes": "The selected subscription access, setup guidance, and replacement support during validity.",
+    "delivery": "Digital access delivered on WhatsApp within minutes after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹450"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2442,
+    "name": "Combo 2 IN 1",
+    "url": "product.html?slug=combo-2-in-1",
+    "image": "images/1000986436-768x768.jpg",
+    "price": "₹219",
+    "oldPrice": "₹299",
+    "addId": "2442",
+    "variationId": "3292",
+    "markup": "<a class=\"product-media\" href=\"shop/combo-2-in-1/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986436-768x768.jpg\" alt=\"Combo 2 IN 1\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/combo-2-in-1/\">Combo 2 IN 1</a><div class=\"product-price\">\n<b>₹219</b><span>/mo</span>\n<s>₹299</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/combo-2-in-1/\" data-add-id=\"2442\" data-var-id=\"3292\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Combo 2 IN 1 to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/combo-2-in-1/\">Buy now</a></div></div></div>",
+    "category": "combo",
+    "collections": [
+      "combo"
+    ],
+    "slug": "combo-2-in-1",
+    "originalUrl": "shop/combo-2-in-1/",
+    "detailUrl": "product.html?slug=combo-2-in-1",
+    "description": "Combo 2 IN 1 is available through SoftMart at ₹219. A value combo that bundles multiple digital subscriptions into one convenient plan.",
+    "includes": "Both products included in the selected combo plan, plus setup guidance and replacement support.",
+    "delivery": "Combo access details delivered on WhatsApp after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹219"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 14176,
+    "name": "Z5 + sony liv (on your number )",
+    "url": "product.html?slug=z5sony-private",
+    "image": "images/untitled-design-2-768x768.jpeg",
+    "price": "₹1,299",
+    "oldPrice": "₹1,499",
+    "addId": "14176",
+    "variationId": "14177",
+    "markup": "<a class=\"product-media\" href=\"shop/z5sony-private/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/untitled-design-2-768x768.jpeg\" alt=\"Z5 + sony liv (on your number )\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/z5sony-private/\">Z5 + sony liv (on your number )</a><div class=\"product-price\">\n<b>₹1,299</b><span>/mo</span>\n<s>₹1,499</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/z5sony-private/\" data-add-id=\"14176\" data-var-id=\"14177\" data-var-att=\"{\" attribute_pa_duration\":\"12-months\"}\"=\"\" aria-label=\"Add Z5 + sony liv (on your number ) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/z5sony-private/\">Buy now</a></div></div></div>",
+    "category": "combo",
+    "collections": [
+      "combo"
+    ],
+    "slug": "z5sony-private",
+    "originalUrl": "shop/z5sony-private/",
+    "detailUrl": "product.html?slug=z5sony-private",
+    "description": "Z5 + sony liv (on your number ) is available through SoftMart at ₹1,299. A value combo that bundles multiple digital subscriptions into one convenient plan.",
+    "includes": "Both products included in the selected combo plan, plus setup guidance and replacement support.",
+    "delivery": "Combo access details delivered on WhatsApp after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹1,299"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3687,
+    "name": "Combo Private",
+    "url": "product.html?slug=combo-pvt",
+    "image": "images/1000986439-768x768.jpg",
+    "price": "₹199",
+    "oldPrice": "₹299",
+    "addId": "3687",
+    "variationId": "3688",
+    "markup": "<a class=\"product-media\" href=\"shop/combo-pvt/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986439-768x768.jpg\" alt=\"Combo Private\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/combo-pvt/\">Combo Private</a><div class=\"product-price\">\n<b>₹199</b><span>/mo</span>\n<s>₹299</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/combo-pvt/\" data-add-id=\"3687\" data-var-id=\"3688\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Combo Private to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/combo-pvt/\">Buy now</a></div></div></div>",
+    "category": "combo",
+    "collections": [
+      "combo"
+    ],
+    "slug": "combo-pvt",
+    "originalUrl": "shop/combo-pvt/",
+    "detailUrl": "product.html?slug=combo-pvt",
+    "description": "Combo Private is available through SoftMart at ₹199. A value combo that bundles multiple digital subscriptions into one convenient plan.",
+    "includes": "Both products included in the selected combo plan, plus setup guidance and replacement support.",
+    "delivery": "Combo access details delivered on WhatsApp after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹199"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2241,
+    "name": "3 IN 1 combo (2)",
+    "url": "product.html?slug=3-in-1-combo-2",
+    "image": "images/1000986438-768x768.jpg",
+    "price": "₹299",
+    "oldPrice": "₹399",
+    "addId": "2241",
+    "variationId": "3216",
+    "markup": "<a class=\"product-media\" href=\"shop/3-in-1-combo-2/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986438-768x768.jpg\" alt=\"3 IN 1 combo (2)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/3-in-1-combo-2/\">3 IN 1 combo (2)</a><div class=\"product-price\">\n<b>₹299</b><span>/mo</span>\n<s>₹399</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/3-in-1-combo-2/\" data-add-id=\"2241\" data-var-id=\"3216\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add 3 IN 1 combo (2) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/3-in-1-combo-2/\">Buy now</a></div></div></div></div></div><div class=\"cat-row\" id=\"cat-software\"><div class=\"cat-row-head\"><h3 class=\"cat-row-title\">Software</h3>\n<a class=\"cat-row-all\" href=\"plans/software/\">View all\n<svg viewBox=\"0 0 24 24\"><path d=\"M5 12h14M13 6l6 6-6 6\"></path></svg>\n</a></div><div class=\"cat-grid\">",
+    "category": "combo",
+    "collections": [
+      "combo"
+    ],
+    "slug": "3-in-1-combo-2",
+    "originalUrl": "shop/3-in-1-combo-2/",
+    "detailUrl": "product.html?slug=3-in-1-combo-2",
+    "description": "3 IN 1 combo (2) is available through SoftMart at ₹299. A value combo that bundles multiple digital subscriptions into one convenient plan.",
+    "includes": "Both products included in the selected combo plan, plus setup guidance and replacement support.",
+    "delivery": "Combo access details delivered on WhatsApp after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹299"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15596,
+    "name": "Lovable Lite on mail",
+    "url": "product.html?slug=loveable",
+    "image": "images/img_0808.jpeg",
+    "price": "₹499",
+    "oldPrice": "₹1,299",
+    "addId": "15596",
+    "variationId": "15597",
+    "markup": "<a class=\"product-media\" href=\"shop/loveable/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/img_0808.jpeg\" alt=\"Lovable Lite on mail\" loading=\"lazy\" decoding=\"async\" width=\"600\" height=\"600\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/loveable/\">Lovable Lite on mail</a><div class=\"product-price\">\n<b>₹499</b><span>/mo</span>\n<s>₹1,299</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/loveable/\" data-add-id=\"15596\" data-var-id=\"15597\" data-var-att=\"{\" attribute_on-your-mail\":\"1=\"\" month\"}\"=\"\" aria-label=\"Add Lovable Lite on mail to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/loveable/\">Buy now</a></div></div></div>",
+    "category": "software",
+    "collections": [
+      "software"
+    ],
+    "slug": "loveable",
+    "originalUrl": "shop/loveable/",
+    "detailUrl": "product.html?slug=loveable",
+    "description": "Lovable Lite on mail is available through SoftMart at ₹499. A digital software product supplied for personal use with clear activation or access instructions.",
+    "includes": "Product license or account access, activation guidance, and replacement support during validity.",
+    "delivery": "Digital license/access details delivered after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹499"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 15591,
+    "name": "Google Ai pro (on email)",
+    "url": "product.html?slug=gemini",
+    "image": "images/img_0810.png",
+    "price": "₹1,999",
+    "oldPrice": "₹4,999",
+    "addId": "15591",
+    "variationId": "15594",
+    "markup": "<a class=\"product-media\" href=\"shop/gemini/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/img_0810.png\" alt=\"Google Ai pro (on email)\" loading=\"lazy\" decoding=\"async\" width=\"500\" height=\"500\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/gemini/\">Google Ai pro (on email)</a><div class=\"product-price\">\n<b>₹1,999</b><span>/mo</span>\n<s>₹4,999</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/gemini/\" data-add-id=\"15591\" data-var-id=\"15594\" data-var-att=\"{\" attribute_on-your-mail\":\"12=\"\" months\"}\"=\"\" aria-label=\"Add Google Ai pro (on email) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/gemini/\">Buy now</a></div></div></div>",
+    "category": "software",
+    "collections": [
+      "software"
+    ],
+    "slug": "gemini",
+    "originalUrl": "shop/gemini/",
+    "detailUrl": "product.html?slug=gemini",
+    "description": "Google Ai pro (on email) is available through SoftMart at ₹1,999. A digital software product supplied for personal use with clear activation or access instructions.",
+    "includes": "Product license or account access, activation guidance, and replacement support during validity.",
+    "delivery": "Digital license/access details delivered after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹1,999"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2304,
+    "name": "LinkedIn Career Plan (On Mail)",
+    "url": "product.html?slug=professional",
+    "image": "images/1000986215-768x768.jpg",
+    "price": "₹1,799",
+    "oldPrice": "₹3,300",
+    "addId": "2304",
+    "variationId": "9454",
+    "markup": "<a class=\"product-media\" href=\"shop/professional/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986215-768x768.jpg\" alt=\"LinkedIn Career Plan (On Mail)\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/professional/\">LinkedIn Career Plan (On Mail)</a><div class=\"product-price\">\n<b>₹1,799</b><span>/mo</span>\n<s>₹3,300</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/professional/\" data-add-id=\"2304\" data-var-id=\"9454\" data-var-att=\"{\" attribute_pa_duration\":\"2-months\"}\"=\"\" aria-label=\"Add LinkedIn Career Plan (On Mail) to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/professional/\">Buy now</a></div></div></div>",
+    "category": "software",
+    "collections": [
+      "software"
+    ],
+    "slug": "professional",
+    "originalUrl": "shop/professional/",
+    "detailUrl": "product.html?slug=professional",
+    "description": "LinkedIn Career Plan (On Mail) is available through SoftMart at ₹1,799. A digital software product supplied for personal use with clear activation or access instructions.",
+    "includes": "Product license or account access, activation guidance, and replacement support during validity.",
+    "delivery": "Digital license/access details delivered after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹1,799"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2228,
+    "name": "Windows 10 Pro License Key",
+    "url": "product.html?slug=windows-10-pro-license-key",
+    "image": "images/1000986564-768x768.jpg",
+    "price": "₹499",
+    "oldPrice": "₹999",
+    "addId": "2228",
+    "variationId": "3709",
+    "markup": "<a class=\"product-media\" href=\"shop/windows-10-pro-license-key/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986564-768x768.jpg\" alt=\"Windows 10 Pro License Key\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/windows-10-pro-license-key/\">Windows 10 Pro License Key</a><div class=\"product-price\">\n<b>₹499</b><span>/mo</span>\n<s>₹999</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/windows-10-pro-license-key/\" data-add-id=\"2228\" data-var-id=\"3709\" data-var-att=\"{\" attribute_duration\":\"lifetime\"}\"=\"\" aria-label=\"Add Windows 10 Pro License Key to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/windows-10-pro-license-key/\">Buy now</a></div></div></div>",
+    "category": "software",
+    "collections": [
+      "software"
+    ],
+    "slug": "windows-10-pro-license-key",
+    "originalUrl": "shop/windows-10-pro-license-key/",
+    "detailUrl": "product.html?slug=windows-10-pro-license-key",
+    "description": "Windows 10 Pro License Key is available through SoftMart at ₹499. A digital software product supplied for personal use with clear activation or access instructions.",
+    "includes": "Product license or account access, activation guidance, and replacement support during validity.",
+    "delivery": "Digital license/access details delivered after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹499"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2226,
+    "name": "Windows 11 Pro License Key",
+    "url": "product.html?slug=windows-11-pro-license-key",
+    "image": "images/1000986565-768x768.jpg",
+    "price": "₹599",
+    "oldPrice": "₹4,999",
+    "addId": "2226",
+    "variationId": "3711",
+    "markup": "<a class=\"product-media\" href=\"shop/windows-11-pro-license-key/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986565-768x768.jpg\" alt=\"Windows 11 Pro License Key\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/windows-11-pro-license-key/\">Windows 11 Pro License Key</a><div class=\"product-price\">\n<b>₹599</b><span>/mo</span>\n<s>₹4,999</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/windows-11-pro-license-key/\" data-add-id=\"2226\" data-var-id=\"3711\" data-var-att=\"{\" attribute_duration\":\"lifetime\"}\"=\"\" aria-label=\"Add Windows 11 Pro License Key to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/windows-11-pro-license-key/\">Buy now</a></div></div></div>",
+    "category": "software",
+    "collections": [
+      "software"
+    ],
+    "slug": "windows-11-pro-license-key",
+    "originalUrl": "shop/windows-11-pro-license-key/",
+    "detailUrl": "product.html?slug=windows-11-pro-license-key",
+    "description": "Windows 11 Pro License Key is available through SoftMart at ₹599. A digital software product supplied for personal use with clear activation or access instructions.",
+    "includes": "Product license or account access, activation guidance, and replacement support during validity.",
+    "delivery": "Digital license/access details delivered after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹599"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2171,
+    "name": "Google Gemini AI Pro",
+    "url": "product.html?slug=google-gemini-ai-pro",
+    "image": "images/1000986484-768x768.jpg",
+    "price": "₹349",
+    "oldPrice": "₹999",
+    "addId": "2171",
+    "variationId": "3695",
+    "markup": "<a class=\"product-media\" href=\"shop/google-gemini-ai-pro/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986484-768x768.jpg\" alt=\"Google Gemini AI Pro\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/google-gemini-ai-pro/\">Google Gemini AI Pro</a><div class=\"product-price\">\n<b>₹349</b><span>/mo</span>\n<s>₹999</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/google-gemini-ai-pro/\" data-add-id=\"2171\" data-var-id=\"3695\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add Google Gemini AI Pro to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/google-gemini-ai-pro/\">Buy now</a></div></div></div>",
+    "category": "software",
+    "collections": [
+      "software"
+    ],
+    "slug": "google-gemini-ai-pro",
+    "originalUrl": "shop/google-gemini-ai-pro/",
+    "detailUrl": "product.html?slug=google-gemini-ai-pro",
+    "description": "Google Gemini AI Pro is available through SoftMart at ₹349. A digital software product supplied for personal use with clear activation or access instructions.",
+    "includes": "Product license or account access, activation guidance, and replacement support during validity.",
+    "delivery": "Digital license/access details delivered after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹349"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2175,
+    "name": "QuillBot Premium",
+    "url": "product.html?slug=quillbot-premium",
+    "image": "images/1000986583-768x768.jpg",
+    "price": "₹199",
+    "oldPrice": "₹859",
+    "addId": "2175",
+    "variationId": "3285",
+    "markup": "<a class=\"product-media\" href=\"shop/quillbot-premium/\">\n<img data-lazyloaded=\"1\" src=\"data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=\" data-src=\"images/1000986583-768x768.jpg\" alt=\"QuillBot Premium\" loading=\"lazy\" decoding=\"async\" width=\"640\" height=\"640\">\t    \t  </a><div class=\"product-body\">\n<a class=\"product-name\" href=\"shop/quillbot-premium/\">QuillBot Premium</a><div class=\"product-price\">\n<b>₹199</b><span>/mo</span>\n<s>₹859</s></div><div class=\"product-actions\">\n<a class=\"btn-cart\" href=\"shop/quillbot-premium/\" data-add-id=\"2175\" data-var-id=\"3285\" data-var-att=\"{\" attribute_pa_duration\":\"1-month\"}\"=\"\" aria-label=\"Add QuillBot Premium to cart\">\n<svg viewBox=\"0 0 24 24\"><path d=\"M6 7h13l-1.5 9h-10L5 3H2\"></path><circle cx=\"9\" cy=\"21\" r=\"1.6\"></circle><circle cx=\"16\" cy=\"21\" r=\"1.6\"></circle></svg>\n</a>\n<a class=\"btn btn-dark\" href=\"shop/quillbot-premium/\">Buy now</a></div></div></div></div></div></div></div>",
+    "category": "software",
+    "collections": [
+      "software"
+    ],
+    "slug": "quillbot-premium",
+    "originalUrl": "shop/quillbot-premium/",
+    "detailUrl": "product.html?slug=quillbot-premium",
+    "description": "QuillBot Premium is available through SoftMart at ₹199. A digital software product supplied for personal use with clear activation or access instructions.",
+    "includes": "Product license or account access, activation guidance, and replacement support during validity.",
+    "delivery": "Digital license/access details delivered after purchase.",
+    "support": "WhatsApp support is available for setup, renewals, and replacement requests.",
+    "options": [
+      "1 Month",
+      "3 Months",
+      "6 Months",
+      "12 Months"
+    ],
+    "goodToKnow": "Access is delivered after order confirmation. Contact SoftMart support for setup, renewal, or replacement help.",
+    "planGroups": [
+      {
+        "title": "PLAN",
+        "options": [
+          {
+            "label": "1 Month",
+            "price": "₹199"
           }
         ]
       }
