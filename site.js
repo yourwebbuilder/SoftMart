@@ -5,8 +5,7 @@
   while ((node = walker.nextNode())) {
     node.nodeValue = node.nodeValue
       .replace(/https:\/\/showroom\.dotpe\.in\/temporary-1weewoo/gi, 'this site')
-      .replace(/\+91\s*94375\s*19360|\+919437519360|919437519360|9437519360/g, '+1 3603601075')
-      .replace(/@tryweewoo/gi, '@xtarnetdev')
+      .replace(/\+91\s*97430\s*68739|\+919743068739|919743068739|9743068739/g, '+91 97430 68739')
       .replace(/WeeWoo/gi, 'SoftMart');
   }
 
@@ -29,11 +28,13 @@
 
   document.querySelectorAll('a[href], area[href]').forEach(function (link) {
     var href = link.getAttribute('href') || '';
-    if (/wa\.me\/|api\.whatsapp\.com/i.test(href)) {
-      link.setAttribute('href', href.replace(/(?:wa\.me\/|phone=)(?:91)?9437519360/g, '13603601075'));
+    var label = (link.textContent || '').toLowerCase();
+    if (/wa\.me\/|api\.whatsapp\.com|whatsapp|97430\s*68739|919743068739/i.test(href + ' ' + label)) {
+      if (href === '#' || !href) link.setAttribute('href', 'https://wa.me/919743068739');
+      else link.setAttribute('href', href.replace(/(wa\.me\/|phone=)(?:\+?91)?9743068739/g, '$1919743068739'));
     }
-    if (/t\.me\/(?:tryweewoo|weewoo)/i.test(href)) {
-      link.setAttribute('href', href.replace(/t\.me\/(?:tryweewoo|weewoo)/i, 't.me/xtarnetdev'));
+    if (/t\.me\//i.test(href) || /telegram|ArisuSoull/i.test(label)) {
+      link.setAttribute('href', href.replace(/t\.me\/[^/?#]*/i, 't.me/ArisuSoull').replace(/^#$/, 'https://t.me/ArisuSoull'));
     }
   });
 

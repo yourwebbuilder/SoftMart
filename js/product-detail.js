@@ -27,8 +27,8 @@
         'About: ' + product.description
       ].join('\n');
       return {
-        whatsapp: 'https://wa.me/13603601075?text=' + encodeURIComponent(message),
-        telegram: 'https://t.me/xtarnetdev?text=' + encodeURIComponent(message)
+        whatsapp: 'https://wa.me/919743068739?text=' + encodeURIComponent(message),
+        telegram: 'https://t.me/ArisuSoull?text=' + encodeURIComponent(message)
       };
     };
     const initialLinks = purchaseLinks(firstPlan);
