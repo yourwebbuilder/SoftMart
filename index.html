@@ -1,0 +1,979 @@
+<!DOCTYPE html><html lang="en-US" prefix="og: https://ogp.me/ns#"><head><script data-no-optimize="1">var litespeed_docref=sessionStorage.getItem("litespeed_docref");litespeed_docref&&(Object.defineProperty(document,"referrer",{get:function(){return litespeed_docref}}),sessionStorage.removeItem("litespeed_docref"));</script> <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#f6f4ea"><style type="text/css">@font-face {font-family:'Space Grotesk';font-style:normal;font-weight:300 700;src:url(fonts/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Space Grotesk';font-style:normal;font-weight:300 700;src:url(fonts/normal_4.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Space Grotesk';font-style:normal;font-weight:300 700;src:url(fonts/normal_1.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Instrument Serif';font-style:normal;font-weight:400;src:url(fonts/normal_2.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Instrument Serif';font-style:normal;font-weight:400;src:url(fonts/normal_3.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Instrument Serif';font-style:italic;font-weight:400;src:url(fonts/italic.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Instrument Serif';font-style:italic;font-weight:400;src:url(fonts/italic_1.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}</style><style>body{background:#f6f4ea;color:#161a10;margin:0}svg{max-width:100%}.logo-bolt{width:15px;height:15px}.nav-icon svg,.hamburger svg,.drawer-close svg{width:22px;height:22px}
+/* Universal touch focus-ring kill — see the note in weewoo-storefront.php. Inline
+   so a cached stylesheet on the visitor's phone can never bring the black box back. */
+*:focus,*:focus-visible,*:active,*:focus-within{outline:0 !important;outline-color:transparent !important}
+a,button,summary,label,[role=button],[tabindex],input,select,textarea,.btn,.chp,.cat,.pc{-webkit-tap-highlight-color:transparent !important}</style><style id="ww-instant-badge-css">/*
+ * CRITICAL — This rule must be the very first thing painted.
+ * .ww-badge-pending is added to every badge element in PHP output.
+ * JS removes it only after the AJAX stock check resolves.
+ * This prevents the flash on LiteSpeed/object-cached pages where
+ * inline style="display:none" may arrive a paint cycle too late.
+ */
+.ww-badge-pending {
+    visibility:hidden !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+}
+.woocommerce ul.products li.product,
+.woocommerce ul.products li.product > a,
+.woocommerce ul.products li.product a.woocommerce-loop-product__link,
+.woocommerce ul.products li.product .woocommerce-loop-product__thumbnail,
+.woocommerce ul.products li.product .product-thumbnail,
+.woocommerce div.product div.images,
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper { position:relative !important; }
+
+.ww-instant-badge {
+    position:absolute !important;
+    top:10px !important; right:10px !important; left:auto !important;
+    background:#121212 !important;
+    color:#c2f068 !important;
+    border-radius:6px !important;
+    font-size:9px !important;
+    padding:3px 6px !important;
+    font-weight:800 !important;
+    text-transform:uppercase !important;
+    letter-spacing:0.5px !important;
+    line-height:1.2 !important;
+    z-index:9999 !important;
+    box-shadow:0 4px 8px rgba(0,0,0,0.35) !important;
+    pointer-events:none !important;
+    
+}
+.ww-badge-single {
+    font-size:11px !important;
+    padding:5px 10px !important;
+    transition:opacity 0.3s ease !important;
+}
+/* compact single-line delivery bar: ⚡ Delivered instantly on your WhatsApp */
+.ww-delivery-box {
+    background:#121212 !important;
+    color:#c2f068 !important;
+    border:1px solid #c2f06833 !important;
+    padding:11px 16px !important;
+    border-radius:12px !important;
+    margin:12px 0 22px !important;
+    font-size:13.5px !important;
+    font-weight:800 !important;
+    line-height:1.2 !important;
+    box-shadow:0 4px 18px rgba(0,0,0,0.18) !important;
+    clear:both !important;
+    letter-spacing:0.1px !important;
+}
+/* display is set by JS after stock check — not in CSS — so .ww-badge-pending can hide it */
+.ww-delivery-box .ww-delivery-inner {
+    display:flex !important; align-items:center !important; gap:10px !important;
+}
+.ww-delivery-icon { font-size:16px; flex-shrink:0; line-height:1; }
+.ww-delivery-text { flex:1 1 auto; }</style><meta name="google-site-verification" content="hYAUHUaJOC4uqVF-UvkWeXCtkLJ--RV2L9rYkmk-JE8"><title>Buy Cheap OTT Subscriptions India | MSME Registered</title><meta name="description" content="Buy cheap OTT subscriptions in India — Netflix, Prime Video, Hotstar, Apple TV+ and 20+ apps from ₹45. Instant WhatsApp delivery, MSME-registered seller."><meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"><link rel="canonical" href=""><meta property="og:locale" content="en_US"><meta property="og:type" content="website"><meta property="og:title" content="Buy Cheap OTT Subscriptions India | MSME Registered"><meta property="og:description" content="Buy cheap OTT subscriptions in India — Netflix, Prime Video, Hotstar, Apple TV+ and 20+ apps from ₹45. Instant WhatsApp delivery, MSME-registered seller."><meta property="og:url" content=""><meta property="og:site_name" content="WeeWoo"><meta property="og:updated_time" content="2026-07-13T20:53:26+05:30"><meta property="og:image" content="images/weewoo-og-1200x630.png"><meta property="og:image:secure_url" content="images/weewoo-og-1200x630.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="WeeWoo — cheap OTT, music and software subscriptions in India from ₹45"><meta property="og:image:type" content="image/png"><meta property="article:published_time" content="2023-04-20T11:41:51+05:30"><meta property="article:modified_time" content="2026-07-13T20:53:26+05:30"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Buy Cheap OTT Subscriptions India | MSME Registered"><meta name="twitter:description" content="Buy cheap OTT subscriptions in India — Netflix, Prime Video, Hotstar, Apple TV+ and 20+ apps from ₹45. Instant WhatsApp delivery, MSME-registered seller."><meta name="twitter:image" content="images/weewoo-og-1200x630.png"> <script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":["Organization","OnlineStore"],"@id":"#organization","name":"WeeWoo","url":"","email":"support@weewoo.in","logo":{"@type":"ImageObject","@id":"#logo","url":"wp-content/uploads/2025/07/cropped-4.png","contentUrl":"wp-content/uploads/2025/07/cropped-4.png","caption":"WeeWoo","inLanguage":"en-US","width":"512","height":"512"},"description":"WeeWoo sells affordable shared OTT, music and software subscriptions in India \u2014 Netflix, Prime Video, JioHotstar, Spotify and 20+ more \u2014 delivered instantly on WhatsApp by an MSME registered seller.","legalName":"WeeWoo","image":{"@id":"#logo"},"telephone":"+1 3603601075","alternateName":["WeeWoo OTT","WeeWoo India","weewoo.in"],"sameAs":["https://www.instagram.com/buyweewoo/","https://www.trustpilot.com/review/weewoo.in","https://www.youtube.com/@xtarnetdev"],"slogan":"Premium subscriptions, affordable prices.","foundingDate":"2022-07","contactPoint":[{"@type":"ContactPoint","contactType":"customer support","telephone":"+1 3603601075","email":"support@weewoo.in","areaServed":"IN","availableLanguage":["English","Hindi"]}],"areaServed":{"@type":"Country","name":"India"},"currenciesAccepted":"INR","paymentAccepted":"UPI, Credit Card, Debit Card, Net Banking, Wallet","knowsAbout":["OTT subscriptions","Shared streaming subscriptions","Netflix subscription","Amazon Prime Video subscription","JioHotstar subscription","Spotify Premium","Software subscriptions"]},{"@type":"WebSite","@id":"#website","url":"","name":"WeeWoo","publisher":{"@id":"#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"?s={search_term_string}","query-input":"required name=search_term_string"},"alternateName":["WeeWoo OTT","weewoo.in"]},{"@type":"ImageObject","@id":"wp-content/uploads/2026/06/weewoo-icon-dark-512.png","url":"wp-content/uploads/2026/06/weewoo-icon-dark-512.png","width":"512","height":"512","inLanguage":"en-US"},{"@type":"WebPage","@id":"#webpage","url":"","name":"Buy Cheap OTT Subscriptions India | MSME Registered","datePublished":"2023-04-20T11:41:51+05:30","dateModified":"2026-07-13T20:53:26+05:30","about":{"@id":"#organization"},"isPartOf":{"@id":"#website"},"primaryImageOfPage":{"@id":"wp-content/uploads/2026/06/weewoo-icon-dark-512.png"},"inLanguage":"en-US"}]}</script> <meta name="facebook-domain-verification" content="b1dqbkskw3jw8bzm9lgae2sk5renk2"><link rel="dns-prefetch" href="//fonts.googleapis.com"><link rel="alternate" type="application/rss+xml" title="WeeWoo » Feed" href="feed/"><link rel="alternate" type="application/rss+xml" title="WeeWoo » Comments Feed" href="comments/feed/"><style id="ww-cream-header">/* ═══ HOMEPAGE HEADER (vault plugin nav) ═══ */
+.nav .nav-inner {
+  background: rgba(253,252,247,.98) !important;
+  border-color: rgba(22,26,16,.06) !important;
+  box-shadow: 0 1px 3px rgba(22,26,16,.03) !important;
+}
+.nav.scrolled .nav-inner {
+  background: rgba(253,252,247,.95) !important;
+  border-color: rgba(22,26,16,.06) !important;
+  box-shadow: 0 1px 3px rgba(22,26,16,.04), 0 4px 16px rgba(22,26,16,.04) !important;
+}
+.nav-links a,
+.nav.scrolled .nav-links a { color: #3a3d35 !important; }
+.logo, .nav.scrolled .logo { color: #161a10 !important; }
+.logo-bolt, .nav.scrolled .logo-bolt { fill: #64A618 !important; }
+.nav-icon svg, .hamburger svg,
+.nav.scrolled .nav-icon svg, .nav.scrolled .hamburger svg { stroke: #3a3d35 !important; }
+.nav-count, .nav.scrolled .nav-count { background: #64A618 !important; color: #fff !important; }
+.popup-search-content { background: #fdfcf7 !important; }
+.mobile-menu { background: #fdfcf7 !important; }
+.mobile-menu .mobile-nav-item a { color: #3a3d35 !important; }
+
+/* ═══ INTERIOR PAGE HEADER (Minimog page-header) ═══ */
+.page-header-inner,
+.page-header-inner.held,
+.page-header.header-dark .page-header-inner,
+.page-header.header-dark .page-header-inner.held {
+  background: rgba(253,252,247,.98) !important;
+  border-color: rgba(22,26,16,.06) !important;
+  box-shadow: 0 1px 3px rgba(22,26,16,.03) !important;
+}
+.page-header .header-icon .icon svg path,
+.page-header.header-dark .header-icon .icon svg path {
+  fill: #3a3d35 !important;
+}
+.page-header .header-icon svg,
+.page-header.header-dark .header-icon svg {
+  color: #3a3d35 !important;
+  stroke: #3a3d35 !important;
+}
+.page-header .header-icon .icon-badge,
+.page-header.header-dark .header-icon .icon-badge {
+  background: #64A618 !important;
+  color: #fff !important;
+}
+
+/* ═══ ELEMENTOR FOOTER — force cream bg ═══ */
+.elementor-location-footer .e-con,
+.elementor-location-footer .elementor-element,
+.page-footer-wrapper,
+.page-footer {
+  background: #fdfcf7 !important;
+}
+
+/* ═══ REFUND PAGE — zero top margin, full-width ═══ */
+.page-id-12949 .page-content {
+  margin-top: 20px !important;
+  margin-bottom: 0 !important;
+}</style><style id="ww-mobile-ux">input[type="search"],.ww-shop-search input,.search-field,.orderby,select.orderby,.popup-search-content input{font-size:16px!important}.cat-row-all{padding-top:6px!important;padding-bottom:6px!important}</style><style id="wp-img-auto-sizes-contain-inline-css">img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */</style><style>1{content-visibility:auto;contain-intrinsic-size:1px 1000px;}</style><style id="woocommerce-inline-inline-css">.woocommerce form .form-row .required { visibility: visible; }
+/*# sourceURL=woocommerce-inline-inline-css */</style><style type="text/css">@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:400;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:500;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:600;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:700;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:800;src:url(fonts/normal_5.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:800;src:url(fonts/normal_7.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:800;src:url(fonts/normal_11.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:800;src:url(fonts/normal_8.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:800;src:url(fonts/normal_10.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:800;src:url(fonts/normal_9.woff2);unicode-range:U+1F00-1FFF;font-display:swap;}@font-face {font-family:'Inter';font-style:normal;font-weight:800;src:url(fonts/normal_6.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}</style> <script id="jquery-core-js" src="js/jquery.min.js"></script> <script id="jquery-migrate-js" src="js/jquery-migrate.min.js"></script> <script data-wp-strategy="defer" id="wc-jquery-blockui-js" src="js/jquery.blockUI.min.js"></script> <script id="wc-add-to-cart-js-extra">var wc_add_to_cart_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"cart/","is_cart":"","cart_redirect_after_add":"no"};
+//# sourceURL=wc-add-to-cart-js-extra</script> <script data-wp-strategy="defer" defer="" id="wc-add-to-cart-js" src="js/add-to-cart.min.js"></script> <script data-wp-strategy="defer" defer="" id="wc-js-cookie-js" src="js/js.cookie.min.js"></script> <script id="woocommerce-js-extra">var woocommerce_params = {"ajax_url":"/wp-admin/admin-ajax.php","wc_ajax_url":"/?wc-ajax=%%endpoint%%","i18n_password_show":"Show password","i18n_password_hide":"Hide password"};
+//# sourceURL=woocommerce-js-extra</script> <script data-wp-strategy="defer" defer="" id="woocommerce-js" src="js/woocommerce.min.js"></script> <script id="wp-hooks-js" src="js/hooks.min.js"></script> <script id="pmw-js-extra">var pmw = {"ajax_url":"wp-admin/admin-ajax.php","root":"wp-json/","nonce_wp_rest":"9dd8ecee5f","nonce_ajax":"4c4ccf33ec"};
+//# sourceURL=pmw-js-extra</script>  <link rel="https://api.w.org/" href="wp-json/"><link rel="alternate" title="JSON" type="application/json" href="wp-json/wp/v2/pages/1021"><meta name="generator" content="Redux 4.5.13"><link rel="manifest" href="js/weewoo-store-manifest.json"><meta name="theme-color" content="#121212"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="WeeWoo"><style>.woocommerce-form__label-for-checkbox.checkbox,
+        .woocommerce-terms-and-conditions-wrapper,
+        #terms {
+            display: none !important;
+        }</style><style>/* Center everything and hide unwanted elements */
+        .wp-block-woocommerce-empty-cart-block {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            padding: 50px 20px !important;
+        }
+
+        .wp-block-woocommerce-empty-cart-block .wc-block-grid.wp-block-product-new,
+        .wp-block-woocommerce-empty-cart-block .wp-block-separator,
+        .wp-block-woocommerce-empty-cart-block h2.wp-block-heading:not(.wc-block-cart__empty-cart__title) {
+            display: none !important;
+        }
+
+        .custom-continue-shopping {
+            display: inline-block !important;
+            background-color: #000 !important;
+            color: #fff !important;
+            padding: 15px 35px !important;
+            text-decoration: none !important;
+            margin-top: 25px !important;
+            border-radius: 4px !important;
+            font-weight: 600 !important;
+            transition: opacity 0.3s ease;
+        }</style><style>/* Permanently hide 'Clear' reset link */
+        .reset_variations {
+            display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }</style><style>/* 1. Premium Minimalist Error Notice Card */
+        .woocommerce-error,
+        ul.woocommerce-error {
+            background-color: #ffffff !important; /* Clean white card */
+            border: 1px solid #f3f4f6 !important; /* Very subtle grey border */
+            border-left: 4px solid #ef4444 !important; /* Sharp red accent line on the left */
+            border-radius: 8px !important; /* Modern, smooth rounded corners */
+            color: #374151 !important; /* Sophisticated dark grey text instead of jarring red */
+            padding: 16px 20px !important;
+            margin: 0 0 25px 0 !important;
+            font-size: 15px !important;
+            font-family: inherit !important;
+            font-weight: 500 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02) !important; /* High-end, floaty shadow */
+            list-style: none !important;
+            display: block !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        /* 2. Format the text inside cleanly */
+        .woocommerce-error li {
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+
+        /* 3. Strip out the "noob" default theme icons */
+        .woocommerce-error::before,
+        .woocommerce-error li::before,
+        .woocommerce-error i,
+        .woocommerce-error .icon {
+            display: none !important; /* Hides the dated circle 'i' icon */
+        }
+        
+        /* Optional: Add a clean, modern dot instead of the icon */
+        .woocommerce-error li::before {
+            content: "•" !important;
+            color: #ef4444 !important;
+            font-size: 20px !important;
+            line-height: 1 !important;
+            margin-right: 10px !important;
+            display: inline-block !important;
+        }</style><noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript><meta name="generator" content="Elementor 4.2.0; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap"> <script data-cfasync="false">window.pmwDataLayer = window.pmwDataLayer || {};
+			window.pmwDataLayer = Object.assign(window.pmwDataLayer, {"cart":{},"cart_item_keys":{},"version":{"number":"1.58.5","pro":true,"eligible_for_updates":true,"distro":"fms","beta":false,"show":true},"pixels":{"google":{"linker":{"settings":null},"user_id":true,"analytics":{"ga4":{"measurement_id":"G-40V21NZCPF","parameters":{},"mp_active":true,"debug_mode":false,"page_load_time_tracking":true},"id_type":"post_id"},"tag_id":"G-40V21NZCPF","tag_id_suppressed":[],"tag_gateway":{"measurement_path":""},"tcf_support":false,"consent_mode":{"is_active":true,"wait_for_update":500,"ads_data_redaction":false,"url_passthrough":true},"enhanced_conversions":{"is_active":true}},"facebook":{"pixel_id":"816130438083668","dynamic_remarketing":{"id_type":"post_id"},"capi":true,"advanced_matching":true,"exclusion_patterns":[],"fbevents_js_url":"https://connect.facebook.net/en_US/fbevents.js"}},"shop":{"list_name":"Front Page","list_id":"front_page","page_type":"front_page","currency":"INR","selectors":{"addToCart":[],"beginCheckout":[]},"order_duplication_prevention":true,"view_item_list_trigger":{"test_mode":false,"background_color":"green","opacity":0.5,"repeat":true,"timeout":1000,"threshold":0.8},"variations_output":true,"session_active":false},"page":{"id":1021,"title":"Home","type":"page","categories":[],"parent":{"id":0,"title":"Home","type":"page","categories":[]}},"general":{"user_logged_in":false,"scroll_tracking_thresholds":[],"page_id":1021,"exclude_domains":[],"server_2_server":{"active":true,"skip_empty_events":true,"always_send_s2s":false,"user_agent_exclude_patterns":[],"ip_exclude_list":[],"pageview_event_s2s":{"is_active":false,"pixels":["facebook"]}},"ssp":{"active":false,"events_url":"","fallback_to_wc":true,"domain_token":"","session_id":"790d644d-ad7b-40e0-87ed-e52591c600a0","quota_exceeded":false},"consent_management":{"explicit_consent":false},"lazy_load_pmw":false,"chunk_base_path":"wp-content/plugins/pixel-manager-pro-for-woocommerce/js/public/pro/","modules":{"load_deprecated_functions":true}}});</script>   <script id="google_gtagjs-inline">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-40V21NZCPF', {} );</script> <link rel="icon" href="images/weewoo-icon-dark-512-50x50.png" sizes="32x32"><link rel="icon" href="images/weewoo-icon-dark-512-300x300.png" sizes="192x192"><link rel="apple-touch-icon" href="images/weewoo-icon-dark-512-300x300.png"><meta name="msapplication-TileImage" content="wp-content/uploads/2026/06/weewoo-icon-dark-512-300x300.png"><style>.ww-seo-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style><style id="ww-cart-badge-color">.icon-badge.mini-cart-badge,.mini-cart-badge{background:#c2f068!important;background-color:#c2f068!important;color:#0b1622!important;}</style><link rel="stylesheet" id="wp-custom-css-file" href="css/custom-0c1d4968022e.css" media="all"><style>/* Base Button Design - Refined for smaller size */
+        .product-action a.button.add_to_cart_button {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: auto !important; 
+            min-width: 140px !important; 
+            height: 40px !important; /* Reduced height to fix "big size" */
+            padding: 0 20px !important;
+            box-sizing: border-box !important;
+            border-radius: 999px !important;
+            background-color: #000000 !important;
+            color: #ffffff !important;
+            font-size: 14px !important;
+            font-weight: 700 !important;
+            white-space: nowrap !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+        }
+
+        /* Fix "too much gap" by reducing margin */
+        .product-action.woocommerce_loop_add_to_cart_wrap {
+            margin-top: 8px !important; /* Reduced from 16px */
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+        /* Shopping Bag Icon */
+        .product-action a.button.add_to_cart_button::before {
+            content: "" !important;
+            display: inline-block !important;
+            width: 18px !important;
+            height: 18px !important;
+            margin-right: 8px !important;
+            background-color: #ffffff !important; 
+            -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z' /%3E%3C/svg%3E") !important;
+            mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z' /%3E%3C/svg%3E") !important;
+            mask-repeat: no-repeat !important;
+            mask-size: contain !important;
+            -webkit-mask-repeat: no-repeat !important;
+        }
+
+        /* Neon Hover Effect */
+        .product-action a.button.add_to_cart_button:hover {
+            background-color: #c2f068 !important;
+            color: #000000 !important;
+            box-shadow: 0 0 15px rgba(194, 240, 104, 0.6) !important;
+            transform: translateY(-2px) !important;
+        }
+        
+        .product-action a.button.add_to_cart_button:hover::before {
+            background-color: #000000 !important;
+        }</style> <script>document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.product-action a.button.add_to_cart_button').forEach(function(btn) {
+                btn.textContent = 'Buy Now';
+            });
+        });</script> <link rel="stylesheet" href="css/weewoo-homepage.css"></head><body class="ww-homepage light" data-ww-badge-init="1"><div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div><header class="nav ww-nav-3" id="nav"><div class="nav-inner">
+<button class="nav-icon hamburger" id="openMenu" aria-label="Open menu">
+<svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+</button>
+<a class="logo" href="" aria-label="SoftMart home">
+<span>SOFT</span>
+<svg class="logo-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z"></path></svg>
+<span class="woo">MART</span>
+</a><nav class="nav-links ww-pc-menu" aria-label="Primary"><ul id="menu-pc-menu" class="ww-pc-ul"><li id="menu-item-2739" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1021 current_page_item menu-item-2739"><a href="" aria-current="page">Home</a></li><li id="menu-item-2740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2740"><a href="#">Shop</a><ul class="sub-menu"><li id="menu-item-2742" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2742"><a href="plans/subscriptions/">Subscriptions</a></li><li id="menu-item-2745" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2745"><a href="plans/combo/">Combo Pack</a></li><li id="menu-item-2743" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2743"><a href="plans/software/">Software</a></li><li id="menu-item-2744" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2744"><a href="plans/adult/">Adult</a></li><li id="menu-item-2998" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2998"><a href="plans/music/">Music</a></li><li id="menu-item-2997" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2997"><a href="plans/more-plans/">More Plans</a></li></ul></li><li id="menu-item-3516" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3516"><a href="login-terms/">Login Terms</a></li><li id="menu-item-2741" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2741"><a href="#">Quick Links</a><ul class="sub-menu"><li id="menu-item-2749" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2749"><a href="terms-and-conditions/">Terms and Conditions</a></li><li id="menu-item-2746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2746"><a href="about-us/">About Us</a></li><li id="menu-item-2747" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2747"><a href="contact-us/">Contact Us</a></li></ul></li></ul></nav><div class="nav-right">
+<button class="nav-icon" id="openSearch" aria-label="Search">
+<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+</button>
+<a class="nav-icon nav-acct" href="my-account/" aria-label="My Account">
+<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg>
+<span class="nav-acct-label">My Account</span>
+</a>
+<a class="nav-icon" href="cart/" aria-label="Cart" id="navCart">
+<svg viewBox="0 0 24 24"><path d="M6 7h13l-1.5 9h-10L5 3H2"></path><circle cx="9" cy="21" r="1.6"></circle><circle cx="16" cy="21" r="1.6"></circle></svg>
+<span class="cart-count" id="cartCount"></span>
+</a></div></div></header> <script>(function () {
+  var D = document;
+  function q(s) { return D.querySelector(s); }
+
+  function closeAll() {
+    var d = D.querySelectorAll('.drawer');
+    for (var i = 0; i < d.length; i++) { d[i].classList.remove('open'); }
+    var o = q('#drawerOverlay'); if (o) { o.classList.remove('open'); }
+    D.body.style.overflow = '';
+  }
+  function openDrawer(sel) {
+    var d = q(sel); if (!d) { return; }
+    d.classList.add('open');
+    var o = q('#drawerOverlay'); if (o) { o.classList.add('open'); }
+    D.body.style.overflow = 'hidden';
+  }
+
+  D.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) { return; }          /* text / non-Element targets */
+    if (t.closest('#openMenu')) { e.preventDefault(); openDrawer('#menuDrawer'); return; }
+    if (t.closest('.drawer-close') || t.closest('#drawerOverlay')) { closeAll(); }
+  });
+  D.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') { return; }
+    var s = q('#searchOverlay');
+    if (!s || !s.classList.contains('open')) { closeAll(); }
+  });
+
+  window.wwCloseDrawers = closeAll;
+  window.__wwDrawerBoot = 1;
+})();</script> <div class="drawer-overlay" id="drawerOverlay"></div><aside class="drawer drawer-menu" id="menuDrawer" aria-label="Menu"><div class="drawer-head">
+<a class="logo" href="">
+<span>SOFT</span>
+<svg class="logo-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z"></path></svg>
+<span class="woo">MART</span>
+</a>
+<button class="drawer-close" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div><div class="drawer-body"><div class="menu-list ww-mobile-menu"><ul id="menu-mobile" class="ww-mobile-ul"><li id="menu-item-12750" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1021 current_page_item menu-item-12750"><a href="" aria-current="page">Home</a></li><li id="menu-item-12751" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12751"><a href="shop/">Shop</a></li><li id="menu-item-12752" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12752"><a href="#">Categories</a><ul class="sub-menu"><li id="menu-item-12768" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12768"><a href="plans/subscriptions/">Subscriptions</a></li><li id="menu-item-12767" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12767"><a href="plans/software/">Software</a></li><li id="menu-item-12764" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12764"><a href="plans/combo/">Combo Pack</a></li><li id="menu-item-12763" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12763"><a href="plans/adult/">Adult</a></li><li id="menu-item-12766" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12766"><a href="plans/music/">Music</a></li><li id="menu-item-12765" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12765"><a href="plans/more-plans/">More Plans</a></li></ul></li><li id="menu-item-12753" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12753"><a href="#">Quick links</a><ul class="sub-menu"><li id="menu-item-12758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12758"><a href="login-terms/">Login Terms</a></li><li id="menu-item-12759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12759"><a href="about-us/">About Us</a></li><li id="menu-item-12760" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12760"><a href="contact-us/">Contact Us</a></li><li id="menu-item-12762" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12762"><a href="terms-and-conditions/">Terms and Conditions</a></li></ul></li></ul></div><div class="menu-bottom">
+<a class="btn btn-lime btn-lg btn-block" href="my-account/">My Account</a></div></div></aside><aside class="drawer drawer-cart" id="cartDrawer" aria-label="Your cart"><div class="drawer-head">
+<b>Your cart <span id="cartHeadCount"></span></b>
+<button class="drawer-close" aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div><div class="drawer-body" id="cartBody"><div class="cart-loading">Loading…</div></div><div class="drawer-foot" id="cartFoot" hidden=""><div class="cart-total-row"><span>Subtotal</span><b id="cartSubtotal">—</b></div>
+<a class="btn btn-lime btn-lg btn-block" id="cartCheckoutBtn" href="checkout/">
+<svg viewBox="0 0 24 24" width="18" height="18" fill="#10130a" aria-hidden="true"><path d="M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z"></path></svg>
+Checkout
+</a></div></aside><div class="search-overlay" id="searchOverlay"><div class="search-overlay-bg"></div><div class="search-modal"><form class="search-bar" action="" method="get" role="search">
+<svg class="search-bar-icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+<input type="search" name="s" id="searchInput" placeholder="Search Netflix, Spotify, combos..." autocomplete="off">
+<input type="hidden" name="post_type" value="product">
+<button type="button" class="search-bar-clear" id="searchClear" aria-label="Clear"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></form><div class="search-results" id="searchResults"></div>
+<button class="search-close-btn" id="searchCloseBtn">Cancel</button></div></div><main id="top" class="page-fade"><section class="hero band-light" id="hero"><div class="hero-inner"><div class="hero-glow" aria-hidden="true"></div><span class="hero-eyebrow">
+<b><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z"></path></svg> INSTANT</b>
+Delivered on WhatsApp in minutes
+</span><h1 class="hero-title">
+<span class="line">All your apps.</span>
+<span class="line"><em>One</em> <span class="accent">WeeWoo.</span></span></h1><p class="hero-sub">Genuine subscriptions at Indian prices. From <b>₹45/month</b> — on WhatsApp in minutes.</p><div class="hero-ctas">
+<a class="btn btn-lime btn-lg magnetic" href="#plans">Explore our plans
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+</a>
+<a class="btn btn-ghost btn-lg magnetic" href="joinus" target="_blank" rel="noopener">
+<svg viewBox="0 0 24 24" width="16" height="16" fill="#25D366" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.3.5c-.2.2-.3.4-.1.7.1.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.1.1.6-.3 1.2z"></path></svg>
+Join WhatsApp community
+</a></div><div class="hero-rails" aria-label="Platforms we cover"><div class="rail"><div class="rail-track"><span class="rail-pill"><span class="rail-tile"><svg fill="#E50914" viewBox="0 0 24 24"><path d="m5.398 0 8.348 23.602c2.346.059 4.856.398 4.856.398L10.113 0H5.398zm8.489 0v9.172l4.715 13.33V0h-4.715zM5.398 1.5V24c1.873-.225 2.81-.312 4.715-.398V14.83L5.398 1.5z"></path></svg></span><span class="rail-name">Netflix</span></span><span class="rail-pill"><span class="rail-tile"><svg viewBox="0 0 24 24"><path d="M3 10.6c3.4 4.8 9.8 6.5 15.5 3.6" fill="none" stroke="#1399ff" stroke-width="2.6" stroke-linecap="round"></path><path d="M15.2 15.6c1.8-.8 3-1.1 4.1-1.5-.2 1.3-.5 2.4-.9 3.9" fill="none" stroke="#1399ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="rail-name">Prime Video</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#1ED760" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg></span><span class="rail-name">Spotify</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#FF0000" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></span><span class="rail-name">YouTube Premium</span></span><span class="rail-pill"><span class="rail-tile"><svg viewBox="0 0 24 24" fill="#10a37f"><path d="M20.6 9.9a5.4 5.4 0 0 0-.47-4.43 5.46 5.46 0 0 0-5.88-2.62A5.47 5.47 0 0 0 5.9 3.8a5.4 5.4 0 0 0-3.6 2.62 5.46 5.46 0 0 0 .67 6.4 5.4 5.4 0 0 0 .46 4.44 5.46 5.46 0 0 0 5.88 2.62 5.4 5.4 0 0 0 4.07 1.82 5.46 5.46 0 0 0 5.21-3.79 5.4 5.4 0 0 0 3.6-2.62 5.46 5.46 0 0 0-.67-6.4zm-8.13 11.36a4.05 4.05 0 0 1-2.6-.94l4.32-2.5a.7.7 0 0 0 .36-.61v-6.1l1.83 1.06v5.05a4.07 4.07 0 0 1-4.07 4.04zM3.74 16.7a4.05 4.05 0 0 1-.48-2.72l4.32 2.5a.7.7 0 0 0 .7 0l5.28-3.05v2.11l-4.4 2.54a4.07 4.07 0 0 1-5.55-1.49zM2.6 7.9a4.05 4.05 0 0 1 2.14-1.78v5.08a.7.7 0 0 0 .35.61l5.28 3.04-1.83 1.06-4.37-2.52A4.07 4.07 0 0 1 2.6 7.9zm15 3.49L12.3 8.33l1.83-1.05 4.37 2.52a4.06 4.06 0 0 1-.61 7.33v-5.13a.7.7 0 0 0-.36-.61zm1.82-2.74l-4.32-2.5a.7.7 0 0 0-.71 0L9.13 9.2V7.09l4.4-2.53a4.07 4.07 0 0 1 6.04 4.22zM8.13 12.4L6.3 11.35V6.3a4.07 4.07 0 0 1 6.67-3.12l-4.32 2.49a.7.7 0 0 0-.36.61zm1-2.14l2.35-1.36 2.36 1.36v2.72l-2.36 1.36-2.35-1.36z"></path></svg></span><span class="rail-name">ChatGPT Plus</span></span><span class="rail-pill"><span class="rail-tile"><svg viewBox="0 0 24 24"><defs><linearGradient id="wwcv1" x1="2" y1="3" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#00c4cc"></stop><stop offset=".55" stop-color="#3d63dd"></stop><stop offset="1" stop-color="#7d2ae8"></stop></linearGradient></defs><circle cx="12" cy="12" r="11" fill="url(#wwcv1)"></circle><path d="M15.4 14.6a4.6 4.6 0 1 1 .3-4.9" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"></path></svg></span><span class="rail-name">Canva Pro</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#FA243C" viewBox="0 0 24 24"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.747.043-1.49.123-2.193.4-1.336.53-2.3 1.452-2.865 2.78-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.801.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03a12.5 12.5 0 001.57-.1c.822-.106 1.596-.35 2.295-.81a5.046 5.046 0 001.88-2.207c.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536a1.88 1.88 0 011.038-2.022c.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516a.904.904 0 00.02-.193c0-1.815 0-3.63-.002-5.443a.725.725 0 00-.026-.185c-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.325.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.442-.088.663-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"></path></svg></span><span class="rail-name">Apple Music</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#FF5E00" viewBox="0 0 24 24"><path d="M2.909 13.436C2.914 7.61 7.642 2.893 13.468 2.898c5.576.005 10.137 4.339 10.51 9.819q.021-.351.022-.706C24.007 5.385 18.64.006 12.012 0S.007 5.36 0 11.988 5.36 23.994 11.988 24q.412 0 .815-.027c-5.526-.338-9.9-4.928-9.894-10.538Zm16.284.155a4.1 4.1 0 0 1-4.095-4.103 4.1 4.1 0 0 1 2.712-3.855 8.95 8.95 0 0 0-4.187-1.037 9.007 9.007 0 1 0 8.997 9.016q-.001-.847-.15-1.651a4.1 4.1 0 0 1-3.278 1.63Z"></path></svg></span><span class="rail-name">Crunchyroll</span></span><span class="rail-pill rail-more"><span class="rail-name">+ 27 more</span></span></div><div class="rail-track" aria-hidden="true"><span class="rail-pill"><span class="rail-tile"><svg fill="#E50914" viewBox="0 0 24 24"><path d="m5.398 0 8.348 23.602c2.346.059 4.856.398 4.856.398L10.113 0H5.398zm8.489 0v9.172l4.715 13.33V0h-4.715zM5.398 1.5V24c1.873-.225 2.81-.312 4.715-.398V14.83L5.398 1.5z"></path></svg></span><span class="rail-name">Netflix</span></span><span class="rail-pill"><span class="rail-tile"><svg viewBox="0 0 24 24"><path d="M3 10.6c3.4 4.8 9.8 6.5 15.5 3.6" fill="none" stroke="#1399ff" stroke-width="2.6" stroke-linecap="round"></path><path d="M15.2 15.6c1.8-.8 3-1.1 4.1-1.5-.2 1.3-.5 2.4-.9 3.9" fill="none" stroke="#1399ff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span class="rail-name">Prime Video</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#1ED760" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg></span><span class="rail-name">Spotify</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#FF0000" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg></span><span class="rail-name">YouTube Premium</span></span><span class="rail-pill"><span class="rail-tile"><svg viewBox="0 0 24 24" fill="#10a37f"><path d="M20.6 9.9a5.4 5.4 0 0 0-.47-4.43 5.46 5.46 0 0 0-5.88-2.62A5.47 5.47 0 0 0 5.9 3.8a5.4 5.4 0 0 0-3.6 2.62 5.46 5.46 0 0 0 .67 6.4 5.4 5.4 0 0 0 .46 4.44 5.46 5.46 0 0 0 5.88 2.62 5.4 5.4 0 0 0 4.07 1.82 5.46 5.46 0 0 0 5.21-3.79 5.4 5.4 0 0 0 3.6-2.62 5.46 5.46 0 0 0-.67-6.4zm-8.13 11.36a4.05 4.05 0 0 1-2.6-.94l4.32-2.5a.7.7 0 0 0 .36-.61v-6.1l1.83 1.06v5.05a4.07 4.07 0 0 1-4.07 4.04zM3.74 16.7a4.05 4.05 0 0 1-.48-2.72l4.32 2.5a.7.7 0 0 0 .7 0l5.28-3.05v2.11l-4.4 2.54a4.07 4.07 0 0 1-5.55-1.49zM2.6 7.9a4.05 4.05 0 0 1 2.14-1.78v5.08a.7.7 0 0 0 .35.61l5.28 3.04-1.83 1.06-4.37-2.52A4.07 4.07 0 0 1 2.6 7.9zm15 3.49L12.3 8.33l1.83-1.05 4.37 2.52a4.06 4.06 0 0 1-.61 7.33v-5.13a.7.7 0 0 0-.36-.61zm1.82-2.74l-4.32-2.5a.7.7 0 0 0-.71 0L9.13 9.2V7.09l4.4-2.53a4.07 4.07 0 0 1 6.04 4.22zM8.13 12.4L6.3 11.35V6.3a4.07 4.07 0 0 1 6.67-3.12l-4.32 2.49a.7.7 0 0 0-.36.61zm1-2.14l2.35-1.36 2.36 1.36v2.72l-2.36 1.36-2.35-1.36z"></path></svg></span><span class="rail-name">ChatGPT Plus</span></span><span class="rail-pill"><span class="rail-tile"><svg viewBox="0 0 24 24"><defs><linearGradient id="wwcv2" x1="2" y1="3" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#00c4cc"></stop><stop offset=".55" stop-color="#3d63dd"></stop><stop offset="1" stop-color="#7d2ae8"></stop></linearGradient></defs><circle cx="12" cy="12" r="11" fill="url(#wwcv2)"></circle><path d="M15.4 14.6a4.6 4.6 0 1 1 .3-4.9" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"></path></svg></span><span class="rail-name">Canva Pro</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#FA243C" viewBox="0 0 24 24"><path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026-.747.043-1.49.123-2.193.4-1.336.53-2.3 1.452-2.865 2.78-.192.448-.292.925-.363 1.408-.056.392-.088.785-.1 1.18 0 .032-.007.062-.01.093v12.223c.01.14.017.283.027.424.05.815.154 1.624.497 2.373.65 1.42 1.738 2.353 3.234 2.801.42.127.856.187 1.293.228.555.053 1.11.06 1.667.06h11.03a12.5 12.5 0 001.57-.1c.822-.106 1.596-.35 2.295-.81a5.046 5.046 0 001.88-2.207c.186-.42.293-.87.37-1.324.113-.675.138-1.358.137-2.04-.002-3.8 0-7.595-.003-11.393zm-6.423 3.99v5.712c0 .417-.058.827-.244 1.206-.29.59-.76.962-1.388 1.14-.35.1-.706.157-1.07.173-.95.045-1.773-.6-1.943-1.536a1.88 1.88 0 011.038-2.022c.323-.16.67-.25 1.018-.324.378-.082.758-.153 1.134-.24.274-.063.457-.23.51-.516a.904.904 0 00.02-.193c0-1.815 0-3.63-.002-5.443a.725.725 0 00-.026-.185c-.04-.15-.15-.243-.304-.234-.16.01-.318.035-.475.066-.76.15-1.52.303-2.28.456l-2.325.47-1.374.278c-.016.003-.032.01-.048.013-.277.077-.377.203-.39.49-.002.042 0 .086 0 .13-.002 2.602 0 5.204-.003 7.805 0 .42-.047.836-.215 1.227-.278.64-.77 1.04-1.434 1.233-.35.1-.71.16-1.075.172-.96.036-1.755-.6-1.92-1.544-.14-.812.23-1.685 1.154-2.075.357-.15.73-.232 1.108-.31.287-.06.575-.116.86-.177.383-.083.583-.323.6-.714v-.15c0-2.96 0-5.922.002-8.882 0-.123.013-.25.042-.37.07-.285.273-.448.546-.518.255-.066.515-.112.774-.165.733-.15 1.466-.296 2.2-.444l2.27-.46c.67-.134 1.34-.27 2.01-.403.22-.043.442-.088.663-.106.31-.025.523.17.554.482.008.073.012.148.012.223.002 1.91.002 3.822 0 5.732z"></path></svg></span><span class="rail-name">Apple Music</span></span><span class="rail-pill"><span class="rail-tile"><svg fill="#FF5E00" viewBox="0 0 24 24"><path d="M2.909 13.436C2.914 7.61 7.642 2.893 13.468 2.898c5.576.005 10.137 4.339 10.51 9.819q.021-.351.022-.706C24.007 5.385 18.64.006 12.012 0S.007 5.36 0 11.988 5.36 23.994 11.988 24q.412 0 .815-.027c-5.526-.338-9.9-4.928-9.894-10.538Zm16.284.155a4.1 4.1 0 0 1-4.095-4.103 4.1 4.1 0 0 1 2.712-3.855 8.95 8.95 0 0 0-4.187-1.037 9.007 9.007 0 1 0 8.997 9.016q-.001-.847-.15-1.651a4.1 4.1 0 0 1-3.278 1.63Z"></path></svg></span><span class="rail-name">Crunchyroll</span></span><span class="rail-pill rail-more"><span class="rail-name">+ 27 more</span></span></div></div></div><div class="hero-trust">
+<span class="trust-stat">
+<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h13l-1.5 9h-10L5 3H2"></path><circle cx="9" cy="21" r="1.5"></circle><circle cx="16" cy="21" r="1.5"></circle></svg>
+<b>10,000+</b> orders
+</span>
+<span class="trust-stat">
+<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z"></path></svg>
+<b>24×7</b> auto-delivery
+</span>
+<span class="trust-stat trust-warranty">
+<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+Replacement <b>warranty</b>
+</span></div></div></section><section class="section band-light" id="categories" style="padding-top:clamp(24px,4vh,52px)"><div class="container"><div class="section-head"><h2 class="section-title reveal">Shop by <em class="accent">plan.</em></h2></div><div class="cats-grid">
+<a class="cat-card reveal" href="plans/subscriptions/" aria-label="Subscriptions"><div class="cat-icon">
+<img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="images/cat-subscriptions.webp" alt="" loading="lazy" width="640" height="640"></div><h3 aria-hidden="true"><span class="c-full">Subscriptions</span><span class="c-short">OTT</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+</a>
+<a class="cat-card reveal" href="plans/combo/" aria-label="Combo Packs"><div class="cat-icon">
+<img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="images/cat-combo.webp" alt="" loading="lazy" width="640" height="640"></div><h3 aria-hidden="true"><span class="c-full">Combo Packs</span><span class="c-short">Combos</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+</a>
+<a class="cat-card reveal" href="plans/software/" aria-label="Software"><div class="cat-icon">
+<img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="images/cat-software.webp" alt="" loading="lazy" width="640" height="640"></div><h3 aria-hidden="true"><span class="c-full">Software</span><span class="c-short">Software</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+</a>
+<a class="cat-card reveal" href="plans/music/" aria-label="Music"><div class="cat-icon">
+<img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="images/cat-music.webp" alt="" loading="lazy" width="640" height="640"></div><h3 aria-hidden="true"><span class="c-full">Music</span><span class="c-short">Music</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+</a>
+<a class="cat-card reveal" href="plans/adult/" aria-label="Adult"><div class="cat-icon">
+<img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="images/cat-adult.webp" alt="" loading="lazy" width="640" height="640"></div><h3 aria-hidden="true"><span class="c-full">Adult</span><span class="c-short">Adult</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></h3>
+</a></div></div></section><section class="band-light" id="plans"><div class="section band-pad-top" style="padding-top:clamp(10px,1.6vh,26px)"><div class="container"><div class="section-head"><h2 class="section-title reveal">Shop by <em class="accent">product.</em></h2></div><div class="cat-row" id="cat-subscriptions"><div class="cat-row-head"><h3 class="cat-row-title">Subscriptions</h3><a class="cat-row-all" href="plans/subscriptions/">View all<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div><div class="cat-grid"></div></div>
+<div class="cat-row" id="cat-combo"><div class="cat-row-head"><h3 class="cat-row-title">Combo Packs</h3><a class="cat-row-all" href="plans/combo/">View all<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div><div class="cat-grid"></div></div>
+<div class="cat-row" id="cat-software"><div class="cat-row-head"><h3 class="cat-row-title">Software</h3><a class="cat-row-all" href="plans/software/">View all<svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></div><div class="cat-grid"></div></div></div></div></section><section class="section" id="reviews"><div class="container"><div class="section-head"><div class="section-eyebrow reveal">Word on the street</div><h2 class="section-title reveal">Pehle shaq, <em class="accent">phir pyaar.</em></h2></div></div><div class="reviews-marquee" id="reviewsMarquee"><div class="rev-row"><div class="rev-track" style="--dur:60s"><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Bhai pehle laga scam hai 😂 ₹45 wala plan liya test ke liye — 4 minute mein WhatsApp pe login aa gaya. Ab 8 mahine ho gaye, sab first class."</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">R</div><div><b>Rohit</b><span>Pune</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Replacement warranty is real, not just marketing. Meri screen Feb mein logout hui, ek ghante ke andar naya access mil gaya. No drama, no 100 questions."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffd98e">S</div><div><b>Sneha</b><span>Bengaluru</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Best decision ever 💯"</p><div class="rev-meta"><div class="rev-avatar" style="background:#bfe3ff">P</div><div><b>Priya</b><span>Delhi</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Ordered at 2:40 AM before a long weekend. Delivered by 2:43 AM. The 24×7 thing is not a gimmick."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffc9d2">A</div><div><b>Arjun</b><span>Hyderabad</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"बहुत बढ़िया सर्विस। पैसे भी बचे और झंझट भी नहीं। रिप्लेसमेंट भी तुरंत मिल गया। भरोसे वाली जगह है।"</p><div class="rev-meta"><div class="rev-avatar" style="background:#d8cfff">S</div><div><b>Suresh</b><span>Indore</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Mummy ko laga main hacker ban gayi 😭 itna sasta kaise?! Combo pack liya, dono smooth chal rahe hain."</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">A</div><div><b>Ananya</b><span>Kolkata</span></div>
+<span class="rev-badge">Verified</span></div></article></div><div class="rev-track" style="--dur:60s" aria-hidden="true"><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Bhai pehle laga scam hai 😂 ₹45 wala plan liya test ke liye — 4 minute mein WhatsApp pe login aa gaya. Ab 8 mahine ho gaye, sab first class."</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">R</div><div><b>Rohit</b><span>Pune</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Replacement warranty is real, not just marketing. Meri screen Feb mein logout hui, ek ghante ke andar naya access mil gaya. No drama, no 100 questions."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffd98e">S</div><div><b>Sneha</b><span>Bengaluru</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Best decision ever 💯"</p><div class="rev-meta"><div class="rev-avatar" style="background:#bfe3ff">P</div><div><b>Priya</b><span>Delhi</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Ordered at 2:40 AM before a long weekend. Delivered by 2:43 AM. The 24×7 thing is not a gimmick."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffc9d2">A</div><div><b>Arjun</b><span>Hyderabad</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"बहुत बढ़िया सर्विस। पैसे भी बचे और झंझट भी नहीं। रिप्लेसमेंट भी तुरंत मिल गया। भरोसे वाली जगह है।"</p><div class="rev-meta"><div class="rev-avatar" style="background:#d8cfff">S</div><div><b>Suresh</b><span>Indore</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Mummy ko laga main hacker ban gayi 😭 itna sasta kaise?! Combo pack liya, dono smooth chal rahe hain."</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">A</div><div><b>Ananya</b><span>Kolkata</span></div>
+<span class="rev-badge">Verified</span></div></article></div></div><div class="rev-row" data-dir="rtl"><div class="rev-track" style="--dur:69s"><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Trust issues the shuru mein, ab poora hostel yahi se leta hai 😂"</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">K</div><div><b>Kunal</b><span>Mumbai</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Support actually replies on WhatsApp. Asked three questions before buying, got straight answers — not copy-paste scripts. That sold me."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffd98e">D</div><div><b>Divya</b><span>Chennai</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Software section underrated hai — genuine key mili, first try mein activate. Shop wala ₹5000 maang raha tha 😅"</p><div class="rev-meta"><div class="rev-avatar" style="background:#bfe3ff">I</div><div><b>Imran</b><span>Lucknow</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"3 saal se le raha hoon. Kabhi dhokha nahi hua."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffc9d2">V</div><div><b>Vikram</b><span>Jaipur</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Very smooth experience. UPI se pay kiya, turant details aa gayi WhatsApp pe. Renewal reminder time pe aata hai, spam zero."</p><div class="rev-meta"><div class="rev-avatar" style="background:#d8cfff">M</div><div><b>Meera</b><span>Kochi</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Honestly didn't expect much from an Instagram ad. Three months in — flawless. My whole friend group switched."</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">F</div><div><b>Farhan</b><span>Bhopal</span></div>
+<span class="rev-badge">Verified</span></div></article></div><div class="rev-track" style="--dur:69s" aria-hidden="true"><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Trust issues the shuru mein, ab poora hostel yahi se leta hai 😂"</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">K</div><div><b>Kunal</b><span>Mumbai</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Support actually replies on WhatsApp. Asked three questions before buying, got straight answers — not copy-paste scripts. That sold me."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffd98e">D</div><div><b>Divya</b><span>Chennai</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Software section underrated hai — genuine key mili, first try mein activate. Shop wala ₹5000 maang raha tha 😅"</p><div class="rev-meta"><div class="rev-avatar" style="background:#bfe3ff">I</div><div><b>Imran</b><span>Lucknow</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"3 saal se le raha hoon. Kabhi dhokha nahi hua."</p><div class="rev-meta"><div class="rev-avatar" style="background:#ffc9d2">V</div><div><b>Vikram</b><span>Jaipur</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Very smooth experience. UPI se pay kiya, turant details aa gayi WhatsApp pe. Renewal reminder time pe aata hai, spam zero."</p><div class="rev-meta"><div class="rev-avatar" style="background:#d8cfff">M</div><div><b>Meera</b><span>Kochi</span></div>
+<span class="rev-badge">Verified</span></div></article><article class="rev-card"><div class="rev-stars"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2z"></path></svg></div><p class="rev-text">"Honestly didn't expect much from an Instagram ad. Three months in — flawless. My whole friend group switched."</p><div class="rev-meta"><div class="rev-avatar" style="background:#c2f068">F</div><div><b>Farhan</b><span>Bhopal</span></div>
+<span class="rev-badge">Verified</span></div></article></div></div></div></section><section class="section" id="faq"><div class="container container-narrow"><div class="section-head"><div class="section-eyebrow reveal">Asked constantly</div><h2 class="section-title reveal">Fair questions,<br><em class="accent">straight answers.</em></h2></div><div class="faq-list">
+<details class="faq-item reveal">
+<summary><span>Kitni jaldi milta hai? How fast is delivery?</span><i></i></summary><div class="faq-body"><p>Most plans are auto-delivered on WhatsApp within minutes of payment — 24×7, even at 3 AM. Items marked ⚡ Instant are fully automated.</p></div>
+</details>
+<details class="faq-item reveal">
+<summary><span>What if my access stops working?</span><i></i></summary><div class="faq-body"><p>Replacement warranty covers every order: if access breaks during its validity, message us on WhatsApp and we repair or replace it, free. No forms, no drama.</p></div>
+</details>
+<details class="faq-item reveal">
+<summary><span>Is my payment info safe?</span><i></i></summary><div class="faq-body"><p>You pay by UPI from your own app — GPay, PhonePe, Paytm, anything. We never see or store card numbers or banking passwords.</p></div>
+</details>
+<details class="faq-item reveal">
+<summary><span>How do I get support after buying?</span><i></i></summary><div class="faq-body"><p>The same WhatsApp thread your order arrives on is the support line. Real humans reply — replacements, renewals, billing, everything in one chat.</p></div>
+</details></div></div></section><section class="section" id="refer"><div class="container"><div class="cta-panel reveal" id="ctaPanel"><canvas class="cta-canvas" id="ctaCanvas" aria-hidden="true"></canvas><div class="cta-content"><div class="cta-say">
+<span class="refer-kicker">Refer &amp; Earn</span><h2>Share WeeWoo, <em>earn real cash.</em></h2><p>Friends buy, you both get wallet credit — ready to spend on your next plan.</p></div><div class="cta-act"><div class="refer-steps"><div class="refer-step"><b>1</b><span>Share link</span></div><div class="refer-step"><b>2</b><span>They buy</span></div><div class="refer-step"><b>3</b><span>You earn</span></div></div>
+<a class="btn btn-dark magnetic" href="my-account/referral/">Get my referral link
+<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+</a>
+<span class="cta-fine">Wallet credit on every referral · No limits</span></div></div></div></div></section><section class="ww-seo-intro" aria-label="About WeeWoo"><div class="container"><p>
+<b>WeeWoo</b> sells genuine OTT, music and software subscriptions in India from
+<b>₹45/month</b> — Netflix, Prime Video, Hotstar, Apple TV+, Spotify and 20+ more,
+delivered on WhatsApp in minutes by an MSME-registered seller.</p></div></section><style>.ww-seo-intro{padding:clamp(18px,3vh,34px) 0 clamp(6px,1.4vh,16px)}
+.ww-seo-intro p{margin:0 auto;max-width:72ch;text-align:center;
+  font-size:clamp(13px,1.5vw,15px);line-height:1.65;opacity:.62}
+.ww-seo-intro p b{font-weight:600;opacity:.9}</style></main><footer class="footer"><div class="footer-glow"></div><div class="container"><div class="footer-bar">
+<a class="logo" href="">
+<span>WEE</span>
+<svg class="logo-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z"></path></svg>
+<span class="woo">WOO</span>
+</a>
+<span class="footer-copy">© 2026 SoftMart · Made with <span class="ft-heart">♥</span> in India 🇮🇳</span><div class="footer-links">
+<a href="login-terms/">Login Terms</a>
+<span class="ft-sep"></span>
+<a href="terms-and-conditions/">Terms</a>
+<span class="ft-sep"></span>
+<a href="refund-policy/">Refund Policy</a></div></div></div></footer><style>/* FULL WIDTH of whatever holds it; the BUTTON stays capped and centred. */
+	.ww-cu{display:block;width:100%;max-width:none;margin:12px 0;padding:14px;background:linear-gradient(180deg,#fbfefa,#fff);border:1px solid #d9f99d;border-radius:16px;box-shadow:0 1px 2px rgba(16,24,40,.04),0 10px 26px -20px rgba(16,24,40,.22);box-sizing:border-box;text-align:left;}
+	#ww-cu-float .ww-cu{max-width:720px;margin:12px auto;}
+	/* Inside the narrow flyout drawer: tighter, and let the button fill the width. */
+	.ww-cu-mini .ww-cu{margin:14px 0 4px;padding:12px;}
+	.ww-cu-mini .ww-cu-btn{max-width:none;}
+	.ww-cu-row2{display:flex;align-items:center;gap:12px;}
+	.ww-cu-logo{width:44px;height:44px;flex:0 0 44px;border-radius:12px;object-fit:cover;background:#fff;border:1px solid rgba(17,24,39,.08);}
+	.ww-cu-logo-ph{display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#65a30d;background:#f7fee7;}
+	.ww-cu-mid{flex:1;min-width:0;}
+	.ww-cu-title{font-size:14.5px;font-weight:800;color:#111;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+	.ww-cu-price{display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap;}
+	.ww-cu-plus,.ww-cu-plus .amount{font-size:14px;font-weight:800;color:#111;}
+	.ww-cu-save,.ww-cu-save .amount{font-size:11.5px;font-weight:800;color:#3f6212;background:#ecfccb;border-radius:6px;padding:2px 7px;}
+	/* Buttons must declare height AND line-height — the theme's global button{height:45px;
+	   line-height:43px} otherwise drops the label to the bottom of the box. */
+	.ww-cu-btn{display:flex!important;align-items:center;justify-content:center;width:100%;max-width:360px;height:auto!important;min-height:46px;line-height:1.2!important;margin:12px auto 0;padding:12px 18px;border:none;border-radius:13px;background:#121212;color:#C2F068;font-size:13.5px;font-weight:800;letter-spacing:.2px;cursor:pointer;box-sizing:border-box;transition:transform .15s;}
+	.ww-cu-btn:active{transform:scale(.97);}
+	.ww-cu-btn[disabled]{opacity:.6;cursor:default;}
+	/* The order-summary table is restyled to FLEX, where colspan is meaningless — force the row cell
+	   to take the whole line so the card is not left narrower than the line items above it. */
+	.ww-cu-row{display:flex!important;width:100%!important;}
+	.ww-cu-row td{display:block!important;flex:1 1 100%!important;width:100%!important;max-width:100%!important;padding:0!important;border:0!important;}</style> <script>/* Checkout re-renders the order review (and this card) on every field change; clear stale busy. */
+	if (window.jQuery) { jQuery(document.body).on('updated_checkout', function(){
+		document.querySelectorAll('.ww-cu-btn').forEach(function(b){ b.disabled=false; delete b.dataset.busy; });
+	}); }
+	function wwCuAccept(b){
+		if(b.dataset.busy) return; b.dataset.busy='1';
+		b.disabled=true; b.textContent='Adding…';
+		var f=new FormData();
+		f.append('action','ww_cu_accept');
+		f.append('key',b.dataset.key); f.append('pid',b.dataset.pid);
+		f.append('vid',b.dataset.vid); f.append('qty',b.dataset.qty); f.append('mode',b.dataset.mode||'combo');
+		f.append('_wpnonce',b.dataset.nonce);
+		fetch('wp-admin/admin-ajax.php',{method:'POST',body:f,credentials:'same-origin'})
+			.then(function(r){return r.json();})
+			.then(function(j){
+				/* Clean url, never location.reload(): the page is often reached via ?add-to-cart=…
+				   and a reload RE-SUBMITS it, re-adding the plan we just swapped out. */
+				if(j&&j.success){ location.replace(location.pathname); return; }
+				b.disabled=false; delete b.dataset.busy;
+				b.textContent=(j&&j.data&&j.data.msg)?j.data.msg:'Could not add — try again';
+			})
+			.catch(function(){ b.disabled=false; delete b.dataset.busy; b.textContent='Network error — try again'; });
+	}</script> <script type="speculationrules">{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/minimog-child/*","/wp-content/themes/minimog/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}</script> <script id="ww-instant-badge-js">(function() {
+        var badges = document.querySelectorAll('.ww-instant-badge, .ww-delivery-box');
+        if (!badges.length) return;
+
+        // Prevent double-run on bfcache restore (browser back/forward)
+        if (document.body.getAttribute('data-ww-badge-init') === '1') return;
+        document.body.setAttribute('data-ww-badge-init', '1');
+
+        var pids = [];
+        badges.forEach(function(el) {
+            var pid = parseInt(el.getAttribute('data-pid'), 10);
+            if (pid && pids.indexOf(pid) === -1) pids.push(pid);
+        });
+        if (!pids.length) return;
+
+        var fd = new FormData();
+        fd.append('action', 'ww_instant_badge_check');
+        pids.forEach(function(p) { fd.append('pids[]', p); });
+
+        fetch('wp-admin/admin-ajax.php', {
+            method: 'POST', body: fd, credentials: 'same-origin',
+            // Ensure browser never uses a cached response for this stock check
+            cache: 'no-store'
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+            if (!res || !res.success) {
+                document.querySelectorAll('.ww-instant-badge,.ww-delivery-box').forEach(function(el){ el.remove(); });
+                return;
+            }
+            var stockData = res.data || {};
+
+            document.querySelectorAll('.ww-instant-badge, .ww-delivery-box').forEach(function(el) {
+                var pid  = parseInt(el.getAttribute('data-pid'), 10);
+                var vars = stockData[pid];
+
+                if (!vars || !vars.length) {
+                    // No automation or no stock → remove completely (never show)
+                    el.remove(); return;
+                }
+
+                el.setAttribute('data-vars', vars.join(','));
+
+                if (el.classList.contains('ww-badge-grid')) {
+                    // Move badge INSIDE the <a> image link so position:absolute anchors correctly
+                    var li = el.closest('li.product');
+                    if (li) {
+                        var anchor = li.querySelector('a.woocommerce-loop-product__link')
+                                  || li.querySelector('a');
+                        if (anchor) { anchor.style.position = 'relative'; anchor.appendChild(el); }
+                    }
+                    el.classList.remove('ww-badge-pending');
+                    el.style.display = 'inline-block';
+
+                } else if (el.classList.contains('ww-badge-single')) {
+                    var form    = document.querySelector('form.variations_form[data-product_id="'+pid+'"]');
+                    var selVar  = form ? parseInt((form.querySelector('input[name="variation_id"]')||{}).value||0, 10) : 0;
+                    var varArr  = vars.map(Number);
+                    // Selected duration in stock, or nothing selected yet → show.
+                    var ok      = !selVar || varArr.indexOf(0)!==-1 || varArr.indexOf(selVar)!==-1;
+                    el.classList.remove('ww-badge-pending');
+                    el.style.display      = 'inline-block';
+                    el.style.visibility   = ok ? 'visible' : 'hidden';
+                    el.style.opacity      = ok ? '1'       : '0';
+
+                } else if (el.classList.contains('ww-delivery-box')) {
+                    var form2   = document.querySelector('form.variations_form[data-product_id="'+pid+'"]');
+                    var selVar2 = form2 ? parseInt((form2.querySelector('input[name="variation_id"]')||{}).value||0, 10) : 0;
+                    var varArr2 = vars.map(Number);
+                    var ok2     = !selVar2 || varArr2.indexOf(0)!==-1 || varArr2.indexOf(selVar2)!==-1;
+                    if (ok2) {
+                        el.classList.remove('ww-badge-pending');
+                        el.style.display = 'block';
+                    } else {
+                        el.style.display = 'none';
+                    }
+                }
+            });
+        })
+        .catch(function() {
+            // On any error, remove all badges so nothing incorrect shows
+            document.querySelectorAll('.ww-instant-badge,.ww-delivery-box').forEach(function(el){ el.remove(); });
+        });
+
+        // Variable product watcher (jQuery — WooCommerce dispatches these events via jQuery)
+        if (typeof jQuery !== 'undefined') {
+            jQuery(document).on('show_variation', '.variations_form', function(e, variation) {
+                var pid    = parseInt(jQuery(this).data('product_id'), 10);
+                var selVar = Number(variation.variation_id);
+                var $b     = jQuery('.ww-badge-single[data-pid="'+pid+'"]');
+                var $box   = jQuery('.ww-delivery-box[data-pid="'+pid+'"]');
+                var dv     = ($b.attr('data-vars') || $box.attr('data-vars') || '');
+                if (!dv) return;
+                var arr = dv.split(',').map(Number);
+                var ok  = arr.indexOf(0) !== -1 || arr.indexOf(selVar) !== -1;
+                $b.css({ 'visibility': ok ? 'visible' : 'hidden', 'opacity': ok ? '1' : '0' });
+                if (ok) { $box.stop(true).slideDown(200, function(){ jQuery(this).css('display','block'); }); }
+                else    { $box.stop(true).slideUp(200); }
+            });
+            jQuery(document).on('hide_variation', '.variations_form', function() {
+                var pid = parseInt(jQuery(this).data('product_id'), 10);
+                var $b  = jQuery('.ww-badge-single[data-pid="'+pid+'"]');
+                var $bx = jQuery('.ww-delivery-box[data-pid="'+pid+'"]');
+                if ($b.attr('data-vars'))  $b.css({ 'visibility': 'visible', 'opacity': '1' });
+                if ($bx.attr('data-vars')) $bx.stop(true).slideDown(200, function(){ jQuery(this).css('display','block'); });
+            });
+        }
+    })();</script> <script>if ("serviceWorker" in navigator) {
+  // 1) Remove the admin Vault SW + its caches if an older site-wide build installed them.
+  navigator.serviceWorker.getRegistrations().then(function(rs){
+    rs.forEach(function(r){ try{ var u=(r.active&&r.active.scriptURL)||(r.waiting&&r.waiting.scriptURL)||(r.installing&&r.installing.scriptURL)||""; if(u.indexOf("weewoo-sw.js")>-1) r.unregister(); }catch(e){} });
+  });
+  if (window.caches && caches.keys) caches.keys().then(function(ks){ ks.forEach(function(k){ if(k.indexOf("ww-")===0 && k.indexOf("ww-store-")!==0) caches.delete(k); }); });
+  // 2) Install the storefront PWA service worker (own scope/caches).
+  window.addEventListener("load", function(){
+    navigator.serviceWorker.register("/weewoo-store-sw.js?v=1787912635", { scope: "/" })
+      .then(function(reg){ try{ reg.update(); }catch(e){} })
+      .catch(function(){});
+  });
+}</script> <script>(function() {
+            function injectButton() {
+                const container = document.querySelector('.wp-block-woocommerce-empty-cart-block');
+                if (container && !document.querySelector('.custom-continue-shopping')) {
+                    const btn = document.createElement('a');
+                    btn.href = 'shop/';
+                    btn.className = 'custom-continue-shopping';
+                    btn.innerText = 'Continue Shopping';
+                    container.appendChild(btn);
+                }
+            }
+
+            // Watch for changes because Cart Blocks load dynamically
+            const observer = new MutationObserver((mutations) => {
+                injectButton();
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+
+            // Initial check
+            injectButton();
+        })();</script> <div id="popup-search" class="page-search-popup" aria-hidden="true" role="dialog" hidden=""><div class="inner scroll-y"><div class="container-wide"><div class="row-search-popup-heading row-flex row-middle"><div class="search-popup-heading col-grow"><h4>Search our store</h4></div><div class="col-shrink">
+<a href="#" id="search-popup-close" class="search-popup-close">
+<span class="fal fa-times"></span>
+</a></div></div><div class="row row-xs-center"><div class="col-md-3 col-search-popup-branding"><div class="popup-search-logo">
+<a href="" rel="home"><m-image class="minimog-lazy-image" style="--lazy-image-width: 280px;--lazy-image-height: 19.285714285714%;" data-image-loading=""><img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-src="images/weewoo-wm-bolt-dark-280x54.png" class="logo dark-logo" alt="WeeWoo" width="140" fetchpriority="high" height="27"></m-image></a></div></div><div class="col-md-6"><div class="page-search-popup-content"><form role="search" method="get" class="search-form popup-search-form style-normal woocommerce-product-search" action=""><span class="screen-reader-text">
+Search for:	</span>
+<span class="search-field__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z" fill="#000000"></path></svg></span>
+<input type="search" class="search-field" placeholder="Search products" value="" name="s" autocomplete="off" title="Search for:">
+<button type="submit" class="search-submit" aria-label="Search">
+<span class="search-btn-icon">
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.8438 19.3203C21.0781 19.5286 21.0781 19.75 20.8438 19.9844L19.9844 20.8438C19.75 21.0781 19.5286 21.0781 19.3203 20.8438L14.5938 16.1172C14.4896 16.013 14.4375 15.9089 14.4375 15.8047V15.2578C12.901 16.5859 11.1302 17.25 9.125 17.25C6.88542 17.25 4.97135 16.4557 3.38281 14.8672C1.79427 13.2786 1 11.3646 1 9.125C1 6.88542 1.79427 4.97135 3.38281 3.38281C4.97135 1.79427 6.88542 1 9.125 1C11.3646 1 13.2786 1.79427 14.8672 3.38281C16.4557 4.97135 17.25 6.88542 17.25 9.125C17.25 11.1302 16.5859 12.901 15.2578 14.4375H15.8047C15.9349 14.4375 16.0391 14.4896 16.1172 14.5938L20.8438 19.3203ZM4.71094 13.5391C5.9349 14.763 7.40625 15.375 9.125 15.375C10.8438 15.375 12.3151 14.763 13.5391 13.5391C14.763 12.3151 15.375 10.8438 15.375 9.125C15.375 7.40625 14.763 5.9349 13.5391 4.71094C12.3151 3.48698 10.8438 2.875 9.125 2.875C7.40625 2.875 5.9349 3.48698 4.71094 4.71094C3.48698 5.9349 2.875 7.40625 2.875 9.125C2.875 10.8438 3.48698 12.3151 4.71094 13.5391Z" fill="#000000"></path></svg>		</span>
+<span class="search-btn-text">
+Search		</span>
+</button></form></div></div><div class="col-md-3 flex justify-end items-center col-search-popup-icons">
+<a href="my-account/" class="popup-search-icon login-link hint--bounce hint--bottom" aria-label="Log in">
+<span class="icon">
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z" fill="#000000"></path></svg>	</span>
+</a>
+<a href="cart/" class="mini-cart__button has-badge hint--bounce hint--bottom popup-search-icon" aria-label="Cart"><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="80" cy="216" r="20"></circle><circle cx="184" cy="216" r="20"></circle><path d="M42.3,72H221.7l-24.1,84.4A16,16,0,0,1,182.2,168H81.8a16,16,0,0,1-15.4-11.6L32.5,37.8A8,8,0,0,0,24.8,32H12" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></path></svg><div class="icon-badge mini-cart-badge" data-count="0">0</div></div></a></div></div><div class="row row-popular-search-keywords"><div class="col-md-push-3 col-md-6"><div class="popular-search-keywords">
+<span class="label">Popular Searches:</span>
+<a href="search/Netflix/">Netflix</a>			<a href="search/Prime+Video/">Prime Video</a>			<a href="search/MS+Office/">MS Office</a></div></div></div><div class="popup-search-results" style="display: none;"><div class="popup-search-results-title">
+Results for "<span class="popup-search-current"></span>"</div><div class="minimog-grid-wrapper minimog-product group-style-10 style-grid-10 caption-style-04" data-grid="{" type":"grid","columns":5,"columnstabletextra":3,"columnsmobileextra":2,"gutter":"30","guttertabletextra":"21","guttermobileextra":"24"}"="" style="--grid-columns-desktop: 5;--grid-columns-tablet-extra: 3;--grid-columns-mobile-extra: 2;--grid-gutter-desktop: 30;--grid-gutter-tablet-extra: 21;--grid-gutter-mobile-extra: 24;"><div class="minimog-grid lazy-grid"></div></div><div class="tm-button-wrapper"><div class="tm-button style-flat tm-button-nm" id="btn-view-all-search-results"><div class="button-content-wrapper">
+<span class="button-text">View all search results</span></div></div></div></div></div></div></div><div id="page-mobile-main-menu" class="page-mobile-main-menu" aria-hidden="true" role="dialog" hidden=""><div class="inner"><div id="page-close-mobile-menu" class="page-close-mobile-menu">
+<span class="fal fa-times"></span></div><div class="page-mobile-menu-content scroll-y"><div class="mobile-menu-nav-menus"><div class="mobile-nav-tab mobile-nav-tab-main-menu"><ul id="mobile-menu-primary" class="menu__container sm sm-simple" data-sm-options="{" submenussuboffsetx":-18,"submenussuboffsety":-17}"=""><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1021 current_page_item menu-item-12750 level-1"><a href=""><div class="menu-item-wrap"><span class="menu-item-title">Home</span></div></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12751 level-1"><a href="shop/"><div class="menu-item-wrap"><span class="menu-item-title">Shop</span></div></a></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12752 level-1"><a href="#"><div class="menu-item-wrap"><span class="menu-item-title">Categories</span><span class="toggle-sub-menu"> </span></div></a><ul class="sub-menu children"><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12768"><a href="plans/subscriptions/"><div class="menu-item-wrap"><span class="menu-item-title">Subscriptions</span></div></a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12767"><a href="plans/software/"><div class="menu-item-wrap"><span class="menu-item-title">Software</span></div></a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12764"><a href="plans/combo/"><div class="menu-item-wrap"><span class="menu-item-title">Combo Pack</span></div></a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12763"><a href="plans/adult/"><div class="menu-item-wrap"><span class="menu-item-title">Adult</span></div></a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12766"><a href="plans/music/"><div class="menu-item-wrap"><span class="menu-item-title">Music</span></div></a></li><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-12765"><a href="plans/more-plans/"><div class="menu-item-wrap"><span class="menu-item-title">More Plans</span></div></a></li></ul></li><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-12753 level-1"><a href="#"><div class="menu-item-wrap"><span class="menu-item-title">Quick links</span><span class="toggle-sub-menu"> </span></div></a><ul class="sub-menu children"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12758"><a href="login-terms/"><div class="menu-item-wrap"><span class="menu-item-title">Login Terms</span></div></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12759"><a href="about-us/"><div class="menu-item-wrap"><span class="menu-item-title">About Us</span></div></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12760"><a href="contact-us/"><div class="menu-item-wrap"><span class="menu-item-title">Contact Us</span></div></a></li><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12762"><a href="terms-and-conditions/"><div class="menu-item-wrap"><span class="menu-item-title">Terms and Conditions</span></div></a></li></ul></li></ul></div></div><div class="mobile-menu-components"><div class="mobile-menu-my-account">
+<span class="button-icon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.5156 12.875C15.9479 12.875 17.1719 13.3958 18.1875 14.4375C19.2292 15.4531 19.75 16.6771 19.75 18.1094V19.125C19.75 19.6458 19.5677 20.0885 19.2031 20.4531C18.8385 20.8177 18.3958 21 17.875 21H4.125C3.60417 21 3.16146 20.8177 2.79688 20.4531C2.43229 20.0885 2.25 19.6458 2.25 19.125V18.1094C2.25 16.6771 2.75781 15.4531 3.77344 14.4375C4.8151 13.3958 6.05208 12.875 7.48438 12.875C7.82292 12.875 8.31771 12.9792 8.96875 13.1875C9.64583 13.3958 10.3229 13.5 11 13.5C11.6771 13.5 12.3542 13.3958 13.0312 13.1875C13.7083 12.9792 14.2031 12.875 14.5156 12.875ZM17.875 19.125V18.1094C17.875 17.1979 17.5365 16.4167 16.8594 15.7656C16.2083 15.0885 15.4271 14.75 14.5156 14.75C14.4375 14.75 14.0208 14.8542 13.2656 15.0625C12.5365 15.2708 11.7812 15.375 11 15.375C10.2188 15.375 9.45052 15.2708 8.69531 15.0625C7.96615 14.8542 7.5625 14.75 7.48438 14.75C6.57292 14.75 5.77865 15.0885 5.10156 15.7656C4.45052 16.4167 4.125 17.1979 4.125 18.1094V19.125H17.875ZM14.9844 10.6094C13.8906 11.7031 12.5625 12.25 11 12.25C9.4375 12.25 8.10938 11.7031 7.01562 10.6094C5.92188 9.51562 5.375 8.1875 5.375 6.625C5.375 5.0625 5.92188 3.73438 7.01562 2.64062C8.10938 1.54688 9.4375 1 11 1C12.5625 1 13.8906 1.54688 14.9844 2.64062C16.0781 3.73438 16.625 5.0625 16.625 6.625C16.625 8.1875 16.0781 9.51562 14.9844 10.6094ZM13.6562 3.96875C12.9271 3.23958 12.0417 2.875 11 2.875C9.95833 2.875 9.07292 3.23958 8.34375 3.96875C7.61458 4.69792 7.25 5.58333 7.25 6.625C7.25 7.66667 7.61458 8.55208 8.34375 9.28125C9.07292 10.0104 9.95833 10.375 11 10.375C12.0417 10.375 12.9271 10.0104 13.6562 9.28125C14.3854 8.55208 14.75 7.66667 14.75 6.625C14.75 5.58333 14.3854 4.69792 13.6562 3.96875Z" fill="#000000"></path></svg></span>
+<span class="button-text">My Account</span></div><div class="tm-button-wrapper mobile-menu-login-btn">		<a class="tm-button style-flat tm-button-sm tm-button-full-wide" href="my-account/"><div class="button-content-wrapper">
+<span class="button-text">Log in</span></div>
+</a></div><div class="tm-button-wrapper">		<a class="tm-button style-border tm-button-sm tm-button-full-wide" href="my-account/"><div class="button-content-wrapper">
+<span class="button-text">Register</span></div>
+</a></div></div></div></div></div><div id="popup-fly-cart" class="popup-fly-cart"><div class="inner">
+<a href="#" id="btn-close-fly-cart" class="btn-close-fly-cart hint--bounce hint--bottom-left" aria-label="Close Cart">
+<i class="fal fa-times"></i>
+</a><div class="fly-cart-wrap scroll-y"><div class="fly-cart-content"><div class="fly-cart-header"><h3 class="fly-cart-title">Shopping Cart</h3><div class="cart-data-js"><div data-value="{" count":0,"free_shipping_class_only":0}"="" class="cart-data-info"></div></div></div><div class="fly-cart-body scroll-y"><div class="fly-cart-body-content"><div class="fly-cart-messages"></div><div class="widget_shopping_cart_content"></div></div></div><div class="fly-cart-footer"><div class="cart-footer-actions"></div><table class="cart-totals-table"><tfoot><tr class="cart-totals-row cart-subtotal"><th class="cart-totals-label">Subtotal</th><td class="cart-totals-value">
+<span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol" translate="no">₹</span>0</bdi></span></td></tr><tr class="cart-totals-row order-total"><th class="cart-totals-label">Total</th><td class="cart-totals-value">
+<strong><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol" translate="no">₹</span>0</bdi></span></strong></td></tr></tfoot></table><div class="woocommerce-mini-cart__buttons buttons">
+<a href="checkout/" class="button checkout wc-forward">Checkout</a></div></div></div></div></div></div><link rel="stylesheet" id="wc-blocks-style-css" href="css/wc-blocks.css" media="all"> <script id="underscore-js" src="js/underscore.min.js"></script> <script id="wp-util-js-extra">var _wpUtilSettings = {"ajax":{"url":"/wp-admin/admin-ajax.php"}};
+//# sourceURL=wp-util-js-extra</script> <script id="wp-util-js" src="js/wp-util.min.js"></script> <script id="wp-api-request-js-extra">var wpApiSettings = {"root":"wp-json/","nonce":"9dd8ecee5f","versionString":"wp/v2/"};
+//# sourceURL=wp-api-request-js-extra</script> <script id="wp-api-request-js" src="js/api-request.min.js"></script> <script id="wp-i18n-js" src="js/i18n.min.js"></script> <script id="wp-i18n-js-after">wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after</script> <script id="wp-private-apis-js" src="js/private-apis.min.js"></script> <script id="wp-url-js" src="js/url.min.js"></script> <script id="wp-api-fetch-js" src="js/api-fetch.min.js"></script> <script id="wp-api-fetch-js-after">wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "9dd8ecee5f" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "wp-admin/admin-ajax.php?action=rest-nonce";
+//# sourceURL=wp-api-fetch-js-after</script> <script id="wp-polyfill-js" src="js/wp-polyfill.min.js"></script> <script id="woo-variation-swatches-js-extra">var woo_variation_swatches_options = {"show_variation_label":"","clear_on_reselect":"1","variation_label_separator":":","is_mobile":"","show_variation_stock":"","stock_label_threshold":"5","cart_redirect_after_add":"no","enable_ajax_add_to_cart":"yes","cart_url":"cart/","is_cart":""};
+//# sourceURL=woo-variation-swatches-js-extra</script> <script id="woo-variation-swatches-js" src="js/frontend.min.js"></script> <script id="sourcebuster-js-js" src="js/sourcebuster.min.js"></script> <script id="wc-order-attribution-js-extra">var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+//# sourceURL=wc-order-attribution-js-extra</script> <script id="wc-order-attribution-js" src="js/order-attribution.min.js"></script> <script id="weewoo-storefront-js" src="js/weewoo-homepage.js"></script> <script id="jquery-ui-core-js-before">jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before</script> <script id="jquery-ui-core-js" src="js/core.min.js"></script> <nav class="ww-dock" aria-label="Primary mobile"><div class="ww-dock-in"><a class="ww-dk on" href=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" width="23" height="23"><path d="M3.5 11.3 12 4l8.5 7.3"></path><path d="M5.6 9.8V19.5a.6.6 0 0 0 .6.6h11.6a.6.6 0 0 0 .6-.6V9.8"></path></svg><span>Home</span></a><a class="ww-dk" href="shop/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" width="23" height="23"><path d="M4 9.4 5.5 4.8h13L20 9.4"></path><path d="M4 9.4h16"></path><path d="M5.6 9.4V19.6a.6.6 0 0 0 .6.6h11.6a.6.6 0 0 0 .6-.6V9.4"></path><path d="M10 20.2v-5.2h4v5.2"></path></svg><span>Shop</span></a><a class="ww-dk" href="my-account/ww-subscriptions/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" width="23" height="23"><rect x="5" y="10.6" width="14" height="9.4" rx="2.6"></rect><path d="M8 10.6V7.9a4 4 0 0 1 8 0v2.7"></path><path d="M12 14.3v2.1"></path></svg><span>My Creds</span></a><a class="ww-dk" href="my-account/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" width="23" height="23"><circle cx="12" cy="12" r="9.2"></circle><circle cx="12" cy="9.8" r="2.9"></circle><path d="M6.7 18.3a5.8 5.8 0 0 1 10.6 0"></path></svg><span>Account</span></a></div></nav><style>/* A FLOATING PILL, not a full-bleed bar.
+	   The old dock was an edge-to-edge translucent band — a default OS tab bar
+	   with our colours on it. Detaching it and rounding it makes it read as part
+	   of this site: the nav, the trust chips and the brand rail are all pills, so
+	   the dock is now the same object family instead of a system component
+	   bolted to the bottom of the page. */
+	.ww-dock{position:fixed;left:0;right:0;bottom:0;z-index:940;
+		background:none;border:0;
+		/* Explicitly cleared, not merely omitted: a stale cached stylesheet or any
+		   later rule re-applying it would put a full-width blur back behind a
+		   transparent wrapper — an invisible, permanent compositor cost. */
+		backdrop-filter:none;-webkit-backdrop-filter:none;
+		padding:0 12px calc(env(safe-area-inset-bottom, 0px) + 10px);
+		/* Only the pill takes taps. The strip either side of it used to swallow
+		   presses aimed at the page underneath. */
+		pointer-events:none;}
+	.ww-dock-in{pointer-events:auto;max-width:400px;margin:0 auto;display:flex;
+		/* Fully opaque. At .97 the page still read through it — with the blur gone
+		   there is nothing for translucency to buy, and a bar you can see the
+		   content through is the opposite of premium. */
+		background:#fdfcf7;
+		border:1px solid rgba(22,26,16,.07);
+		border-radius:22px;padding:6px 6px 5px;
+		/* No backdrop-filter. A permanently mounted full-viewport-width blur is a
+		   continuous compositor cost on every page and every scroll, and against a
+		   cream page it buys almost nothing visually. A near-opaque panel with a
+		   real shadow reads more solid and costs nothing. */
+		box-shadow:0 18px 38px -18px rgba(22,26,16,.45),0 2px 6px -3px rgba(22,26,16,.14);}
+	.ww-dk{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:3px 0 2px;
+		color:#7f887a;font-size:10px;font-weight:700;letter-spacing:-.01em;text-decoration:none;
+		font-family:-apple-system,BlinkMacSystemFont,Inter,Segoe UI,Roboto,sans-serif;
+		transition:color .2s ease,transform .14s cubic-bezier(.2,.7,.3,1);-webkit-tap-highlight-color:transparent;}
+	/* The active capsule is the SVG's own padding on content-box, so the icon
+	   keeps its 23px geometry and no wrapper element is needed — the markup is
+	   printed in four places and is better left alone. */
+	.ww-dk svg{box-sizing:content-box;padding:3px 12px;border-radius:999px;
+		background:transparent;transition:background .22s cubic-bezier(.2,.7,.3,1);}
+	.ww-dk.on{color:#3f6b0a;}
+	.ww-dk.on svg{background:#dff2b8;}
+	.ww-dk:active{transform:scale(.94);}
+	/* Keep page content clear of the dock. The reserved space MUST match the dock's real height —
+	   it was hard-coded to 64px while the dock actually renders 77px, so the last 13px of the footer
+	   sat underneath it. --ww-dock-h is measured from the live element below (offsetHeight already
+	   includes the safe-area padding, so env() must NOT be added again on top of it). */
+	/* Two vars on purpose: --ww-dock-h is the dock's REAL height (what the sticky buy bar must sit
+	   flush on top of), --ww-dock-pad adds breathing room and is what reserves page space. Using the
+	   padded value for the bar left an 8px strip of scrolling content showing between the two bars. */
+	:root{--ww-dock-h:78px;--ww-dock-pad:86px;}
+	@media (max-width:900px){ body{padding-bottom:var(--ww-dock-pad) !important;} }
+	/* desktop: no bottom dock (the top nav already has everything) */
+	@media (min-width:901px){ .ww-dock{display:none !important;} }
+	/* product sticky buy bar must sit ABOVE the dock, not under it */
+	@media (max-width:900px){ .ww-sticky-buy.on{bottom:var(--ww-dock-h) !important;} }
+	/* A product page shows the dock AND the sticky buy bar, so it must clear BOTH — the buy bar is
+	   ~66px tall and sits on top of the dock. Reserving only the dock height left the last ~66px of
+	   the page (related products / footer) permanently unreachable under the bar. */
+	@media (max-width:900px){ body.single-product.ww-shop{padding-bottom:calc(var(--ww-dock-pad) + 78px) !important;} }
+	/* iOS rubber-band: the canvas colour comes from <html>. With no background there, over-scrolling
+	   past the end of a page flashes a big WHITE band under the dock (very visible on a phone,
+	   because the page itself is cream). --bg (#f6f4ea) is the storefront body colour — #FDFCF7 is
+	   --panel, i.e. the CARD colour, which still mismatched the page. */
+	html{background:#f6f4ea;}
+	/* `contain` not `none`: it stops the bounce chaining to the canvas (the white band) while
+	   KEEPING Android Chrome's pull-to-refresh, which matters on a site with a service worker. */
+	html,body{overscroll-behavior-y:contain;}</style> <script>/* Measure the dock once and expose its true height, so the body padding can never drift out of
+	   sync with the dock again (icon size, font, or safe-area changes all move it). */
+	(function(){
+		function sync(){
+			var d = document.querySelector('.ww-dock');
+			if (!d) return;
+			var h = d.offsetHeight;                       // includes safe-area-inset padding
+			if (h > 0) {
+				var r = document.documentElement.style;
+				r.setProperty('--ww-dock-h',   h + 'px');        // exact height — the buy bar sits on this
+				r.setProperty('--ww-dock-pad', (h + 8) + 'px');  // + breathing room — reserves page space
+			}
+		}
+		if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', sync); else sync();
+		window.addEventListener('resize', sync);
+		window.addEventListener('orientationchange', function(){ setTimeout(sync, 250); });
+	})();</script> <div class="wwp-scrim" id="wwp-scrim" hidden=""></div><div class="wwp" id="wwp" hidden="" role="dialog" aria-modal="true" aria-labelledby="wwp-t">
+<span class="wwp-grab"></span><div class="wwp-top">
+<img data-lazyloaded="1" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" class="wwp-logo" data-src="images/weewoo-app-192.png" alt="" width="60" height="60"><div>
+<b id="wwp-t">Install the WeeWoo app</b>
+<i>Your plans, logins &amp; orders — one tap away.</i></div></div><ul class="wwp-pts"><li><span>⚡</span> Opens instantly, no browser bar</li><li><span>🔒</span> Your credentials always on hand</li><li><span>📦</span> Track orders without logging in again</li></ul><div class="wwp-ios" id="wwp-ios" hidden=""><ol class="wwp-steps"><li><span class="wwp-sn">1</span><span>Tap the <b>Share</b> button
+<svg class="wwp-shr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path><path d="m8 7 4-4 4 4"></path><path d="M4 13v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-6"></path></svg>
+at the bottom of Safari</span></li><li><span class="wwp-sn">2</span><span>Scroll down and choose <b>Add to Home Screen</b></span></li><li><span class="wwp-sn">3</span><span>Tap <b>Add</b> — WeeWoo appears on your home screen</span></li></ol></div><div class="wwp-ios wwp-warn" id="wwp-ios-safari" hidden=""><p><b>Open this page in Safari first.</b> Adding to the Home Screen only works in Safari on iPhone and iPad.</p></div>
+<button class="wwp-go" id="wwp-go">Install app</button>
+<button class="wwp-no" id="wwp-no">Not now</button></div><style>.wwp-scrim{position:fixed;inset:0;background:rgba(22,26,16,.42);z-index:1200;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);opacity:0;transition:opacity .28s cubic-bezier(.4,0,.2,1);}
+	.wwp-scrim.on{opacity:1;}
+	.wwp{position:fixed;left:10px;right:10px;bottom:10px;z-index:1201;max-width:460px;margin:0 auto;
+	  background:#fff;border-radius:26px;padding:10px 20px 18px;box-shadow:0 24px 60px -20px rgba(15,23,42,.45);
+	  transform:translate3d(0,130%,0);transition:transform .38s cubic-bezier(.2,.8,.25,1);will-change:transform;
+	  padding-bottom:calc(env(safe-area-inset-bottom,0px) + 18px);font-family:-apple-system,BlinkMacSystemFont,Inter,Segoe UI,Roboto,sans-serif;}
+	.wwp.on{transform:translate3d(0,0,0);}
+	.wwp-grab{display:block;width:38px;height:4px;border-radius:99px;background:#e2e2da;margin:0 auto 16px;}
+	.wwp-top{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+	/* The real app icon, so the sheet previews exactly what lands on the home screen. */
+	.wwp-logo{flex:none;width:60px;height:60px;border-radius:15px;display:block;
+	  box-shadow:0 8px 20px -10px rgba(22,26,16,.55);}
+	.wwp-top b{display:block;font-family:'Space Grotesk',Inter,sans-serif;font-size:17px;font-weight:700;letter-spacing:-.02em;color:#161a10;}
+	.wwp-top i{font-style:normal;font-size:12.5px;color:#8a938d;line-height:1.35;}
+	.wwp-pts{list-style:none;margin:0 0 16px;padding:0;}
+	.wwp-pts li{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:13px;color:#3a3d35;}
+	.wwp-pts span{width:26px;height:26px;flex:none;border-radius:8px;display:grid;place-items:center;background:#eef1e6;font-size:13px;}
+	.wwp-ios{background:#f2f4ec;border-radius:14px;padding:13px 14px;margin:0 0 16px;}
+	.wwp-ios p{margin:0;font-size:12.5px;line-height:1.5;color:#3a3d35;}
+	.wwp-steps{list-style:none;margin:0;padding:0;counter-reset:none;}
+	.wwp-steps li{display:flex;align-items:flex-start;gap:10px;padding:5px 0;font-size:12.5px;
+	  line-height:1.5;color:#3a3d35;}
+	.wwp-steps li b{font-weight:800;color:#161a10;}
+	.wwp-sn{flex:none;width:19px;height:19px;border-radius:50%;background:#161a10;color:#c2f068;
+	  font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+	/* Inline Share glyph so step 1 points at the exact control, not a description of it. */
+	.wwp-shr{width:14px;height:14px;vertical-align:-2px;display:inline-block;color:#0a84ff;}
+	.wwp-warn{background:#fff4e5;}
+	.wwp-warn p{color:#7a4a00;}
+	.wwp-go{display:block;width:100%;height:52px;border:0;border-radius:15px;background:#64A618;color:#fff;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 14px 28px -16px rgba(100,166,24,.95);}
+	.wwp-no{display:block;width:100%;height:44px;margin-top:4px;border:0;background:none;color:#8a938d;font-size:13.5px;font-weight:700;cursor:pointer;}
+	/* Drawer install card. Every box-model value is stated because Minimog's global
+	   button rules otherwise impose a fixed height and centred inline layout, which
+	   pushed the two text lines out of the card entirely. */
+	.ww-install-card{display:flex!important;align-items:center!important;gap:12px;width:100%;
+	  height:auto!important;min-height:0!important;text-align:left!important;cursor:pointer;
+	  background:linear-gradient(180deg,#f3f6ec,#eef2e4);border:1px solid rgba(100,166,24,.28);
+	  border-radius:16px;padding:12px 14px!important;margin:0 0 12px!important;
+	  font-family:inherit;line-height:1.3!important;box-shadow:none!important;
+	  -webkit-appearance:none;appearance:none;overflow:hidden;
+	  transition:transform .14s cubic-bezier(.2,.7,.3,1),border-color .2s;}
+	.ww-install-card:active{transform:scale(.985);}
+	.ww-install-card .ww-install-ic{width:38px;height:38px;flex:0 0 38px;border-radius:11px;
+	  background:#161a10;color:#C2F068;display:grid;place-items:center;padding:0;}
+	.ww-install-card .ww-install-ic svg{width:19px;height:19px;}
+	.ww-install-tx{flex:1 1 auto;min-width:0;display:block;}
+	.ww-install-card b{display:block;font-size:14.5px;color:#161a10;font-weight:800;margin:0;}
+	.ww-install-card i{display:block;font-style:normal;font-size:11.5px;color:#6b7266;margin-top:1px;
+	  white-space:normal;overflow:hidden;text-overflow:ellipsis;}
+	.ww-drawer-logout{display:block;text-align:center;margin-top:10px;color:#E11D0F;font-weight:700;font-size:14px;text-decoration:none;padding:8px;}</style> <script data-no-optimize="1" data-cfasync="false">(function(){
+	  var LS=window.localStorage;
+	  function get(k,d){try{return LS.getItem(k)||d;}catch(e){return d;}}
+	  function set(k,v){try{LS.setItem(k,v);}catch(e){}}
+	  /* Already-installed detection. display-mode:standalone alone misses Android's
+	     minimal-ui/fullscreen installs and the ?utm_source=pwa launch the manifest
+	     start_url uses, so all four signals count — otherwise we'd nag people who
+	     already installed, which is exactly the annoyance this gate exists to avoid. */
+	  var standalone=window.matchMedia('(display-mode: standalone)').matches
+	      ||window.matchMedia('(display-mode: minimal-ui)').matches
+	      ||window.matchMedia('(display-mode: fullscreen)').matches
+	      ||window.navigator.standalone===true
+	      ||/[?&]utm_source=pwa\b/.test(location.search)
+	      ||get('ww_pwa_done','')==='1',
+	      /* iPadOS 13+ reports itself as "Macintosh" and only gives itself away through
+	         touch points, so the UA test alone misses every modern iPad. */
+	      isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)
+	            ||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1),
+	      /* "Add to Home Screen" exists ONLY in Safari on iOS. Chrome (CriOS), Firefox
+	         (FxiOS), Edge (EdgiOS), Opera and in-app webviews all run the same WebKit
+	         engine but expose no such menu item — telling those users to tap Share would
+	         send them looking for a control that isn't there. */
+	      isIOSSafari=isIOS&&/Safari/i.test(navigator.userAgent)
+	                  &&!/CriOS|FxiOS|EdgiOS|OPiOS|GSA\//i.test(navigator.userAgent),
+	      deferred=null,
+	      sheet=document.getElementById('wwp'),scrim=document.getElementById('wwp-scrim'),
+	      go=document.getElementById('wwp-go'),no=document.getElementById('wwp-no'),
+	      ios=document.getElementById('wwp-ios'),iosWarn=document.getElementById('wwp-ios-safari'),
+	      sheetTitle=document.getElementById('wwp-t');
+	  var MIN_VIEWS=4, SNOOZE_DAYS=14;
+	  var views=parseInt(get('ww_pv','0'),10)+1; set('ww_pv',views);
+	  function snoozed(){var t=parseInt(get('ww_pwa_snooze','0'),10);return t&&(Date.now()-t)<SNOOZE_DAYS*864e5;}
+	  /* My Account is the page where installing actually pays off — it's where people
+	     come back for their logins — so the sheet may open there on the first visit,
+	     bypassing the engagement counter (the snooze and installed checks still hold). */
+	  var ON_ACCOUNT = false;
+	  function open(){ if(standalone)return;
+	    if(isIOS){
+	      // No prompt to fire on iOS — swap the CTA for instructions the user can follow.
+	      go.hidden=true;
+	      if(sheetTitle) sheetTitle.textContent='Add WeeWoo to your Home Screen';
+	      if(isIOSSafari){ ios.hidden=false; if(iosWarn) iosWarn.hidden=true; }
+	      else           { if(iosWarn) iosWarn.hidden=false; ios.hidden=true; }
+	    }
+	    sheet.hidden=false;scrim.hidden=false; requestAnimationFrame(function(){sheet.classList.add('on');scrim.classList.add('on');}); }
+	  function close(){ sheet.classList.remove('on');scrim.classList.remove('on'); setTimeout(function(){sheet.hidden=true;scrim.hidden=true;},380); }
+	  function mayAutoOpen(){ return !standalone && !snoozed() && !get('ww_pwa_done','') && (ON_ACCOUNT || views>=MIN_VIEWS); }
+	  window.addEventListener('beforeinstallprompt',function(e){ e.preventDefault(); deferred=e; if(mayAutoOpen()){setTimeout(open,ON_ACCOUNT?1100:1800);} });
+	  if(isIOS&&mayAutoOpen()){ setTimeout(open,ON_ACCOUNT?1100:1800); }
+	  go&&go.addEventListener('click',function(){ if(!deferred){close();return;} deferred.prompt(); deferred.userChoice.then(function(c){ if(c.outcome==='accepted'){set('ww_pwa_done','1');} deferred=null; close(); }); });
+	  no&&no.addEventListener('click',function(){ set('ww_pwa_snooze',Date.now()); close(); });
+	  scrim&&scrim.addEventListener('click',function(){ set('ww_pwa_snooze',Date.now()); close(); });
+	  document.addEventListener('click',function(e){ var t=e.target.closest&&e.target.closest('[data-ww-install]'); if(!t)return; e.preventDefault(); if(standalone)return;
+	    // close whatever drawer this was clicked from (weewoo drawers toggle an .open class)
+	    document.querySelectorAll('.drawer.open,.drawer-overlay.open').forEach(function(el){el.classList.remove('open');});
+	    document.body.classList.remove('nav-open','menu-open');
+	    setTimeout(open, 120); });
+	  function hideEntry(){ document.querySelectorAll('[data-ww-install]').forEach(function(el){el.style.display='none';}); }
+	  if(standalone){ hideEntry(); }
+	  /* On iOS the menu item must not say "Install app" — there is no install. Relabel it to
+	     match what will actually happen when it's tapped. Non-Safari iOS gets the honest
+	     version so nobody hunts for a Share sheet that has no such option. */
+	  if(isIOS && !standalone){
+	    document.querySelectorAll('[data-ww-install-title]').forEach(function(el){
+	      el.textContent = isIOSSafari ? 'Add to Home Screen' : 'Open in Safari to install';
+	    });
+	    document.querySelectorAll('[data-ww-install-sub]').forEach(function(el){
+	      el.textContent = isIOSSafari
+	        ? 'Tap Share, then Add to Home Screen'
+	        : 'Home Screen install works in Safari only';
+	    });
+	  }
+	  window.addEventListener('appinstalled',function(){ set('ww_pwa_done','1'); hideEntry(); close(); });
+	  /* Chrome fires neither event when the app is already installed — it simply never
+	     fires beforeinstallprompt. getInstalledRelatedApps (where supported) closes that gap. */
+	  if(navigator.getInstalledRelatedApps){
+	    navigator.getInstalledRelatedApps().then(function(apps){ if(apps&&apps.length){ set('ww_pwa_done','1'); hideEntry(); } }).catch(function(){});
+	  }
+	})();</script> <script id="ww-css-guard" data-no-optimize="1" data-no-defer="1" data-cfasync="false">(function(){
+  var KEY = 'ww_css_guard';
+  // Same-origin stylesheets that produced no rules. A 404 looks exactly like this.
+  function suspects(){
+    var out = [], links = document.querySelectorAll('link[rel="stylesheet"][href]');
+    for (var i = 0; i < links.length; i++) {
+      var l = links[i], href = l.href || '';
+      if (href.indexOf(location.origin) !== 0) continue;   // cross-origin: CORS, not failure
+      if (l.media && l.media !== 'all' && l.media !== 'screen' && !window.matchMedia(l.media).matches) continue;
+      var n = null;
+      try { n = l.sheet ? l.sheet.cssRules.length : 0; } catch(e) { continue; }  // unreadable → skip
+      if (n === 0) out.push(href);
+    }
+    return out;
+  }
+  function heal(){
+    try {
+      if (sessionStorage.getItem(KEY)) return;      // already tried this tab — do not loop
+      sessionStorage.setItem(KEY, '1');
+    } catch(e) { return; }
+    var go = function(){
+      var u = location.pathname + (location.search ? location.search + '&' : '?') + 'wwcss=' + Date.now();
+      location.replace(u);
+    };
+    if (window.caches && caches.keys) {
+      caches.keys().then(function(k){
+        return Promise.all(k.map(function(n){ return caches.delete(n); }));
+      }).then(go).catch(go);
+    } else { go(); }
+  }
+  function check(){
+    var list = suspects();
+    if (!list.length) { try { sessionStorage.removeItem(KEY); } catch(e){} return; }  // healthy
+    // Zero rules is only a FAILURE if the file genuinely is not there. Confirm before reloading,
+    // so an intentionally empty stylesheet can never trigger a reload.
+    var pending = list.length, dead = false;
+    list.forEach(function(href){
+      fetch(href, { method: 'HEAD', cache: 'no-store' })
+        .then(function(r){ if (!r.ok) dead = true; })
+        .catch(function(){ dead = true; })
+        .then(function(){ if (--pending === 0 && dead) heal(); });
+    });
+  }
+  // Give the browser a moment after load: `sheet` is legitimately null while a file is in flight.
+  if (document.readyState === 'complete') { setTimeout(check, 1200); }
+  else { window.addEventListener('load', function(){ setTimeout(check, 1200); }); }
+})();</script> <script>(function($) {
+            'use strict';
+            
+            function selectFirstVariation() {
+                // Find all variation item wrappers
+                $('.variable-items-wrapper').each(function() {
+                    const $wrapper = $(this);
+                    
+                    // Only act if no item is already selected
+                    if ($wrapper.find('.variable-item.selected').length === 0) {
+                        const $firstItem = $wrapper.find('.variable-item:first');
+                        if ($firstItem.length) {
+                            // Trigger click so the plugin updates the price and image
+                            $firstItem.trigger('click');
+                        }
+                    }
+                });
+            }
+
+            // 1. Run on document ready
+            $(document).ready(function() {
+                // Give the swatches plugin a moment to initialize
+                setTimeout(selectFirstVariation, 500);
+            });
+
+            // 2. Run when WooCommerce variations are updated (e.g., after loading)
+            $(document).on('show_variation', function() {
+                $('.reset_variations').hide();
+            });
+
+        })(jQuery);</script> <script data-no-optimize="1">window.lazyLoadOptions=Object.assign({},{threshold:300},window.lazyLoadOptions||{});!function(t,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):(t="undefined"!=typeof globalThis?globalThis:t||self).LazyLoad=e()}(this,function(){"use strict";function e(){return(e=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var n,a=arguments[e];for(n in a)Object.prototype.hasOwnProperty.call(a,n)&&(t[n]=a[n])}return t}).apply(this,arguments)}function o(t){return e({},at,t)}function l(t,e){return t.getAttribute(gt+e)}function c(t){return l(t,vt)}function s(t,e){return function(t,e,n){e=gt+e;null!==n?t.setAttribute(e,n):t.removeAttribute(e)}(t,vt,e)}function i(t){return s(t,null),0}function r(t){return null===c(t)}function u(t){return c(t)===_t}function d(t,e,n,a){t&&(void 0===a?void 0===n?t(e):t(e,n):t(e,n,a))}function f(t,e){et?t.classList.add(e):t.className+=(t.className?" ":"")+e}function _(t,e){et?t.classList.remove(e):t.className=t.className.replace(new RegExp("(^|\\s+)"+e+"(\\s+|$)")," ").replace(/^\s+/,"").replace(/\s+$/,"")}function g(t){return t.llTempImage}function v(t,e){!e||(e=e._observer)&&e.unobserve(t)}function b(t,e){t&&(t.loadingCount+=e)}function p(t,e){t&&(t.toLoadCount=e)}function n(t){for(var e,n=[],a=0;e=t.children[a];a+=1)"SOURCE"===e.tagName&&n.push(e);return n}function h(t,e){(t=t.parentNode)&&"PICTURE"===t.tagName&&n(t).forEach(e)}function a(t,e){n(t).forEach(e)}function m(t){return!!t[lt]}function E(t){return t[lt]}function I(t){return delete t[lt]}function y(e,t){var n;m(e)||(n={},t.forEach(function(t){n[t]=e.getAttribute(t)}),e[lt]=n)}function L(a,t){var o;m(a)&&(o=E(a),t.forEach(function(t){var e,n;e=a,(t=o[n=t])?e.setAttribute(n,t):e.removeAttribute(n)}))}function k(t,e,n){f(t,e.class_loading),s(t,st),n&&(b(n,1),d(e.callback_loading,t,n))}function A(t,e,n){n&&t.setAttribute(e,n)}function O(t,e){A(t,rt,l(t,e.data_sizes)),A(t,it,l(t,e.data_srcset)),A(t,ot,l(t,e.data_src))}function w(t,e,n){var a=l(t,e.data_bg_multi),o=l(t,e.data_bg_multi_hidpi);(a=nt&&o?o:a)&&(t.style.backgroundImage=a,n=n,f(t=t,(e=e).class_applied),s(t,dt),n&&(e.unobserve_completed&&v(t,e),d(e.callback_applied,t,n)))}function x(t,e){!e||0<e.loadingCount||0<e.toLoadCount||d(t.callback_finish,e)}function M(t,e,n){t.addEventListener(e,n),t.llEvLisnrs[e]=n}function N(t){return!!t.llEvLisnrs}function z(t){if(N(t)){var e,n,a=t.llEvLisnrs;for(e in a){var o=a[e];n=e,o=o,t.removeEventListener(n,o)}delete t.llEvLisnrs}}function C(t,e,n){var a;delete t.llTempImage,b(n,-1),(a=n)&&--a.toLoadCount,_(t,e.class_loading),e.unobserve_completed&&v(t,n)}function R(i,r,c){var l=g(i)||i;N(l)||function(t,e,n){N(t)||(t.llEvLisnrs={});var a="VIDEO"===t.tagName?"loadeddata":"load";M(t,a,e),M(t,"error",n)}(l,function(t){var e,n,a,o;n=r,a=c,o=u(e=i),C(e,n,a),f(e,n.class_loaded),s(e,ut),d(n.callback_loaded,e,a),o||x(n,a),z(l)},function(t){var e,n,a,o;n=r,a=c,o=u(e=i),C(e,n,a),f(e,n.class_error),s(e,ft),d(n.callback_error,e,a),o||x(n,a),z(l)})}function T(t,e,n){var a,o,i,r,c;t.llTempImage=document.createElement("IMG"),R(t,e,n),m(c=t)||(c[lt]={backgroundImage:c.style.backgroundImage}),i=n,r=l(a=t,(o=e).data_bg),c=l(a,o.data_bg_hidpi),(r=nt&&c?c:r)&&(a.style.backgroundImage='url("'.concat(r,'")'),g(a).setAttribute(ot,r),k(a,o,i)),w(t,e,n)}function G(t,e,n){var a;R(t,e,n),a=e,e=n,(t=Et[(n=t).tagName])&&(t(n,a),k(n,a,e))}function D(t,e,n){var a;a=t,(-1<It.indexOf(a.tagName)?G:T)(t,e,n)}function S(t,e,n){var a;t.setAttribute("loading","lazy"),R(t,e,n),a=e,(e=Et[(n=t).tagName])&&e(n,a),s(t,_t)}function V(t){t.removeAttribute(ot),t.removeAttribute(it),t.removeAttribute(rt)}function j(t){h(t,function(t){L(t,mt)}),L(t,mt)}function F(t){var e;(e=yt[t.tagName])?e(t):m(e=t)&&(t=E(e),e.style.backgroundImage=t.backgroundImage)}function P(t,e){var n;F(t),n=e,r(e=t)||u(e)||(_(e,n.class_entered),_(e,n.class_exited),_(e,n.class_applied),_(e,n.class_loading),_(e,n.class_loaded),_(e,n.class_error)),i(t),I(t)}function U(t,e,n,a){var o;n.cancel_on_exit&&(c(t)!==st||"IMG"===t.tagName&&(z(t),h(o=t,function(t){V(t)}),V(o),j(t),_(t,n.class_loading),b(a,-1),i(t),d(n.callback_cancel,t,e,a)))}function $(t,e,n,a){var o,i,r=(i=t,0<=bt.indexOf(c(i)));s(t,"entered"),f(t,n.class_entered),_(t,n.class_exited),o=t,i=a,n.unobserve_entered&&v(o,i),d(n.callback_enter,t,e,a),r||D(t,n,a)}function q(t){return t.use_native&&"loading"in HTMLImageElement.prototype}function H(t,o,i){t.forEach(function(t){return(a=t).isIntersecting||0<a.intersectionRatio?$(t.target,t,o,i):(e=t.target,n=t,a=o,t=i,void(r(e)||(f(e,a.class_exited),U(e,n,a,t),d(a.callback_exit,e,n,t))));var e,n,a})}function B(e,n){var t;tt&&!q(e)&&(n._observer=new IntersectionObserver(function(t){H(t,e,n)},{root:(t=e).container===document?null:t.container,rootMargin:t.thresholds||t.threshold+"px"}))}function J(t){return Array.prototype.slice.call(t)}function K(t){return t.container.querySelectorAll(t.elements_selector)}function Q(t){return c(t)===ft}function W(t,e){return e=t||K(e),J(e).filter(r)}function X(e,t){var n;(n=K(e),J(n).filter(Q)).forEach(function(t){_(t,e.class_error),i(t)}),t.update()}function t(t,e){var n,a,t=o(t);this._settings=t,this.loadingCount=0,B(t,this),n=t,a=this,Y&&window.addEventListener("online",function(){X(n,a)}),this.update(e)}var Y="undefined"!=typeof window,Z=Y&&!("onscroll"in window)||"undefined"!=typeof navigator&&/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent),tt=Y&&"IntersectionObserver"in window,et=Y&&"classList"in document.createElement("p"),nt=Y&&1<window.devicePixelRatio,at={elements_selector:".lazy",container:Z||Y?document:null,threshold:300,thresholds:null,data_src:"src",data_srcset:"srcset",data_sizes:"sizes",data_bg:"bg",data_bg_hidpi:"bg-hidpi",data_bg_multi:"bg-multi",data_bg_multi_hidpi:"bg-multi-hidpi",data_poster:"poster",class_applied:"applied",class_loading:"litespeed-loading",class_loaded:"litespeed-loaded",class_error:"error",class_entered:"entered",class_exited:"exited",unobserve_completed:!0,unobserve_entered:!1,cancel_on_exit:!0,callback_enter:null,callback_exit:null,callback_applied:null,callback_loading:null,callback_loaded:null,callback_error:null,callback_finish:null,callback_cancel:null,use_native:!1},ot="src",it="srcset",rt="sizes",ct="poster",lt="llOriginalAttrs",st="loading",ut="loaded",dt="applied",ft="error",_t="native",gt="data-",vt="ll-status",bt=[st,ut,dt,ft],pt=[ot],ht=[ot,ct],mt=[ot,it,rt],Et={IMG:function(t,e){h(t,function(t){y(t,mt),O(t,e)}),y(t,mt),O(t,e)},IFRAME:function(t,e){y(t,pt),A(t,ot,l(t,e.data_src))},VIDEO:function(t,e){a(t,function(t){y(t,pt),A(t,ot,l(t,e.data_src))}),y(t,ht),A(t,ct,l(t,e.data_poster)),A(t,ot,l(t,e.data_src)),t.load()}},It=["IMG","IFRAME","VIDEO"],yt={IMG:j,IFRAME:function(t){L(t,pt)},VIDEO:function(t){a(t,function(t){L(t,pt)}),L(t,ht),t.load()}},Lt=["IMG","IFRAME","VIDEO"];return t.prototype={update:function(t){var e,n,a,o=this._settings,i=W(t,o);{if(p(this,i.length),!Z&&tt)return q(o)?(e=o,n=this,i.forEach(function(t){-1!==Lt.indexOf(t.tagName)&&S(t,e,n)}),void p(n,0)):(t=this._observer,o=i,t.disconnect(),a=t,void o.forEach(function(t){a.observe(t)}));this.loadAll(i)}},destroy:function(){this._observer&&this._observer.disconnect(),K(this._settings).forEach(function(t){I(t)}),delete this._observer,delete this._settings,delete this.loadingCount,delete this.toLoadCount},loadAll:function(t){var e=this,n=this._settings;W(t,n).forEach(function(t){v(t,e),D(t,n,e)})},restoreAll:function(){var e=this._settings;K(e).forEach(function(t){P(t,e)})}},t.load=function(t,e){e=o(e);D(t,e)},t.resetStatus=function(t){i(t)},t}),function(t,e){"use strict";function n(){e.body.classList.add("litespeed_lazyloaded")}function a(){console.log("[LiteSpeed] Start Lazy Load"),o=new LazyLoad(Object.assign({},t.lazyLoadOptions||{},{elements_selector:"[data-lazyloaded]",callback_finish:n})),i=function(){o.update()},t.MutationObserver&&new MutationObserver(i).observe(e.documentElement,{childList:!0,subtree:!0,attributes:!0})}var o,i;t.addEventListener?t.addEventListener("load",a,!1):t.attachEvent("onload",a)}(window,document);</script>
+
+
+
+<script>
+document.title = document.title.replace(/WeeWoo/gi, 'SoftMart');
+document.querySelectorAll('[aria-label], [alt], h1, h2, h3, p, b, span').forEach(function (el) {
+  if (el.children.length === 0) el.textContent = el.textContent.replace(/WeeWoo/gi, 'SoftMart').replace(/WEE|WOO/g, 'SoftMart');
+  ['aria-label','alt'].forEach(function (attr) { var value = el.getAttribute(attr); if (value) el.setAttribute(attr, value.replace(/WeeWoo/gi, 'SoftMart')); });
+});
+document.querySelectorAll('.nav-acct, .login-link, .mobile-menu-my-account, .mobile-menu-login-btn, .mobile-menu-logout-btn, .ww-drawer-logout, .ww-dock a[href*="/my-account/"]').forEach(function (el) { el.remove(); });
+document.querySelectorAll('a, button').forEach(function (el) {
+  var label = (el.textContent || '').trim().toLowerCase();
+  if (label === 'my account' || label === 'log in' || label === 'login' || label === 'account' || label === 'my creds') el.closest('a, button')?.remove();
+});
+document.querySelectorAll('.logo').forEach(function (logo) {
+  logo.setAttribute('aria-label', 'SoftMart home');
+  logo.innerHTML = '<span>SOFT</span><svg class="logo-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z"></path></svg><span class="woo">MART</span>';
+});
+var brandStyle = document.createElement('style');
+brandStyle.textContent = '.logo > span:first-child { color:#161a10 !important; font-family:"Space Grotesk",sans-serif !important; font-weight:700 !important; letter-spacing:-.045em !important; } .logo { gap:0 !important; } .footer .logo > span:first-child { color:#f6f4ea !important; }';
+document.head.appendChild(brandStyle);
+</script><script src="site.js?v=brand-assets-1"></script></body></html><!-- Page optimized by LiteSpeed Cache @2026-10-03 15:05:48 --><!-- Page cached by LiteSpeed Cache 7.8.1 on 2026-10-03 15:05:48 --><!-- Guest Mode -->

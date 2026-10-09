@@ -1,0 +1,896 @@
+p:has(.order-number, .order-date, .order-status) {
+    display: none;
+}
+.elementor-element-7ddcdd5.e-con {
+  --padding-top: 0px;
+  --padding-right: 0px;
+  --padding-bottom: 0px;
+  --padding-left: 0px;
+}
+
+.minimog-wc-account-content-inner &gt; p:nth-of-type(2) {
+    display: none;
+}
+
+/* 1. Remove padding from the outer box using the magic class! */
+.product-wrapper {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    
+    /* Adding these back to keep your clean sharedsub layout */
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+}
+
+/* 2. Force the image to touch the edges */
+.product-wrapper img {
+    width: 100% !important;
+    margin: 0 !important;
+    display: block !important;
+    border-radius: 0 !important;
+}
+
+/* 3. Add the cushion back to the text area */
+.product-wrapper .product-info {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    padding-bottom: 15px !important;
+}
+/* --- 4. SLEEK PRODUCT TITLES &amp; PRICES --- */
+.product-wrapper .woocommerce-loop-product__title {
+    font-size: 15px !important; 
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    margin-bottom: 5px !important;
+    color: #111111 !important; 
+    
+    /* ALLOWS TEXT TO DROP TO A 2ND LINE */
+    white-space: normal !important;
+    
+    /* Smart feature: Limits text to exactly 2 lines max so it doesn't break your grid */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+/* Adjust the price size to match the new sleek title */
+.product-wrapper .price {
+    font-size: 14px !important;
+    margin-bottom: 15px !important;
+}
+.product-wrapper .price ins {
+    font-weight: 700 !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+}
+.product-wrapper .price del {
+    font-size: 12px !important;
+    color: #888888 !important;
+}
+
+/* --- 5. BLACK DARK THEME BUY NOW BUTTON --- */
+.product-wrapper a.button.add_to_cart_button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 42px !important; /* Slightly sleeker height */
+    padding: 0 15px !important;
+    border-radius: 8px !important; /* Matches your card curves */
+    
+    /* Black Background and White Text */
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease-in-out !important; /* Makes the hover effect smooth */
+}
+
+/* Shopping bag icon (Forced to white) */
+.product-wrapper a.button.add_to_cart_button::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff !important; 
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z'%3E%3C/path%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z'%3E%3C/path%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+/* Hover effect */
+.product-wrapper a.button.add_to_cart_button:hover {
+    background-color: #333333 !important; /* Lighter black */
+    border-color: #333333 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important; /* Tiny pop-up lift on hover! */
+}
+
+/* Ensure text stays white inside */
+.product-wrapper a.button.add_to_cart_button span {
+    color: #ffffff !important;
+}
+/* Hide the Additional Information tabs section on single product pages */
+.minimog-tabs.minimog-tabs--horizontal {
+  display: none !important;
+}
+/*test*/
+/* Compact &amp; Minimal Product Description */
+.entry-product-content-section {
+    padding: 30px 0 !important; /* Reduced vertical space */
+    background: #fafafa;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.entry-product-content-section .container {
+    max-width: 900px !important; /* Narrower container for better focus */
+    margin: 0 auto;
+}
+
+/* Minimal Heading */
+.product-description-heading {
+    text-align: center;
+    font-size: 20px !important; /* Smaller, more sophisticated heading */
+    font-weight: 600 !important;
+    margin-bottom: 25px !important;
+    color: #444;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+/* Create the Compact Grid */
+
+
+/* =============================/* =========================================
+   REFINED COMPACT SINGLE BOX STYLING
+========================================= */
+
+/* 1. The Main Box */
+.entry-product-content-section .container {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px; 
+    padding: 20px 25px !important; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    display: block !important; 
+    width: 100% !important; 
+    box-sizing: border-box;
+}
+
+.entry-product-content-section .container:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transform: translateY(-2px); 
+    border-color: #d4d4d4;
+}
+
+/* 2. Typography */
+.entry-product-content-section .container p {
+    font-size: 14px !important; 
+    line-height: 1.6 !important; 
+    color: #4a4a4a; 
+    margin-bottom: 12px !important; 
+    border: none !important; 
+    background: transparent !important; 
+    padding: 0 !important; 
+    box-shadow: none !important; 
+}
+
+.entry-product-content-section .container p:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* 3. Global Headings (Keeps emoji, bold text, and description inline) */
+.entry-product-content-section .container p strong, 
+.entry-product-content-section .container p b {
+    color: #111111;
+    font-size: 14.5px !important;
+    display: inline !important; /* Forces it to stay on the same line */
+    margin-right: 5px; 
+}
+
+/* 4. Mobile Responsiveness (Small screens only) */
+@media (max-width: 768px) {
+    .entry-product-content-section .container {
+        padding: 20px 18px !important; /* Increased padding for a better mobile frame */
+    }
+    
+    .entry-product-content-section .container p {
+        font-size: 13.5px !important; 
+        margin-bottom: 15px !important; /* Slightly more space between points on mobile */
+    }
+}
+/*test2*/
+/* 1. Reduce the large empty space at the bottom of the card */
+.product-wrapper {
+    padding-bottom: 70px !important; /* Reduced from 96px */
+}
+
+/* 2. Move the button slightly higher and center it */
+.product-action {
+    bottom: 15px !important; /* Moves button closer to price */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 40px) !important; /* Keeps some side padding */
+    display: flex !important;
+    justify-content: center !important;
+    position: absolute !important; /* Keep original theme behavior */
+}
+
+/* 3. Tighten the Title to Price gap */
+.product-info .price {
+    margin-top: 2px !important;
+    margin-bottom: 0 !important;
+}
+
+.product-info .product-title {
+    margin-bottom: 0px !important;
+    line-height: 1.3 !important;
+}
+/*heading change */
+/* Custom Heading Styles for Minimog Child Theme */
+.page-title-bar-heading h1 {
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    color: #111 !important;
+}
+@media (max-width: 767px) {
+    .page-title-bar-heading h1 {
+        font-size: 32px !important;
+    }
+}
+/* Force the logo and its container to be visible immediately */
+.minimog-lazy-image.m-img-loaded img.logo,
+.minimog-lazy-image img.logo {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Ensure the wrapper doesn't hide it while loading */
+m-image.minimog-lazy-image {
+    background-image: none !important;
+    opacity: 1 !important;
+}
+/* ==========================================================================
+   PREMIUM PRODUCT PAGE OVERRIDES - (USER ALIGNMENT FIX APPLIED)
+   ========================================================================== */
+
+/* 1. PRODUCT TITLE */
+body.single-product div.product .product-title-wrap h1.product_title,
+body.single-product div.product h1.product_title {
+    font-size: 2.5rem !important; 
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+    color: #18181b !important; 
+    margin-bottom: 0.5rem !important; 
+    line-height: 1.2 !important;
+}
+
+/* 2. ROUNDED PRODUCT IMAGE */
+body.single-product div.product .woocommerce-product-gallery img {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05) !important;
+}
+
+/* 3. PRICE AREA */
+body.single-product div.product .entry-price-wrap {
+    padding: 0 !important; 
+    background: transparent !important; 
+    border: none !important; 
+    box-shadow: none !important; 
+    margin-bottom: 1.5rem !important;
+    display: block !important;
+}
+
+body.single-product div.product .entry-price-wrap .price {
+    display: flex !important;
+    align-items: baseline !important; 
+    gap: 0.75rem !important;
+    margin: 0 !important;
+}
+
+body.single-product div.product .price ins {
+    text-decoration: none !important;
+    background: transparent !important;
+    order: 1 !important; 
+}
+
+body.single-product div.product .price del {
+    order: 2 !important; 
+}
+
+body.single-product div.product .price ins .woocommerce-Price-amount, 
+body.single-product div.product .entry-price-wrap &gt; .price &gt; .woocommerce-Price-amount {
+    font-size: 1.875rem !important; 
+    font-weight: 700 !important;
+    letter-spacing: -0.025em !important;
+    color: #18181b !important;
+}
+
+body.single-product div.product .price del .woocommerce-Price-amount {
+    font-size: 1.125rem !important; 
+    color: #a1a1aa !important; 
+    text-decoration: line-through !important;
+    margin-bottom: 0 !important;
+    font-weight: 500 !important;
+}
+
+/* 4. VARIATIONS (Gradients &amp; Animations) */
+body.single-product div.product form.cart table.variations {
+    border: none !important;
+    margin-bottom: 2rem !important;
+}
+
+body.single-product div.product form.cart table.variations td, 
+body.single-product div.product form.cart table.variations tr {
+    display: block !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+body.single-product div.product form.cart table.variations .label, 
+body.single-product div.product form.cart .reset_variations {
+    display: none !important; 
+}
+
+body.single-product div.product form.cart ul.variable-items-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 0.75rem !important; 
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body.single-product div.product form.cart li.variable-item {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 1rem !important;
+    border-radius: 0.75rem !important; 
+    border: 1px solid #e4e4e7 !important; 
+    background: linear-gradient(145deg, #ffffff 0%, #f4f4f5 100%) !important; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important; 
+    margin: 0 !important;
+    width: 100% !important; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02) !important;
+}
+
+body.single-product div.product form.cart li.variable-item:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.08) !important;
+    border-color: #d4d4d8 !important;
+}
+
+body.single-product div.product form.cart li.variable-item.selected {
+    border-color: #18181b !important; 
+    background: linear-gradient(135deg, #18181b 0%, #27272a 100%) !important; 
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2) !important; 
+}
+
+body.single-product div.product form.cart li.variable-item span {
+    font-weight: 600 !important;
+    color: #3f3f46 !important;
+    transition: color 0.3s ease !important;
+}
+
+body.single-product div.product form.cart li.variable-item.selected span {
+    color: #ffffff !important;
+}
+
+/* ==========================================================
+   5. ACTIONS AREA
+   ========================================================== */
+
+/* ========== NEW FIX STARTS HERE ========== */
+/* Container for quantity and buttons */
+.entry-product-quantity-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: flex-end !important;
+    gap: 10px !important;
+}
+
+/* Ensure Quantity doesn't stretch and fits on the first line */
+.entry-product-quantity-wrapper .quantity-button-wrapper {
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+}
+
+/* Make Add to Cart button fill the rest of the first line */
+.entry-product-quantity-wrapper .button-2 {
+    flex: 1 !important;
+    margin: 0 !important;
+    height: 56px !important;
+}
+
+/* Force Buy Now button to the next line and make it full width */
+.entry-product-quantity-wrapper .button-buy-now {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    height: 56px !important;
+}
+/* ========== NEW FIX ENDS HERE ========== */
+
+/* Fix Add to Cart button alignment, height, AND styling */
+body.single-product div.product form.cart .single_add_to_cart_button.button-2 {
+    margin: 0 !important;
+    height: 56px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* Styling */
+    background-color: #ffffff !important;
+    color: #18181b !important;
+    border: 1px solid #18181b !important;
+    border-radius: 9999px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    gap: 8px !important;
+    padding: 0 1rem !important;
+    text-transform: none !important; 
+    white-space: nowrap !important;
+    transition: all 0.3s ease !important;
+}
+
+body.single-product div.product form.cart .single_add_to_cart_button.button-2::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 18px !important;
+    height: 18px !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2318181b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'/%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'/%3E%3C/svg%3E") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease !important;
+}
+
+body.single-product div.product form.cart .single_add_to_cart_button.button-2:hover {
+    background-color: #18181b !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.single-product div.product form.cart .single_add_to_cart_button.button-2:hover::before {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'/%3E%3Cline x1='3' y1='6' x2='21' y2='6'/%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'/%3E%3C/svg%3E") !important;
+}
+
+body.single-product div.product form.cart .single_add_to_cart_button.button-2:active {
+    transform: scale(0.98) !important;
+}
+
+/* Keep Buy Now button on its own line below AND apply styling */
+body.single-product div.product form.cart .button-buy-now {
+    width: 100% !important;
+    flex-basis: 100% !important;
+    margin-top: 0 !important;
+    height: 56px !important;
+    
+    /* Styling */
+    background-color: #18181b !important;
+    color: #ffffff !important;
+    border-radius: 9999px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12) !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important; 
+    text-transform: none !important;
+    transition: all 0.3s ease !important;
+}
+
+body.single-product div.product form.cart .button-buy-now::after {
+    content: "" !important;
+    display: inline-block !important;
+    width: 18px !important;
+    height: 18px !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important; 
+}
+
+body.single-product div.product form.cart .button-buy-now:hover {
+    background-color: #27272a !important; 
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2) !important;
+}
+
+body.single-product div.product form.cart .button-buy-now:hover::after {
+    transform: scale(1.3) rotate(15deg) !important;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23facc15' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E") !important;
+}
+
+body.single-product div.product form.cart .button-buy-now:active {
+    transform: scale(0.98) !important;
+}
+
+/*////////product descption design ///////*/
+
+//* Fix Description Padding and Alignment */
+.entry-product-section.entry-product-content-section .container {
+    background-color: transparent !important;
+    padding-left: 20px !important;  /* Added back side padding */
+    padding-right: 20px !important; /* Added back side padding */
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    margin: 40px auto !important;
+    box-sizing: border-box !important; /* Ensures padding is included in width */
+}
+
+/* Center the Heading */
+.entry-product-section-heading.product-description-heading {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+    border: none !important;
+}
+
+/* Left-align text with balanced spacing */
+.entry-product-section.entry-product-content-section .container p {
+    text-align: left !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    color: #444444 !important;
+}
+/* related product size */
+
+/* RESET Large Price Size in Product Cards (Related &amp; Carousel) */
+.product-info .price .woocommerce-Price-amount.amount,
+.swiper-slide .price .woocommerce-Price-amount.amount,
+.related.products .price .woocommerce-Price-amount.amount,
+.up-sells.products .price .woocommerce-Price-amount.amount {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+/* Also reset the inner bdi tag specifically */
+.product-info .price .woocommerce-Price-amount.amount bdi,
+.swiper-slide .price .woocommerce-Price-amount.amount bdi,
+.related.products .price .woocommerce-Price-amount.amount bdi {
+    font-size: 16px !important;
+}
+
+/* Reset the "Old Price" (Del) to be even smaller */
+.product-info .price del .woocommerce-Price-amount.amount,
+.product-info .price del .woocommerce-Price-amount.amount bdi,
+.swiper-slide .price del .woocommerce-Price-amount.amount,
+.swiper-slide .price del .woocommerce-Price-amount.amount bdi {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #999 !important;
+}
+
+/* --- FIX: GAP BETWEEN ATTRIBUTES --- */
+
+/* Adds space between the first attribute (Duration) and second attribute (Account) */
+body.single-product div.product form.cart table.variations tr:not(:last-child) {
+    margin-bottom: 25px !important;
+}
+
+/* Adds a title for each attribute since we hid the default labels earlier */
+body.single-product div.product form.cart table.variations tr::before {
+    content: attr(data-attribute_name);
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #18181b;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+}
+
+/* Ensure the grid of buttons doesn't overlap the title */
+body.single-product div.product form.cart ul.variable-items-wrapper {
+    margin-top: 5px !important;
+}
+
+/* =========================================================================
+   WeeWoo — Mobile Menu (Lime brand · Option A: navy chips + lime icons)
+   Scoped to mobile menu only. New items get a default lime sparkle icon.
+   ========================================================================= */
+.page-mobile-main-menu { background: rgba(18,16,38,0.30) !important; }
+.page-mobile-main-menu &gt; .inner { background: rgba(255,255,255,0.96) !important; -webkit-backdrop-filter: blur(18px) saturate(120%); backdrop-filter: blur(18px) saturate(120%); border-left:1px solid rgba(11,22,34,0.06) !important; box-shadow:-26px 0 70px rgba(11,22,34,0.16) !important; }
+.page-mobile-main-menu .page-mobile-menu-content { position:relative; z-index:1; }
+.page-mobile-main-menu #mobile-menu-primary { display:block; padding:6px 6px 2px; }
+.page-mobile-main-menu #mobile-menu-primary &gt; li { display:block; width:100%; border:0 !important; }
+.page-mobile-main-menu #mobile-menu-primary &gt; li &gt; a { display:block; margin:4px 6px; padding:9px 10px !important; border-radius:16px; transition: background-color .25s ease, transform .2s ease; }
+.page-mobile-main-menu #mobile-menu-primary &gt; li &gt; a .menu-item-wrap { display:flex; align-items:center; gap:13px; width:100%; --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l2.1 5.8L20 11l-5.9 2.2L12 19l-2.1-5.8L4 11l5.9-2.2z'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu #mobile-menu-primary .menu-item-title { flex:1; font-weight:600; font-size:15px; letter-spacing:.2px; color:#1a2433; }
+.page-mobile-main-menu #mobile-menu-primary &gt; li &gt; a:active { transform: scale(.97); }
+@media (hover:hover){ .page-mobile-main-menu #mobile-menu-primary &gt; li &gt; a:hover { background: rgba(11,22,34,0.04); } }
+.page-mobile-main-menu #mobile-menu-primary &gt; li &gt; a .menu-item-wrap::before { content:""; flex:0 0 auto; width:40px; height:40px; border-radius:13px; background: var(--wm-icon) center/21px no-repeat, #0B1622; box-shadow:0 6px 14px rgba(11,22,34,0.18), inset 0 1px 0 rgba(255,255,255,0.06); }
+.page-mobile-main-menu #mobile-menu-primary &gt; li:nth-child(1) &gt; a .menu-item-wrap { --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 10.5 12 3l9 7.5'/%3E%3Cpath d='M5 9.5V21h14V9.5'/%3E%3Cpath d='M9.5 21v-6h5v6'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu #mobile-menu-primary &gt; li:nth-child(2) &gt; a .menu-item-wrap { --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 7h12l1 13H5z'/%3E%3Cpath d='M9 7a3 3 0 0 1 6 0'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu #mobile-menu-primary &gt; li:nth-child(3) &gt; a .menu-item-wrap { --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1.5'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1.5'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu #mobile-menu-primary &gt; li:nth-child(4) &gt; a .menu-item-wrap { --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 6.5v14'/%3E%3Cpath d='M3 5h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6v13h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3H3z'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu #mobile-menu-primary &gt; li:nth-child(5) &gt; a .menu-item-wrap { --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M13 2 4 14h7l-1 8 9-12h-7z'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu #mobile-menu-primary &gt; li:nth-child(6) &gt; a .menu-item-wrap { --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='18' height='18' rx='2'/%3E%3Cpath d='M3 9h18'/%3E%3Cpath d='M9 21V9'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu #mobile-menu-primary &gt; li:nth-child(7) &gt; a .menu-item-wrap { --wm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C2F068' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='8' width='18' height='4' rx='1'/%3E%3Cpath d='M5 12v9h14v-9'/%3E%3Cpath d='M12 8v13'/%3E%3Cpath d='M12 8S10 3.5 8 4.8 9.4 8 12 8z'/%3E%3Cpath d='M12 8s2-4.5 4-3.2S14.6 8 12 8z'/%3E%3C/svg%3E"); }
+.page-mobile-main-menu .toggle-sub-menu { width:34px !important; height:34px !important; border-radius:11px; background: rgba(194,240,104,0.20) !important; transition: background-color .25s ease; }
+.page-mobile-main-menu .toggle-sub-menu::after, .page-mobile-main-menu .toggle-sub-menu::before { content:"" !important; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B1622' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/15px 15px no-repeat !important; width:15px !important; height:15px !important; border:0 !important; margin:0 !important; transition: transform .3s ease; }
+.page-mobile-main-menu .menu-item-has-children.toggled &gt; a .toggle-sub-menu::after, .page-mobile-main-menu .menu-item-has-children.active &gt; a .toggle-sub-menu::after, .page-mobile-main-menu li.open &gt; a .toggle-sub-menu::after, .page-mobile-main-menu .toggle-sub-menu[aria-expanded="true"]::after { transform: rotate(180deg); }
+.page-mobile-main-menu .sub-menu.children { margin:2px 8px 6px 14px !important; padding-left:8px !important; border-left:2px solid rgba(194,240,104,0.55) !important; }
+.page-mobile-main-menu .sub-menu .menu-item-title { font-weight:500; font-size:14px; color:#4a5360; }
+.page-mobile-main-menu .sub-menu &gt; li &gt; a { border-radius:12px; transition: background-color .2s ease; }
+@media (hover:hover){ .page-mobile-main-menu .sub-menu &gt; li &gt; a:hover { background: rgba(194,240,104,0.12); } }
+.page-mobile-main-menu #page-close-mobile-menu { width:42px !important; height:42px !important; border-radius:50% !important; background:rgba(255,255,255,0.7) !important; border:1px solid rgba(11,22,34,0.10) !important; box-shadow:0 6px 18px rgba(11,22,34,0.14) !important; transition: transform .3s ease; }
+.page-mobile-main-menu #page-close-mobile-menu:hover { transform: rotate(90deg); }
+.page-mobile-main-menu #page-close-mobile-menu &gt; span { color:#0B1622 !important; }
+.page-mobile-main-menu .mobile-menu-components { padding:6px 12px 18px !important; }
+.page-mobile-main-menu .mobile-menu-my-profile { background:#f6f7f4 !important; border:1px solid #ececec !important; border-radius:16px !important; padding:10px 12px !important; box-shadow:0 4px 14px rgba(11,22,34,0.06) !important; }
+.page-mobile-main-menu .mobile-menu-my-account { display:flex !important; align-items:center !important; gap:8px !important; font-weight:600 !important; color:#1a2433 !important; padding:4px 4px 10px !important; font-size:15px !important; }
+.page-mobile-main-menu .mobile-menu-login-btn .tm-button, .page-mobile-main-menu .mobile-menu-logout-btn .tm-button { background:#C2F068 !important; color:#0B1622 !important; border:0 !important; border-radius:999px !important; font-weight:600 !important; letter-spacing:.2px !important; box-shadow:0 8px 20px rgba(160,200,40,0.30) !important; }
+.page-mobile-main-menu .mobile-menu-login-btn .tm-button *, .page-mobile-main-menu .mobile-menu-logout-btn .tm-button * { color:#0B1622 !important; }
+.page-mobile-main-menu .mobile-menu-components .tm-button-wrapper:not(.mobile-menu-login-btn):not(.mobile-menu-logout-btn) .tm-button { background:#ffffff !important; color:#0B1622 !important; border:2px solid #0B1622 !important; border-radius:999px !important; font-weight:600 !important; box-shadow:none !important; }
+.page-mobile-main-menu .mobile-menu-components .tm-button-wrapper:not(.mobile-menu-login-btn):not(.mobile-menu-logout-btn) .tm-button * { color:#0B1622 !important; }
+@keyframes wmItemIn { from{opacity:0; transform:translateX(18px);} to{opacity:1; transform:none;} }
+@keyframes wmChipIn { from{opacity:0; transform:scale(.55) rotate(-8deg);} to{opacity:1; transform:none;} }
+.page-mobile-menu-opened .page-mobile-main-menu #mobile-menu-primary &gt; li { animation: wmItemIn .5s cubic-bezier(.22,1,.36,1) both; }
+.page-mobile-menu-opened .page-mobile-main-menu #mobile-menu-primary &gt; li &gt; a .menu-item-wrap::before { animation: wmChipIn .55s cubic-bezier(.34,1.56,.64,1) both; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(1), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(1) &gt; a .menu-item-wrap::before { animation-delay:.06s; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(2), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(2) &gt; a .menu-item-wrap::before { animation-delay:.11s; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(3), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(3) &gt; a .menu-item-wrap::before { animation-delay:.16s; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(4), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(4) &gt; a .menu-item-wrap::before { animation-delay:.21s; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(5), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(5) &gt; a .menu-item-wrap::before { animation-delay:.26s; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(6), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(6) &gt; a .menu-item-wrap::before { animation-delay:.31s; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(7), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(7) &gt; a .menu-item-wrap::before { animation-delay:.36s; }
+.page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(n+8), .page-mobile-menu-opened #mobile-menu-primary &gt; li:nth-child(n+8) &gt; a .menu-item-wrap::before { animation-delay:.40s; }
+@media (prefers-reduced-motion: reduce){ .page-mobile-menu-opened .page-mobile-main-menu #mobile-menu-primary &gt; li, .page-mobile-menu-opened .page-mobile-main-menu #mobile-menu-primary &gt; li &gt; a .menu-item-wrap::before { animation:none !important; } }
+/* === end WeeWoo Glassmorphism Mobile Menu === */
+
+/* =========================================================================
+   WeeWoo — Premium Description Section  (Lime brand, adaptive)
+   Lime-on-white: white card, lime accent rows, black labels, lime heading
+   underline, black accent for Q&amp;A (paragraphs after the <hr>). Adaptive for
+   any product/point count. To remove: delete to the end marker.
+   ========================================================================= */
+body .entry-product-section.entry-product-content-section { background: rgb(250,250,250) !important; }
+body .entry-product-section.entry-product-content-section .container {
+  display: flex !important; flex-direction: column; gap: 13px !important;
+  max-width: 920px !important; margin: 20px auto 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #ececec !important; border-radius: 22px !important;
+  padding: clamp(20px,4vw,30px) clamp(16px,3.5vw,26px) clamp(22px,4vw,32px) !important;
+  box-shadow: 0 14px 44px rgba(20,20,20,0.06) !important;
+}
+body .entry-product-section.entry-product-content-section .container:hover { transform: none !important; box-shadow: 0 14px 44px rgba(20,20,20,0.06) !important; border-color: #ececec !important; }
+body .entry-product-section.entry-product-content-section .product-description-heading {
+  text-align: center !important; font-weight: 700 !important; color: #141414 !important;
+  font-size: clamp(20px,3.4vw,27px) !important; letter-spacing: .2px !important;
+  margin: 0 0 8px !important; padding-bottom: 14px !important; position: relative !important; max-width: none !important;
+}
+body .entry-product-section.entry-product-content-section .product-description-heading::after {
+  content: "" !important; position: absolute !important; left: 50% !important; bottom: 0 !important; transform: translateX(-50%) !important;
+  width: 66px !important; height: 4px !important; border-radius: 4px !important;
+  background: linear-gradient(90deg,#C2F068,#7DBB2E) !important;
+}
+body .entry-product-section.entry-product-content-section .container &gt; p {
+  margin: 0 !important; max-width: none !important; width: auto !important; align-self: stretch !important;
+  text-align: left !important; display: block !important;
+  padding: 13px 16px 13px 18px !important;
+  line-height: 1.62 !important; font-size: clamp(14px,2.6vw,15.5px) !important; color: #3a3a3a !important;
+  background: #ffffff !important;
+  border: 1px solid #eef0e6 !important; border-left: 4px solid #A6D94A !important; border-radius: 14px !important;
+  box-shadow: 0 4px 14px rgba(20,20,20,0.04) !important;
+  transition: transform .2s ease, box-shadow .25s ease !important;
+}
+@media (hover:hover){ body .entry-product-section.entry-product-content-section .container &gt; p:hover { transform: translateY(-2px) !important; box-shadow: 0 10px 24px rgba(20,20,20,0.08) !important; } }
+body .entry-product-section.entry-product-content-section .container &gt; p strong,
+body .entry-product-section.entry-product-content-section .container &gt; p b { color: #141414 !important; font-weight: 700 !important; font-size: inherit !important; display: inline !important; }
+body .entry-product-section.entry-product-content-section .container &gt; p u { color: #5B7B14 !important; font-weight: 600 !important; text-decoration-color: rgba(91,123,20,0.4) !important; text-underline-offset: 3px !important; }
+body .entry-product-section.entry-product-content-section .container &gt; hr ~ p { border-left-color: #141414 !important; }
+body .entry-product-section.entry-product-content-section .container &gt; hr {
+  border: 0 !important; height: 1px !important; width: 100% !important; max-width: none !important; align-self: stretch !important;
+  margin: 4px 0 !important; border-radius: 0 !important; padding: 0 !important;
+  background: linear-gradient(90deg, transparent, #d8d8d8, transparent) !important;
+}
+body .entry-product-section.entry-product-content-section .container &gt; p:empty,
+body .entry-product-section.entry-product-content-section .container &gt; p:has(u:empty) { display: none !important; }
+@media (max-width: 600px){
+  body .entry-product-section.entry-product-content-section .container { border-radius: 18px !important; gap: 11px !important; }
+  body .entry-product-section.entry-product-content-section .container &gt; p { padding: 12px 14px 12px 16px !important; }
+}
+/* === end WeeWoo Description Section === */
+
+/* =========================================================================
+   WeeWoo — Premium Variation Buttons (duration switcher, lime brand)
+   Overrides the older button styling via higher specificity.
+   Selected = black with a lime check badge; others = clean white, lime hover.
+   To remove: delete down to the end marker.
+   ========================================================================= */
+html body.single-product div.product form.cart ul.variable-items-wrapper.button-variable-items-wrapper { display:grid !important; grid-template-columns:1fr 1fr !important; gap:10px !important; margin:8px 0 4px !important; padding:0 !important; list-style:none !important; }
+html body.single-product div.product form.cart li.variable-item.button-variable-item { margin:0 !important; padding:11px 14px !important; min-height:48px !important; display:flex !important; align-items:center !important; justify-content:center !important; border:1.5px solid #e6e6e6 !important; border-radius:13px !important; background:#ffffff !important; box-shadow:0 2px 6px rgba(20,20,20,0.05) !important; position:relative !important; overflow:visible !important; outline:none !important; transition: all .2s ease !important; cursor:pointer; }
+html body.single-product div.product form.cart li.variable-item.button-variable-item:hover { border-color:#A6D94A !important; background:#F7FBEE !important; transform:translateY(-2px) !important; box-shadow:0 8px 18px rgba(124,160,30,0.16) !important; }
+html body.single-product div.product form.cart li.variable-item.button-variable-item.selected { background:#141414 !important; border-color:#141414 !important; box-shadow:0 8px 20px rgba(20,20,20,0.22) !important; transform:translateY(-1px) !important; }
+html body.single-product div.product form.cart li.variable-item.button-variable-item .variable-item-span { display:block !important; padding:0 !important; margin:0 !important; border:0 !important; min-height:0 !important; background:transparent !important; box-shadow:none !important; color:#141414 !important; font-weight:600 !important; font-size:14.5px !important; line-height:1.1 !important; letter-spacing:.2px !important; text-transform:none !important; }
+html body.single-product div.product form.cart li.variable-item.button-variable-item.selected .variable-item-span { color:#ffffff !important; }
+html body.single-product div.product form.cart li.variable-item.button-variable-item.selected::after { content:"" !important; position:absolute !important; top:-7px !important; right:-7px !important; width:22px !important; height:22px !important; border-radius:50% !important; background:#C2F068 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141414' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 6'/%3E%3C/svg%3E") center/13px no-repeat !important; box-shadow:0 2px 6px rgba(20,20,20,0.2) !important; border:2px solid #fff !important; }
+html body.single-product div.product form.cart li.variable-item.button-variable-item.disabled, html body.single-product div.product form.cart li.variable-item.button-variable-item.wvs-archive-disabled { opacity:.4 !important; }
+@media (max-width:480px){ html body.single-product div.product form.cart li.variable-item.button-variable-item { min-height:44px !important; } }
+/* === end WeeWoo Variation Buttons === */
+
+/* =========================================================================
+   WeeWoo — Premium Product Page v2 (lime brand). Added via Cowork.
+   Black pill Buy Now (white bolt -&gt; lime on hover), pill Add to Cart,
+   circular quantity stepper, always-visible slider arrows, sticky bar.
+   To remove: delete down to the end marker.
+   ========================================================================= */
+body.single-product .product-title-wrap h1.product_title.entry-title { font-weight:800 !important; letter-spacing:-0.6px !important; color:#141414 !important; line-height:1.08 !important; }
+body.single-product .entry-price-wrap .price { font-weight:800 !important; color:#141414 !important; }
+body.single-product .entry-price-wrap .price del, body.single-product .entry-price-wrap .price del .amount { color:#a3a3a3 !important; font-weight:500 !important; }
+body.single-product .entry-price-wrap .price ins { text-decoration:none !important; }
+body.single-product .entry-product-quantity-wrapper .quantity { display:inline-flex !important; align-items:center !important; justify-content:center !important; background:#fff !important; border:1.5px solid #e6e6e6 !important; border-radius:999px !important; padding:5px !important; gap:4px !important; box-shadow:0 2px 6px rgba(20,20,20,0.05) !important; width:auto !important; max-width:none !important; }
+body.single-product .entry-product-quantity-wrapper .quantity-button-wrapper { width:auto !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity .qty { order:2 !important; position:static !important; border:0 !important; background:transparent !important; width:40px !important; min-width:40px !important; flex:0 0 40px !important; min-height:0 !important; text-align:center !important; font-weight:700 !important; font-size:16px !important; color:#141414 !important; box-shadow:none !important; padding:0 !important; -moz-appearance:textfield; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.decrease { order:1 !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.increase { order:3 !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.decrease, html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.increase { position:static !important; left:auto !important; right:auto !important; top:auto !important; transform:none !important; flex:0 0 40px !important; width:40px !important; min-width:40px !important; max-width:none !important; height:40px !important; min-height:40px !important; border:0 !important; border-radius:50% !important; font-size:0 !important; color:transparent !important; line-height:1 !important; padding:0 !important; display:flex !important; align-items:center !important; justify-content:center !important; cursor:pointer !important; transition:all .18s ease !important; box-shadow:none !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.decrease::before, html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.increase::before, html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.decrease::after, html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.increase::after { display:none !important; content:none !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.decrease { background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141414' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") center/17px no-repeat, #f3f3f3 !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.increase { background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141414' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/17px no-repeat, #f3f3f3 !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.decrease:hover { background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141414' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M5 12h14'/%3E%3C/svg%3E") center/17px no-repeat, #C2F068 !important; }
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity button.increase:hover { background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23141414' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E") center/17px no-repeat, #C2F068 !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-2 { background:#fff !important; color:#141414 !important; border:2px solid #141414 !important; border-radius:999px !important; font-weight:700 !important; letter-spacing:.2px !important; box-shadow:none !important; min-height:52px !important; transition:all .2s ease !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-2:hover { background:#141414 !important; color:#fff !important; transform:translateY(-2px) !important; box-shadow:0 8px 20px rgba(20,20,20,0.18) !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-2:hover * { color:#fff !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-buy-now { background:#141414 !important; color:#ffffff !important; border:2px solid #141414 !important; border-radius:999px !important; font-weight:700 !important; letter-spacing:.3px !important; box-shadow:0 8px 22px rgba(20,20,20,0.20) !important; min-height:54px !important; transition:all .2s ease !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-buy-now span { color:#ffffff !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-buy-now::after { content:"" !important; display:inline-block !important; width:18px !important; height:18px !important; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M13 2 4 14h7l-1 8 9-12h-7z'/%3E%3C/svg%3E") center/contain no-repeat !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-buy-now:hover { background:#000 !important; border-color:#000 !important; transform:translateY(-2px) !important; box-shadow:0 12px 28px rgba(20,20,20,0.30) !important; }
+html body.single-product div.product form.cart button.single_add_to_cart_button.button-buy-now:hover::after { background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C2F068'%3E%3Cpath d='M13 2 4 14h7l-1 8 9-12h-7z'/%3E%3C/svg%3E") center/contain no-repeat !important; }
+body.single-product .related.products .entry-product-section-heading { text-align:center !important; font-weight:800 !important; color:#141414 !important; position:relative !important; padding-bottom:14px !important; }
+body.single-product .related.products .entry-product-section-heading::after { content:"" !important; position:absolute !important; left:50% !important; bottom:0 !important; transform:translateX(-50%) !important; width:66px !important; height:4px !important; border-radius:4px !important; background:linear-gradient(90deg,#C2F068,#7DBB2E) !important; }
+body.single-product .related.products .tm-swiper .swiper-nav-button, body.single-product .related.products .swiper-nav-button { opacity:1 !important; visibility:visible !important; width:46px !important; height:46px !important; border-radius:50% !important; background:#fff !important; border:1.5px solid #e6e6e6 !important; color:#141414 !important; box-shadow:0 4px 12px rgba(20,20,20,0.10) !important; display:flex !important; align-items:center !important; justify-content:center !important; transition:all .2s ease !important; }
+body.single-product .related.products .swiper-nav-button:hover { background:#C2F068 !important; border-color:#C2F068 !important; color:#141414 !important; transform:scale(1.06) !important; }
+body.single-product .related.products .swiper-nav-button.swiper-button-disabled { opacity:.4 !important; visibility:visible !important; }
+body.single-product .related.products .swiper-nav-button .nav-button-icon { color:inherit !important; }
+#sticky-product-bar.sticky-product { background:#ffffff !important; box-shadow:0 -6px 24px rgba(20,20,20,0.10) !important; border-top:1px solid #eee !important; }
+#sticky-product-bar a.sticky-product-a, #sticky-product-bar .tm-button, #sticky-product-bar a.button { background:#C2F068 !important; color:#141414 !important; border:0 !important; border-radius:999px !important; font-weight:700 !important; box-shadow:0 6px 16px rgba(160,200,40,0.32) !important; transition:all .2s ease !important; }
+#sticky-product-bar a.sticky-product-a *, #sticky-product-bar .tm-button * { color:#141414 !important; }
+#sticky-product-bar a.sticky-product-a:hover, #sticky-product-bar .tm-button:hover { background:#b6e94f !important; transform:translateY(-1px) !important; }
+/* === end WeeWoo Premium Product Page === */
+
+/* WeeWoo account sidebar — LIGHT PREMIUM (Claude v4) */
+.minimog-wc-account-wrap .my-account-profile .my-name,.minimog-wc-account-wrap h6.my-name{color:#161a10!important;opacity:1!important;font-weight:700!important;}
+body.woocommerce-account .minimog-wc-account-nav-inner .woocommerce-MyAccount-navigation-link a,body.woocommerce-account .minimog-wc-account-nav .minimog-wc-account-nav-inner .woocommerce-MyAccount-navigation-link a,body.woocommerce-account .woocommerce-MyAccount-navigation li a{color:#3a3d35!important;}
+body.woocommerce-account .minimog-wc-account-nav-inner .woocommerce-MyAccount-navigation-link a:hover,body.woocommerce-account .minimog-wc-account-nav .minimog-wc-account-nav-inner .woocommerce-MyAccount-navigation-link a:hover,body.woocommerce-account .woocommerce-MyAccount-navigation li a:hover{color:#2d5a06!important;}
+body.woocommerce-account .minimog-wc-account-nav-inner .woocommerce-MyAccount-navigation-link.is-active a,body.woocommerce-account .minimog-wc-account-nav .minimog-wc-account-nav-inner .woocommerce-MyAccount-navigation-link.is-active a,body.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a{color:#2d5a06!important;font-weight:700!important;}
+body.woocommerce-account .minimog-wc-account-nav .woocommerce-MyAccount-navigation ul li.is-active{border:0!important;background:transparent!important;}
+.minimog-wc-account-nav .woocommerce-MyAccount-navigation ul li a i,.minimog-wc-account-nav .woocommerce-MyAccount-navigation ul li a svg{color:inherit!important;}
+#btn-toggle-account-nav{color:#64A618!important;border-color:rgba(194,240,104,.5)!important;}
+
+
+/* ww-account-content-stretch — fix content area gap on all account sub-pages (Claude v5) */
+body.woocommerce-account .minimog-wc-account-content,
+body.woocommerce-account .minimog-wc-account-content-inner { max-width:none !important; flex:1 1 0% !important; padding-right:0 !important; }
+
+
+/* ww-account-nav-cream (Claude v5b) — light header on all account pages */
+body.ww-account .nav.scrolled .nav-inner,
+body.woocommerce-account .nav.scrolled .nav-inner {
+  background:rgba(253,252,247,.95) !important;
+  border-color:rgba(22,26,16,.06) !important;
+  box-shadow:0 1px 3px rgba(22,26,16,.04),0 4px 16px rgba(22,26,16,.04) !important;
+}
+body.ww-account .nav-links a,
+body.woocommerce-account .nav-links a { color:#3a3d35 !important; }
+body.ww-account .nav-links a:hover, body.ww-account .nav-links a.active,
+body.woocommerce-account .nav-links a:hover, body.woocommerce-account .nav-links a.active { color:#2d5a06 !important; background:rgba(22,26,16,.06) !important; }
+body.ww-account .logo, body.woocommerce-account .logo { color:#161a10 !important; }
+body.ww-account .logo-bolt, body.woocommerce-account .logo-bolt { fill:#64A618 !important; }
+body.ww-account .nav-icon svg, body.woocommerce-account .nav-icon svg { stroke:#3a3d35 !important; }
+body.ww-account .hamburger svg, body.woocommerce-account .hamburger svg { stroke:#3a3d35 !important; }
+body.ww-account .nav-count, body.woocommerce-account .nav-count { background:#64A618 !important; color:#fff !important; }
+
+/* ww-sidebar-global (Claude v5b) — premium sidebar on ALL account pages */
+body.woocommerce-account .woocommerce-MyAccount-navigation {
+  background:#fff !important; border-radius:22px !important; border:1px solid rgba(22,26,16,.06) !important;
+  box-shadow:0 1px 3px rgba(22,26,16,.04),0 4px 16px rgba(22,26,16,.04) !important;
+  padding:.75rem !important; overflow:hidden !important;
+}
+body.woocommerce-account .woocommerce-MyAccount-navigation ul { list-style:none !important; margin:0 !important; padding:0 !important; display:flex !important; flex-direction:column !important; gap:2px !important; }
+body.woocommerce-account .woocommerce-MyAccount-navigation li { margin:0 !important; padding:0 !important; }
+body.woocommerce-account .woocommerce-MyAccount-navigation li a {
+  display:flex !important; align-items:center !important; gap:10px !important;
+  padding:.7rem 1rem !important; border-radius:12px !important;
+  font-family:'Space Grotesk',-apple-system,system-ui,sans-serif !important;
+  font-size:.82rem !important; font-weight:600 !important; color:#3a3d35 !important;
+  text-decoration:none !important; transition:all .2s !important; background:transparent !important;
+}
+body.woocommerce-account .woocommerce-MyAccount-navigation li a:hover { background:rgba(194,240,104,.12) !important; color:#2d5a06 !important; transform:translateX(3px) !important; }
+body.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a {
+  background:linear-gradient(135deg,rgba(194,240,104,.2),rgba(194,240,104,.1)) !important;
+  color:#2d5a06 !important; font-weight:700 !important; box-shadow:inset 3px 0 0 #64A618 !important;
+}
+/* sidebar icons */
+body.woocommerce-account .woocommerce-MyAccount-navigation li a::before {
+  content:""; display:inline-block; width:16px; height:16px; flex-shrink:0;
+  background-size:contain; background-repeat:no-repeat; background-position:center; opacity:.45;
+}
+body.woocommerce-account .woocommerce-MyAccount-navigation li.is-active a::before { opacity:1; }
+body.woocommerce-account .woocommerce-MyAccount-navigation-link--dashboard a::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7'/%3E%3Crect x='14' y='3' width='7' height='7'/%3E%3Crect x='14' y='14' width='7' height='7'/%3E%3Crect x='3' y='14' width='7' height='7'/%3E%3C/svg%3E"); }
+body.woocommerce-account .woocommerce-MyAccount-navigation-link--orders a::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z'/%3E%3Cpath d='M3 6h18'/%3E%3C/svg%3E"); }
+body.woocommerce-account .woocommerce-MyAccount-navigation-link--ww-subscriptions a::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E"); }
+body.woocommerce-account .woocommerce-MyAccount-navigation-link--wallet a::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 8V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-1'/%3E%3Cpath d='M21 12H13a2 2 0 0 0 0 4h8V12z'/%3E%3C/svg%3E"); }
+body.woocommerce-account .woocommerce-MyAccount-navigation-link--referral a::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 12 20 22 4 22 4 12'/%3E%3Crect x='2' y='7' width='20' height='5'/%3E%3Cpath d='M12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z'/%3E%3C/svg%3E"); }
+body.woocommerce-account .woocommerce-MyAccount-navigation-link--edit-account a::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E"); }
+body.woocommerce-account .woocommerce-MyAccount-navigation-link--customer-logout a::before { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'/%3E%3Cpolyline points='16 17 21 12 16 7'/%3E%3Cline x1='21' x2='9' y1='12' y2='12'/%3E%3C/svg%3E"); }
+/* hide default Minimog avatar widget above sidebar */
+body.woocommerce-account .minimog-wc-account-wrap .my-account-user { display:none !important; }
+/* mobile: Minimog slide-in nav (restored v6) */
+@media(max-width:991px){
+  body.woocommerce-account .minimog-wc-account-wrap { flex-direction:column !important; }
+  body.woocommerce-account .minimog-wc-account-content { width:100% !important; flex:1 !important; }
+  /* slide-in panel styles */
+  body.woocommerce-account .minimog-wc-account-nav { background:#fdfcf7 !important; border-right:1px solid rgba(22,26,16,.08) !important; width:280px !important; max-width:82vw !important; }
+  /* toggle tab button */
+  body.woocommerce-account .btn-toggle-account-nav { background:#fdfcf7 !important; border:1px solid rgba(22,26,16,.08) !important; border-left:none !important; border-radius:0 12px 12px 0 !important; box-shadow:2px 0 8px rgba(22,26,16,.1) !important; width:32px !important; height:32px !important; top:76px !important; }
+  body.woocommerce-account .btn-toggle-account-nav i { color:#3a3d35 !important; font-size:11px !important; }
+  /* hide footer on mobile account pages */
+  body.woocommerce-account footer.footer,
+  .ww-account footer.footer { display:none !important; }
+}
+
+
+/* ww-account-sidebar-guard (v6) — the content-stretch rule above sets the content column to
+   flex:1 1 0%, which let it eat the sidebar's width so the account side menu
+   vanished. Pin the nav column; stack it above content on narrow screens. */
+body.woocommerce-account .minimog-wc-account-wrap {
+  display:flex !important; align-items:flex-start !important;
+  gap:24px !important; flex-wrap:wrap !important;
+}
+body.woocommerce-account .minimog-wc-account-nav {
+  flex:0 0 260px !important; width:260px !important;
+  min-width:260px !important; max-width:260px !important;
+  display:block !important; visibility:visible !important;
+}
+body.woocommerce-account .minimog-wc-account-nav-inner { display:block !important; }
+body.woocommerce-account .woocommerce-MyAccount-navigation { display:block !important; }
+body.woocommerce-account .woocommerce-MyAccount-navigation ul { display:flex !important; }
+body.woocommerce-account .minimog-wc-account-content { min-width:0 !important; }
+@media (max-width:900px){
+  body.woocommerce-account .minimog-wc-account-nav {
+    flex:1 1 100% !important; width:100% !important;
+    min-width:0 !important; max-width:100% !important; margin-bottom:18px !important;
+  }
+}
+
+
+/* ww-footer-3col — ONE footer layout site-wide:
+   [logo]            [© copyright]            [links]
+   .footer-copy used to live inside .footer-links, which is why the layout
+   differed page to page. It is now its own middle flex child. */
+.footer .footer-bar{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;flex-wrap:wrap!important;}
+.footer .footer-bar > .logo{flex:0 0 auto!important;}
+.footer .footer-bar > .footer-copy{flex:1 1 auto!important;width:auto!important;margin:0!important;text-align:center!important;white-space:nowrap!important;font-size:12.5px!important;}
+.footer .footer-bar > .footer-links{flex:0 0 auto!important;display:flex!important;align-items:center!important;gap:8px!important;flex-wrap:nowrap!important;}
+.footer .footer-links .footer-copy{display:none!important;} /* stale nested copy, if any */
+.footer .ft-sep-copy{display:none!important;}
+@media(max-width:860px){
+  .footer .footer-bar{flex-direction:column!important;text-align:center!important;gap:14px!important;}
+  .footer .footer-bar > .footer-copy{order:3!important;white-space:normal!important;}
+  .footer .footer-bar > .footer-links{order:2!important;justify-content:center!important;flex-wrap:wrap!important;}
+}

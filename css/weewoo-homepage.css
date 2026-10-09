@@ -1,0 +1,1094 @@
+/* ═══════════════ WEEWOO — midnight lime, banded ═══════════════
+   Default tokens = DARK band. `.band-light` / `body.light` re-scope
+   the same variables to light values, so components adapt per band. */
+:root{
+  --bg:#0a0d07;
+  --panel:#11150c;
+  --panel-2:#151a0f;
+  --ink:#f2f4e8;
+  --ink-2:#dde3cb;
+  --muted:#9aa38c;
+  --muted-2:#6b7460;
+  --lime:#c2f068;
+  --lime-bright:#d6ff7a;
+  --lime-deep:#a3d93a;
+  --lime-ink:#c2f068;          /* accent text on dark = lime itself */
+  --line:rgba(226,240,190,.10);
+  --line-strong:rgba(226,240,190,.20);
+  --amber:#ffc24d;
+  --shadow-s:0 6px 18px -8px rgba(0,0,0,.5);
+  --shadow-m:0 24px 55px -22px rgba(0,0,0,.65);
+  --shadow-l:0 44px 95px -30px rgba(0,0,0,.75);
+  --font-display:"Space Grotesk",sans-serif;
+  --font-serif:"Instrument Serif",serif;
+  --font-body:"Inter",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --radius:20px;
+  --light-bg:#f6f4ea;          /* the white band + product art bg tone */
+}
+.band-light,body.light{
+  --bg:#f6f4ea;
+  --panel:#fdfcf7;
+  --panel-2:#edeadb;
+  --ink:#161a10;
+  --ink-2:#2b3021;
+  --muted:#606852;
+  --muted-2:#6f7560;   /* darkened: #9b9e87 failed contrast on cream */
+  --lime-ink:#4f7a08;          /* accent text on light = deep green */
+  --line:#e6e1cd;
+  --line-strong:#d3ccb2;
+  --shadow-s:0 6px 18px -8px rgba(22,26,16,.12);
+  --shadow-m:0 22px 50px -22px rgba(22,26,16,.22);
+  --shadow-l:0 40px 90px -30px rgba(22,26,16,.30);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--font-body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--lime);color:#10130a}
+img,svg,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.04;letter-spacing:-.02em}
+em{font-family:var(--font-serif);font-style:italic;font-weight:400;letter-spacing:0}
+.accent{color:var(--lime-ink)}
+
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#edeadb}
+::-webkit-scrollbar-thumb{background:#c9c8ae;border-radius:6px;border:2px solid #edeadb}
+::-webkit-scrollbar-thumb:hover{background:#a9ad8d}
+
+/* ═══════ utilities ═══════ */
+.container{width:min(1240px,92vw);margin:0 auto}
+.container-narrow{width:min(880px,92vw)}
+/* Sections carried 9vh top AND bottom — 73px each on an 812px phone, so any two
+   stacked sections put 146px of empty page between them, and the homepage read
+   as a series of far-apart islands. Trimmed everywhere and pinned to a flat
+   value on phones, where vh units are largest relative to the content. */
+.section{padding:clamp(48px,7vh,104px) 0;position:relative}
+/* 22, not 30. Two stacked sections each contribute their own padding, so this
+   is really "44px between any two sections on a phone" — the number that
+   actually shows on screen is always double what is written here. */
+@media(max-width:700px){ .section{padding:22px 0} }
+/* The shelf is a self-contained card and what follows it is a heading, so the
+   section's generic bottom padding is more than this join needs. Targeted by id
+   because the same 30px is correct everywhere else. */
+#categories{padding-bottom:clamp(12px,1.8vh,28px)}
+/* Same reasoning at the foot of the product grid. */
+#plans > .section{padding-bottom:clamp(10px,1.6vh,26px)}
+.band-light{background:var(--bg);color:var(--ink)}
+.band-light .section-title,.band-light h2,.band-light h3{color:var(--ink)}
+/* (band-fade rules removed — the page is one light theme, no dark bands to fade into) */
+.band-light .band-pad-top{padding-top:0}
+.section-head{margin-bottom:clamp(32px,4.5vw,56px)}
+/* Must come AFTER the rule above, not before it. The first attempt at this put
+   the phone override higher up the file, where the later base rule simply won
+   on source order — same specificity — so it silently did nothing. */
+@media(max-width:700px){ .section-head{margin-bottom:20px} }
+.section-head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--lime-ink);margin-bottom:16px;
+}
+.section-eyebrow::before{content:"";width:26px;height:2px;background:var(--lime-deep);border-radius:2px}
+.section-title{font-size:clamp(30px,4.4vw,52px)}
+.section-sub{color:var(--muted);margin-top:14px;max-width:520px;font-size:16.5px}
+
+.reveal{opacity:0;transform:translateY(30px);filter:blur(5px);
+  transition:opacity .85s var(--ease),transform .85s var(--ease),filter .85s var(--ease)}
+.reveal.in{opacity:1;transform:none;filter:none}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--font-display);font-weight:600;letter-spacing:.01em;
+  border-radius:999px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s,color .35s,border-color .35s;
+  will-change:transform;position:relative;white-space:nowrap;
+}
+.btn-sm{padding:10px 20px;font-size:14px}
+.btn-lg{padding:16px 30px;font-size:16px}
+/* Buttons were flat fills. The hairline of light along the top edge is what
+   separates a button that looks printed on the page from one that looks like an
+   object you can press — it is a 1px inset highlight, not a gradient anyone
+   should notice. The press state matters more on a phone than hover does,
+   because hover never happens there. */
+.btn-lime{background:linear-gradient(180deg,#cff581,var(--lime));color:#10130a;
+  box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 10px 26px -10px rgba(163,217,58,.7)}
+.btn-lime:hover{background:linear-gradient(180deg,#d9ff8f,var(--lime-bright));
+  box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 16px 40px -12px rgba(163,217,58,.85)}
+.btn-lime svg{transition:transform .3s var(--ease)}
+.btn-lime:hover svg{transform:translateX(3px)}
+.btn-dark{background:linear-gradient(180deg,#232a1a,#12160d);color:#fff;
+  box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 10px 26px -12px rgba(22,26,16,.65)}
+.btn-dark:hover{background:linear-gradient(180deg,#2b3320,#0a0d06);
+  box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 16px 36px -12px rgba(22,26,16,.75)}
+.btn-dark svg{transition:transform .3s var(--ease)}
+.btn-dark:hover svg{transform:translateX(3px)}
+/* Presses read on touch, where there is no hover to give feedback at all. */
+.btn:active{transform:translateY(1px) scale(.988)}
+/* Keyboard focus was invisible on every button on the page. */
+.btn:focus-visible{outline:none;
+  box-shadow:0 0 0 3px rgba(163,217,58,.6),0 0 0 6px rgba(22,26,16,.14)}
+.btn-ghost{border:1.5px solid var(--line-strong);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--lime-deep);color:var(--lime-ink)}
+.btn-block{width:100%}
+
+/* (preloader removed — the page paints straight away, no black WEEWOO splash) */
+
+/* ═══════ chrome ═══════ */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--lime);z-index:120;
+  box-shadow:0 0 10px rgba(194,240,104,.7)}
+/* (grain overlay removed — see template. It was a fixed, full-viewport,
+   will-change:transform layer animating forever at 4% opacity.) */
+
+/* toast */
+.toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--lime);color:#10130a;font-family:var(--font-display);font-weight:600;font-size:14px;
+  padding:13px 22px;border-radius:999px;z-index:180;display:flex;align-items:center;gap:9px;
+  box-shadow:0 20px 50px -12px rgba(194,240,104,.5);transition:transform .5s var(--ease);pointer-events:none;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast svg{width:16px;height:16px;fill:#10130a}
+
+/* ═══════ nav ═══════ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:110;transition:transform .5s var(--ease)}
+.nav-inner{
+  width:min(1280px,94vw);margin:12px auto 0;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 10px 0 20px;border-radius:18px;
+  border:1px solid transparent;transition:background .4s,border-color .4s,box-shadow .4s,height .4s;
+}
+.nav.scrolled .nav-inner{
+  background:rgba(10,13,7,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-color:var(--line);height:58px;box-shadow:var(--shadow-s);
+}
+body.light .nav.scrolled .nav-inner{background:rgba(253,252,247,.82)}
+.nav.hidden{transform:translateY(-110%)}
+.logo{display:flex;align-items:center;gap:4px;font-family:var(--font-display);
+  font-weight:700;letter-spacing:.18em;font-size:15.5px;color:var(--ink)}
+.logo-bolt{width:15px;height:15px;fill:var(--lime);filter:drop-shadow(0 0 8px rgba(194,240,104,.7))}
+body.light .logo-bolt{fill:var(--lime-deep)}
+.logo .woo{color:var(--lime-ink)}
+.nav-links{display:flex;gap:2px}
+.nav-links a{padding:8px 13px;border-radius:10px;font-size:14px;font-weight:500;color:var(--muted);
+  transition:color .3s,background .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);background:rgba(226,240,190,.08)}
+body.light .nav-links a:hover,body.light .nav-links a.active{background:rgba(22,26,16,.06)}
+.nav-right{display:flex;align-items:center;gap:6px}
+.nav-icon{
+  position:relative;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  color:var(--ink);transition:background .3s;
+}
+.nav-icon:hover{background:rgba(226,240,190,.1)}
+body.light .nav-icon:hover{background:rgba(22,26,16,.06)}
+.nav-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cart-count{
+  position:absolute;top:4px;right:3px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;
+  background:var(--lime);color:#10130a;font-size:10.5px;font-weight:800;
+  display:grid;place-items:center;font-family:var(--font-display);
+  transform:scale(0);transition:transform .35s var(--ease);
+}
+.cart-count{top:-3px;right:-3px;width:19px;height:19px;min-width:19px;padding:0;border-radius:50%;
+  font-size:11px;font-weight:800;border:2px solid var(--bg);box-sizing:content-box}
+.cart-count.on{transform:scale(1)}
+a:focus:not(:focus-visible),button:focus:not(:focus-visible),
+.product-card:focus:not(:focus-visible),input:focus:not(:focus-visible),
+select:focus:not(:focus-visible),summary:focus:not(:focus-visible){outline:none!important;box-shadow:none!important}
+.hamburger{display:grid}
+.nav-links{display:none}
+
+/* ═══════ nav — LIGHT chrome (the top of the page is now a light band) ═══════
+   Re-scope the tokens ON the nav/drawers so their children pick up light values
+   while the page below still uses the dark root tokens. */
+.ww-homepage .nav,
+.ww-homepage .drawer{
+  --bg:#f6f4ea; --panel:#fdfcf7; --panel-2:#edeadb;
+  --ink:#161a10; --ink-2:#2b3021; --muted:#606852; --muted-2:#9b9e87;
+  --lime-ink:#4f7a08;
+  --line:#e6e1cd; --line-strong:#d3ccb2;
+  --shadow-s:0 6px 18px -8px rgba(22,26,16,.12);
+  --shadow-m:0 22px 50px -22px rgba(22,26,16,.22);
+}
+/* .drawer hard-codes a dark background + dark tokens — override both */
+.ww-homepage .drawer{background:#fdfcf7;color:#161a10}
+.ww-homepage .drawer-overlay{background:rgba(22,26,16,.42)}
+.ww-homepage .drawer-close:hover{background:var(--panel-2)!important}
+.ww-homepage .nav.scrolled .nav-inner{background:rgba(253,252,247,.85);border-color:var(--line)}
+.ww-homepage .nav .logo-bolt{fill:var(--lime-deep);filter:none}
+.ww-homepage .nav-icon:hover{background:rgba(22,26,16,.06)}
+.ww-homepage .cart-count{border-color:#f6f4ea}
+
+/* MOBILE header: hamburger left · logo centre · cart right */
+.ww-homepage .ww-nav-3 .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;
+  padding:0 10px}
+.ww-homepage .ww-nav-3 .hamburger{justify-self:start;grid-column:1}
+.ww-homepage .ww-nav-3 .logo{justify-self:center;grid-column:2}
+.ww-homepage .ww-nav-3 .nav-right{justify-self:end;grid-column:3}
+/* every inline chrome SVG needs an explicit size — LiteSpeed's CSS combine drops
+   generic `svg{width}` rules and the icons collapse to 0-width empty boxes */
+.ww-homepage .ww-nav-3 .hamburger{width:44px!important;height:44px!important;display:grid!important;
+  place-items:center!important;padding:0!important;border:none!important;outline:none!important;
+  box-shadow:none!important;background:none!important;border-radius:12px}
+.ww-homepage .ww-nav-3 .hamburger svg{width:24px!important;height:24px!important;stroke:#161a10!important;
+  fill:none!important;stroke-width:2!important;stroke-linecap:round}
+.ww-homepage .nav-icon svg{width:22px!important;height:22px!important;fill:none!important}
+.ww-homepage .logo-bolt{width:15px!important;height:15px!important}
+.ww-homepage .drawer-close{width:40px!important;height:40px!important;display:grid!important;
+  place-items:center!important;padding:0!important;border:none!important;outline:none!important;
+  box-shadow:none!important;background:none!important;border-radius:11px}
+.ww-homepage .drawer-close svg{width:20px!important;height:20px!important;stroke:var(--ink)!important;
+  fill:none!important;stroke-width:2!important;stroke-linecap:round}
+
+/* DESKTOP: the WordPress "Pc Menu" (primary) — logo left · menu · cart right */
+.ww-homepage .ww-pc-menu{display:none}
+@media(min-width:961px){
+  .ww-homepage .ww-nav-3 .nav-inner{display:flex;justify-content:space-between;align-items:center;
+    padding:0 10px 0 20px}
+  .ww-homepage .ww-nav-3 .hamburger{display:none!important}
+  .ww-homepage .ww-nav-3 .logo{justify-self:auto}
+  .ww-homepage .ww-pc-menu{display:block!important;margin:0 auto}
+  .ww-homepage .ww-pc-ul{display:flex;gap:2px;align-items:center;list-style:none;margin:0;padding:0}
+  .ww-homepage .ww-pc-ul > li{position:relative;list-style:none}
+  .ww-homepage .ww-pc-ul > li > a{display:block;padding:8px 14px;border-radius:10px;font-size:14.5px;
+    font-weight:500;color:var(--muted);font-family:var(--font-body);white-space:nowrap;
+    transition:color .25s,background .25s}
+  .ww-homepage .ww-pc-ul > li > a:hover{color:var(--ink);background:rgba(22,26,16,.06)}
+  .ww-homepage .ww-pc-ul .sub-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:210px;
+    background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-m);padding:8px;
+    list-style:none;margin:0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.25s;z-index:120}
+  .ww-homepage .ww-pc-ul li:hover > .sub-menu{opacity:1;visibility:visible;transform:none}
+  .ww-homepage .ww-pc-ul .sub-menu li{list-style:none}
+  .ww-homepage .ww-pc-ul .sub-menu a{display:block;padding:9px 12px;border-radius:9px;font-size:14px;color:var(--ink)}
+  .ww-homepage .ww-pc-ul .sub-menu a:hover{background:rgba(22,26,16,.06)}
+}
+
+/* drawers */
+.drawer-overlay{position:fixed;inset:0;background:rgba(5,7,3,.55);z-index:100040;
+  opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(3px)}
+.drawer-overlay.open{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;bottom:0;width:min(380px,92vw);background:#10140b;color:#f2f4e8;z-index:100050;
+  display:flex;flex-direction:column;transition:transform .5s var(--ease);box-shadow:var(--shadow-l);
+  --ink:#f2f4e8;--muted:#9aa38c;--muted-2:#6b7460;--line:rgba(226,240,190,.10);--line-strong:rgba(226,240,190,.2);
+  --panel-2:#181d10;--lime-ink:#c2f068;
+}
+.drawer-menu{left:0;transform:translateX(-105%)}
+.drawer-cart{right:0;transform:translateX(105%)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+.drawer-head b{font-family:var(--font-display);font-size:17px;letter-spacing:.02em}
+.drawer-close{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;transition:background .3s}
+.drawer-close:hover{background:var(--panel-2)}
+.drawer-close svg{width:18px;height:18px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+.drawer-body{flex:1;overflow-y:auto;padding:14px 22px 24px}
+.menu-list{display:flex;flex-direction:column;gap:2px}
+.menu-link{
+  display:block;padding:14px 4px;font-family:var(--font-display);font-weight:500;font-size:16px;
+  color:var(--ink);border-bottom:1px solid var(--line);transition:color .25s,padding-left .25s;
+}
+.menu-link:hover{color:var(--lime-ink);padding-left:8px}
+.menu-acc{border-bottom:1px solid var(--line)}
+.menu-acc summary{
+  list-style:none;display:flex;justify-content:space-between;align-items:center;
+  padding:14px 4px;font-family:var(--font-display);font-weight:500;font-size:16px;
+  color:var(--ink);cursor:pointer;transition:color .25s;
+}
+.menu-acc summary::-webkit-details-marker{display:none}
+.menu-acc summary:hover{color:var(--lime-ink)}
+.menu-acc summary svg{width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease);flex-shrink:0}
+.menu-acc[open] summary svg{transform:rotate(180deg)}
+.menu-acc-body{padding:0 0 10px 16px;display:flex;flex-direction:column;gap:2px}
+.menu-acc-body a{display:block;padding:9px 4px;font-size:14.5px;color:var(--muted);border-radius:8px;transition:color .25s,padding-left .25s}
+.menu-acc-body a:hover{color:var(--lime-ink);padding-left:6px}
+/* ── drawer menu built from the WordPress "Mobile" menu — ACCORDION (collapsed by default).
+   Same markup + behaviour as the shop pages, so editing Appearance → Menus updates both. ── */
+.ww-mobile-ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ww-mobile-ul li{list-style:none;border-bottom:1px solid var(--line)}
+.ww-mobile-ul > li > a{display:block;padding:14px 10px;margin:0 -6px;border-radius:10px;
+  font-family:var(--font-display);font-weight:500;font-size:16px;color:var(--ink);
+  transition:color .25s,background .25s}
+/* hover = DEEP green (#4f7a08), not the bright lime — lime text on a light drawer is unreadable */
+.ww-mobile-ul > li > a:hover{color:var(--lime-ink);background:rgba(22,26,16,.05)}
+.ww-mobile-ul .sub-menu{list-style:none;margin:0;padding:0 0 0 16px;
+  max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.ww-mobile-ul li.ww-open > .sub-menu{max-height:640px;padding-bottom:8px}
+.ww-mobile-ul .sub-menu li{border:none}
+.ww-mobile-ul .sub-menu a{display:block;padding:9px 4px;font-size:14.5px;color:var(--muted);transition:color .25s}
+.ww-mobile-ul .sub-menu a:hover{color:var(--lime-ink)}
+.ww-mobile-ul li.menu-item-has-children > a{position:relative;padding-right:34px}
+.ww-mobile-ul li.menu-item-has-children > a::after{
+  content:"";position:absolute;right:8px;top:50%;width:9px;height:9px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s var(--ease);
+}
+.ww-mobile-ul li.menu-item-has-children.ww-open > a::after{transform:translateY(-20%) rotate(225deg)}
+
+.menu-bottom{padding:24px 0 0;margin-top:auto}
+.cart-loading{text-align:center;color:var(--muted);padding:56px 0;font-size:14px}
+.cart-empty{text-align:center;color:var(--muted);padding:60px 10px;font-size:15px}
+.cart-empty svg{width:54px;height:54px;margin:0 auto 14px;stroke:var(--muted-2);fill:none;stroke-width:1.5}
+.cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cart-item img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--panel-2)}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-info b{font-family:var(--font-display);font-size:14.5px;display:block}
+.cart-item-info span{font-size:12.5px;color:var(--muted)}
+.cart-item-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line-strong);border-radius:999px}
+.qty button{width:28px;height:28px;font-size:15px;color:var(--muted);transition:color .2s}
+.qty button:hover{color:var(--lime-ink)}
+.qty b{min-width:22px;text-align:center;font-size:13.5px;font-family:var(--font-display)}
+.cart-item-price{font-family:var(--font-display);font-weight:700;font-size:15px}
+.cart-remove{color:var(--muted-2);font-size:12px;text-decoration:underline;margin-top:2px}
+.cart-remove:hover{color:#ff7b6b}
+.drawer-foot{padding:18px 22px 22px;border-top:1px solid var(--line)}
+.cart-total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.cart-total-row span{color:var(--muted);font-size:14px}
+.cart-total-row b{font-family:var(--font-display);font-size:22px}
+
+/* ═══════ HERO — light band, centered copy over two brand rails ═══════
+   No scroll-hijack, no sticky stage, no rAF loop. The only motion is one
+   `transform` marquee per rail, which pauses when the hero scrolls away. */
+.hero{position:relative;overflow:hidden;background:var(--bg);color:var(--ink)}
+.hero-inner{
+  position:relative;z-index:1;
+  width:min(1280px,92vw);margin:0 auto;
+  padding:clamp(116px,15vh,168px) 0 clamp(18px,3vh,32px);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.hero-glow{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(42% 46% at 50% 4%,rgba(194,240,104,.30),transparent 68%),
+    radial-gradient(30% 34% at 88% 78%,rgba(124,200,255,.14),transparent 70%),
+    radial-gradient(28% 32% at 10% 72%,rgba(255,201,210,.14),transparent 70%)}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 7px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow-s);
+  font-size:12.5px;font-weight:600;color:var(--ink-2);margin-bottom:22px}
+.hero-eyebrow b{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:999px;
+  background:var(--lime);color:#10130a;font-size:11px;font-weight:800;letter-spacing:.03em}
+.hero-eyebrow b svg{width:10px!important;height:10px!important;fill:#10130a}
+
+.hero-title{font-size:clamp(40px,5.6vw,72px);font-weight:600;color:var(--ink);letter-spacing:-.025em}
+.hero-title .line{display:block;overflow:hidden;padding-bottom:.09em;margin-bottom:-.09em}
+.hero-title .accent{color:var(--lime-ink)}
+.hero-title em{color:var(--lime-ink)}
+/* one-shot entrance — no scroll listener */
+.hero-title .line{transform:translateY(100%);opacity:0;
+  transition:transform .9s var(--ease),opacity .9s var(--ease)}
+.hero-title .line:nth-child(2){transition-delay:.10s}
+body.loaded .hero-title .line,html.noanim .hero-title .line{transform:none;opacity:1}
+
+.hero-sub{color:var(--muted);font-size:clamp(15px,1.5vw,17.5px);max-width:480px;margin:18px auto 0}
+.hero-sub b{color:var(--ink);font-weight:600}
+.hero-ctas{display:flex;gap:11px;margin-top:28px;flex-wrap:wrap;justify-content:center}
+.hero .btn-ghost{border-color:rgba(37,211,102,.45);color:var(--ink)}
+.hero .btn-ghost:hover{border-color:#25D366}
+
+/* ── brand rails ── */
+/* full-bleed out of the centered .hero-inner container (else 100vw overflows right) */
+.hero-rails{position:relative;width:100vw;margin-left:calc(50% - 50vw);
+  margin-top:clamp(38px,6vh,64px);padding-bottom:4px}
+.hero-rails::before,.hero-rails::after{content:"";position:absolute;top:0;bottom:0;width:clamp(48px,10vw,150px);
+  z-index:3;pointer-events:none}
+.hero-rails::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.hero-rails::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+/* contain:paint lets the browser skip everything scrolled outside the row, and
+   caps the layer to the strip instead of the full-bleed 100vw band. */
+.rail{display:flex;overflow:hidden;margin-bottom:0;contain:paint}
+.rail-track{display:flex;gap:12px;padding-right:12px;flex-shrink:0;
+  animation:railslide 52s linear infinite;will-change:transform;
+  /* Both of these are about TEXT, not the movement. A layer sliding on
+     fractional pixels re-rasterises its glyphs every frame, which is what made
+     the names shimmer and the strip feel like it was dropping frames. */
+  backface-visibility:hidden;-webkit-font-smoothing:antialiased}
+.rail-rev .rail-track{animation-duration:58s;animation-direction:reverse}
+.rail:hover .rail-track{animation-play-state:paused}
+.hero-rails.offscreen .rail-track{animation-play-state:paused}
+@keyframes railslide{to{transform:translateX(-100%)}}
+
+.rail-pill{display:flex;align-items:center;gap:11px;padding:9px 20px 9px 9px;border-radius:999px;
+  background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow-s);white-space:nowrap}
+/* One shadow, no gloss. Each tile was carrying two boxshadows plus an ::after
+   gradient — four paint operations per pill, thirty-two pills, all inside a
+   permanently animating layer, for a highlight invisible at 36px. */
+.rail-tile{width:36px;height:36px;flex:none;border-radius:22%;display:grid;place-items:center;
+  background:#fff;box-shadow:0 0 0 1px rgba(22,26,16,.06)}
+.rail-tile svg{width:20px!important;height:20px!important}
+.rail-name{font-family:var(--font-display);font-weight:600;font-size:15px;color:var(--ink);
+  letter-spacing:-.01em}
+
+/* The closing chip: says what the eight logos do NOT show. */
+.rail-more{background:var(--lime);border-color:transparent;padding:9px 20px}
+.rail-more .rail-name{color:var(--ink)}
+
+/* trust stats strip below hero rails */
+.hero-trust{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:clamp(22px,3.5vh,36px);flex-wrap:wrap;
+}
+.trust-stat{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12.5px;font-weight:500;color:var(--muted);
+  font-family:var(--font-display);letter-spacing:.01em;
+  padding:7px 14px;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);
+  box-shadow:var(--shadow-s);
+}
+.trust-stat svg{color:var(--lime-deep);flex-shrink:0}
+/* Three chips do not fit one line on a phone, so this one wrapped alone onto a
+   second row. Two chips on one line reads as a deliberate pair; three with one
+   orphaned reads as a layout fault. */
+@media(max-width:640px){.trust-warranty{display:none}}
+.trust-stat b{color:var(--ink);font-weight:700}
+
+@media(max-width:900px){
+  .hero-inner{padding:clamp(96px,13vh,124px) 0 clamp(16px,2.5vh,28px)}
+  .hero-title{font-size:clamp(34px,9vw,46px)}
+  .hero-sub{font-size:14.5px;max-width:340px;margin-top:14px}
+  .hero-ctas{margin-top:22px;gap:9px;width:100%;flex-direction:column;align-items:center}
+  .hero-ctas .btn-lg{padding:13px 20px;font-size:14px;width:min(320px,88vw);justify-content:center}
+  .hero-rails{margin-top:32px}
+  .hero-trust{margin-top:20px;gap:6px}
+  .trust-stat{font-size:11.5px;padding:6px 11px;gap:5px}
+  .trust-stat svg{width:12px!important;height:12px!important}
+  .rail-pill{padding:8px 16px 8px 8px}
+  .rail-tile{width:30px;height:30px}
+  .rail-tile svg{width:17px!important;height:17px!important}
+  .rail-name{font-size:13.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .rail-track{animation:none}
+  .hero-title .line{transform:none;opacity:1;transition:none}
+}
+/* the old text marquee is gone — the hero rails replaced it.
+   `marquee` keyframes stay: the reviews strip still animates on them. */
+@keyframes marquee{to{transform:translateX(-100%)}}
+.offscreen .rev-track{animation-play-state:paused}
+
+/* ═══════ categories (light band) — 6 across desktop, 3 mobile ═══════ */
+/* the ⚡ INSTANT badge must sit UNDER the fixed nav, not float over it */
+.ww-homepage .ww-instant-badge{z-index:2!important}
+/* ═══ categories — ONE shelf, not five floating cards ═══
+   The previous version gave every category its own bordered card, its own
+   shadow and its own bordered icon box: at five across on a phone that is a
+   63px card carrying two frames, so the art was tiny and the whole row read as
+   a cramped app drawer. This is one object — a single panel divided by
+   hairlines — which lets the artwork be roughly twice the size in the same
+   width, and gives the row a shape of its own instead of five competing ones.
+   The icons are masked to CIRCLES on purpose: the source art is opaque WebP
+   with a baked-in cream square (#f3f0e1, slightly off our panel), so any
+   straight edge shows a faint tonal box. A circle has no corners to give it
+   away and reads as a deliberate plinth. */
+.cats-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  background:var(--panel);border:1px solid var(--line);
+  border-radius:clamp(18px,1.8vw,26px);overflow:hidden;
+  box-shadow:var(--shadow-s);
+}
+.cat-card{
+  position:relative;display:flex;flex-direction:column;align-items:center;
+  gap:clamp(7px,.85vw,13px);text-align:center;
+  padding:clamp(15px,2vw,28px) clamp(4px,.7vw,14px) clamp(13px,1.6vw,24px);
+  background:transparent;border:0;border-radius:0;overflow:visible;
+  transition:background .35s var(--ease);
+}
+/* hairline between columns, inset from the panel edges so it never touches the
+   rounded corners */
+.cat-card + .cat-card::before{content:"";position:absolute;left:0;top:16%;bottom:16%;
+  width:1px;background:var(--line)}
+/* the lime bar grows out of the centre on hover — the only motion in the row */
+.cat-card::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:3px;
+  background:var(--lime-deep);border-radius:3px 3px 0 0;
+  transition:left .4s var(--ease),right .4s var(--ease)}
+.cat-card:hover{background:rgba(194,240,104,.10)}
+.cat-card:hover::after{left:16%;right:16%}
+
+.cat-icon{
+  width:clamp(50px,5.8vw,92px);aspect-ratio:1;
+  border:0;border-radius:50%;overflow:hidden;position:relative;background:transparent;
+  box-shadow:inset 0 0 0 1px rgba(22,26,16,.05);
+  transition:transform .45s var(--ease);
+}
+.cat-card:hover .cat-icon{transform:translateY(-4px) scale(1.045)}
+/* square art into a square box: cover crops nothing, the circle just trims the
+   cream corners off */
+.cat-icon img{width:100%;height:100%;object-fit:cover;display:block}
+
+.cat-card h3{font-size:clamp(11px,1.05vw,15px);margin:0;
+  display:inline-flex;align-items:center;gap:5px;color:var(--ink);
+  letter-spacing:-.015em;max-width:100%;white-space:nowrap;
+  transition:color .3s var(--ease)}
+.cat-card:hover h3{color:var(--lime-ink)}
+.cat-card h3 svg{width:12px;height:12px;stroke:var(--lime-deep);fill:none;stroke-width:2.6;
+  stroke-linecap:round;stroke-linejoin:round;opacity:0;
+  transition:transform .35s var(--ease),opacity .3s}
+.cat-card:hover h3 svg{opacity:1;transform:translateX(3px)}
+.cat-card p{display:none}
+.c-short{display:none}
+
+@media(max-width:620px){
+  /* Short label, no arrow — at ~68px per column the arrow was taking the width
+     the word needs. */
+  .c-full{display:none}
+  .c-short{display:inline}
+  .cat-card h3{gap:0;letter-spacing:-.02em}
+  .cat-card h3 svg{display:none}
+}
+@media(hover:none){
+  /* Touch has no hover, so the lime bar would never appear — it is decoration
+     there, not information. */
+  .cat-card::after{display:none}
+}
+
+/* ═══════ products (light band) ═══════ */
+.catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:1100px){.catalog-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:820px){.catalog-grid{grid-template-columns:repeat(2,1fr);gap:13px}}
+
+/* ═══════ category sections (homepage products — grid per category) ═══════ */
+.cat-row{margin-bottom:clamp(40px,5vw,64px)}
+/* That margin separates one product row from the NEXT one; on the last row it
+   has nothing to separate, so it just stacked onto the section padding below
+   and left ~100px of blank page before the reviews heading. */
+.cat-row:last-child{margin-bottom:0}
+.cat-row-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px}
+.cat-row-title{font-family:var(--font-display);font-weight:600;font-size:clamp(20px,2.7vw,29px);color:var(--ink);line-height:1.1}
+.cat-row-sub{color:var(--muted);font-size:13.5px;font-weight:500;display:block;margin-top:4px}
+.cat-row-all{display:inline-flex;align-items:center;gap:6px;color:var(--lime-ink);font-family:var(--font-display);font-weight:600;font-size:14px;white-space:nowrap;flex-shrink:0}
+.cat-row-all svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.cat-row-all:hover svg{transform:translateX(3px)}
+/* product cards in the category grids are ALWAYS visible — never depend on a JS
+   reveal (fixes blank/white cards when jumping to the section via "Explore plans") */
+.cat-grid .product-card{opacity:1!important;transform:none!important}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+@media(max-width:1200px){.cat-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:960px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.cat-grid{grid-template-columns:repeat(2,1fr);gap:13px}}
+.product-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;position:relative;
+  transition:transform .45s var(--ease),box-shadow .45s,border-color .45s;
+  opacity:0;transform:translateY(24px) scale(.98);
+}
+.product-card.shown{opacity:1;transform:none}
+.product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:var(--line-strong)}
+.product-media{position:relative;overflow:hidden;aspect-ratio:1/.9;background:#f6f4ea}
+.product-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.product-card:hover .product-media img{transform:scale(1.08) rotate(-.5deg)}
+.media-instant{position:absolute;top:12px;left:12px;z-index:2;
+  font-family:var(--font-display);font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--lime);background:rgba(16,19,10,.9);padding:5px 11px;border-radius:999px;white-space:nowrap;
+  box-shadow:0 4px 14px -4px rgba(0,0,0,.4)}
+.product-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+/* always reserve 2 lines for the name so cards never differ in height */
+.product-name{font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  line-height:1.3;min-height:2.6em}
+.product-desc{font-size:12px;color:var(--muted);margin-top:3px}
+.product-price{display:flex;align-items:baseline;gap:7px;margin:12px 0 14px;flex-wrap:wrap}
+.product-price b{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--ink);line-height:1}
+.product-price span{font-size:12.5px;color:var(--muted);font-weight:600}
+.product-price s{color:var(--muted-2);font-size:13px;margin-left:2px}
+.product-actions{display:flex;gap:8px;margin-top:auto}
+.product-actions .btn{flex:1;padding:11px 8px;font-size:13.5px}
+.btn-cart{
+  flex:0 0 44px!important;width:44px;border-radius:14px;border:1.5px solid var(--line-strong);
+  display:grid;place-items:center;transition:all .3s;
+}
+.btn-cart:hover{background:var(--lime);border-color:var(--lime)}
+.btn-cart svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn-cart:hover svg{stroke:#10130a}
+.catalog-cta{text-align:center;margin-top:40px}
+/* instant-delivery explainer strip (light band) */
+.instant-note{display:flex;align-items:center;gap:16px;margin-top:0;
+  border:1px solid var(--line);border-radius:18px;padding:16px 22px;
+  background:linear-gradient(100deg,rgba(194,240,104,.16),rgba(194,240,104,.04));}
+.instant-note-badge{flex-shrink:0;font-family:var(--font-display);font-weight:800;font-size:12px;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--lime);background:#10130a;
+  padding:8px 14px;border-radius:999px;white-space:nowrap}
+.instant-note p{font-size:14px;color:var(--ink-2);line-height:1.5}
+.instant-note p b{color:var(--ink);font-weight:600}
+@media(max-width:560px){.instant-note{flex-direction:column;align-items:flex-start;gap:10px;padding:14px 16px}
+  .instant-note p{font-size:13px}}
+@media(max-width:520px){
+  .product-body{padding:12px 12px 14px}
+  .product-name{font-size:14px}
+  .product-desc{font-size:11px}
+  .product-price b{font-size:20px}
+  .product-price span{font-size:11.5px}
+  .product-price{margin:9px 0 11px}
+  .product-actions .btn{padding:10px 6px;font-size:12px}
+  .btn-cart{flex-basis:38px!important;width:38px}
+}
+/* "you may also like" — horizontal scroll on mobile, one line */
+@media(max-width:820px){
+  .related .catalog-grid{display:flex;overflow-x:auto;gap:13px;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    padding:2px 4px 12px;margin:0 -4px;
+    scrollbar-width:none}
+  .related .catalog-grid::-webkit-scrollbar{display:none}
+  .related .catalog-grid .product-card{flex:0 0 72%;scroll-snap-align:start}
+}
+@media(max-width:520px){
+  .related .catalog-grid .product-card{flex-basis:78%}
+}
+
+/* ═══════ reviews (dark) ═══════ */
+.reviews-marquee{display:flex;flex-direction:column;gap:16px;overflow:hidden;position:relative}
+.reviews-marquee::before,.reviews-marquee::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.reviews-marquee::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
+.reviews-marquee::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
+.rev-row{display:flex;overflow:hidden}
+.rev-track{display:flex;gap:16px;padding-right:16px;flex-shrink:0;will-change:transform;
+  align-items:stretch;animation:marquee var(--dur,60s) linear infinite}
+.rev-row[data-dir="rtl"] .rev-track{animation-direction:reverse}
+.rev-row:hover .rev-track{animation-play-state:paused}
+.rev-card{
+  width:auto;min-width:230px;max-width:390px;flex-shrink:0;display:flex;flex-direction:column;
+  border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;background:var(--panel);
+}
+.rev-stars{display:flex;gap:2px;margin-bottom:10px}
+.rev-stars svg{width:12px;height:12px;fill:var(--amber)}
+.rev-text{font-size:14px;color:var(--ink-2);flex:1}
+.rev-meta{display:flex;align-items:center;gap:10px;margin-top:14px}
+.rev-avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+  font-family:var(--font-display);font-weight:700;font-size:13px;color:#10130a}
+.rev-meta b{display:block;font-size:13px;font-family:var(--font-display)}
+.rev-meta span{font-size:11px;color:var(--muted-2)}
+.rev-meta .rev-badge{margin-left:auto;font-size:9.5px;font-weight:700;letter-spacing:.06em;color:var(--lime-ink);
+  border:1px solid rgba(194,240,104,.35);padding:3px 8px;border-radius:999px;text-transform:uppercase;white-space:nowrap;
+  background:rgba(194,240,104,.22)}
+
+/* ═══════ faq ═══════ */
+.faq-list{display:grid;gap:12px}
+.faq-item{border:1px solid var(--line);border-radius:16px;background:var(--panel);overflow:hidden;transition:border-color .4s,box-shadow .4s}
+.faq-item[open]{border-color:rgba(194,240,104,.45);box-shadow:var(--shadow-s)}
+.faq-item summary{
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:19px 24px;cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:15.5px;
+  transition:color .3s;color:var(--ink)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--lime-ink)}
+.faq-item summary i{position:relative;width:22px;height:22px;flex-shrink:0}
+.faq-item summary i::before,.faq-item summary i::after{
+  content:"";position:absolute;top:50%;left:50%;background:var(--lime-deep);border-radius:2px;
+  transition:transform .4s var(--ease)}
+.faq-item summary i::before{width:14px;height:2px;transform:translate(-50%,-50%)}
+.faq-item summary i::after{width:2px;height:14px;transform:translate(-50%,-50%)}
+.faq-item[open] summary i::after{transform:translate(-50%,-50%) rotate(90deg) scaleY(0)}
+.faq-body{padding:0 24px;overflow:hidden}
+.faq-body p{color:var(--muted);font-size:14.5px;padding-bottom:22px;max-width:680px}
+
+/* ═══════ CTA ═══════ */
+/* ═══ referral — a compact card, not a full screen ═══
+   This measured 688px tall on an 812px phone: 0.85 of the viewport for a
+   secondary offer sitting below the entire catalogue. The height came from
+   three things, all fixed here — 90px of vertical padding, a 58px headline on
+   its own two lines, and the three steps stacking into full-width rows below
+   560px. It is now a horizontal card on desktop and a tight stack on phones. */
+.cta-panel{
+  position:relative;border-radius:26px;overflow:hidden;background:var(--lime);
+  padding:clamp(22px,3vw,40px) clamp(20px,3.4vw,46px);text-align:left;color:#10130a;
+  box-shadow:0 28px 60px -28px rgba(163,217,58,.55);
+}
+.cta-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.4}
+.cta-content{position:relative;z-index:2;display:grid;grid-template-columns:1fr;
+  gap:clamp(16px,2.2vw,30px);align-items:center}
+/* Side by side only when there is genuinely room for two columns of text. */
+@media(min-width:880px){.cta-content{grid-template-columns:1.05fr .95fr}}
+
+.cta-panel h2{font-size:clamp(23px,3.2vw,40px);line-height:1.06;letter-spacing:-.03em;
+  /* else the italic "cash." drops alone onto a third line */
+  text-wrap:balance}
+.cta-panel p{margin:9px 0 0;max-width:44ch;font-size:clamp(14px,1.2vw,16px);
+  color:rgba(16,19,10,.72);font-weight:500;line-height:1.5}
+.cta-fine{display:block;margin-top:12px;font-size:11.5px;font-weight:600;
+  color:rgba(16,19,10,.6);letter-spacing:.02em;line-height:1.45;text-align:center}
+
+.refer-kicker{display:inline-block;font-family:var(--font-display);font-weight:700;font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:#10130a;background:rgba(16,19,10,.12);
+  padding:5px 12px;border-radius:999px;margin-bottom:12px}
+
+/* One row of three, at every width. Stacked, these three chips alone were
+   ~180px — more than the whole card needs to be. */
+.refer-steps{display:flex;gap:7px;margin:0 0 14px}
+.refer-step{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;
+  background:rgba(16,19,10,.07);border:1px solid rgba(16,19,10,.13);
+  border-radius:12px;padding:9px 6px;min-width:0}
+.refer-step b{width:20px;height:20px;border-radius:50%;background:#10130a;color:var(--lime);
+  display:grid;place-items:center;font-family:var(--font-display);font-size:11.5px;flex-shrink:0}
+.refer-step span{font-family:var(--font-display);font-weight:600;font-size:11.5px;color:#10130a;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cta-act{min-width:0}
+.cta-act .btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:48px;box-sizing:border-box;line-height:1.2;white-space:nowrap}
+.cta-act .btn svg{display:block;flex:0 0 16px;width:16px;height:16px}
+@media(min-width:880px){.cta-act .btn{width:auto}}
+
+/* ── dynamic product detail page ── */
+.product-detail-page{background:var(--bg);color:var(--ink);min-height:100vh}
+.product-detail{padding:clamp(34px,7vw,90px) 0 80px}
+.product-back{display:inline-block;margin-bottom:24px;color:var(--muted);font-size:14px;font-weight:600;text-decoration:none}
+.product-detail-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,80px);align-items:center}
+.product-detail-media{position:relative;background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(18px,4vw,44px);box-shadow:0 18px 42px -28px rgba(22,26,16,.32)}
+.product-detail-media img{display:block;width:100%;aspect-ratio:1;object-fit:contain;border-radius:16px}
+.product-detail-badge{position:absolute;top:18px;left:18px;z-index:1;background:var(--lime);color:#10130a;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:800;letter-spacing:.04em}
+.product-detail-kicker{margin:0 0 12px;color:var(--lime-deep);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.product-detail-copy h1{margin:0;color:var(--ink);font-family:var(--font-display);font-size:clamp(30px,5vw,58px);line-height:1.02;letter-spacing:-.04em}
+.product-detail-price{display:flex;align-items:baseline;gap:10px;margin:20px 0 16px;font-family:var(--font-display)}
+.product-detail-price b{font-size:clamp(25px,3vw,38px)}
+.product-detail-price s{color:var(--muted-2);font-size:16px}.product-detail-price span{color:var(--muted);font-size:14px}
+.product-detail-label{display:block;margin:4px 0 7px;font-size:13px;font-weight:800;color:var(--ink)}
+.product-detail-select{width:100%;max-width:420px;height:48px;padding:0 14px;border:1px solid var(--line-strong);border-radius:12px;background:#fff;color:var(--ink);font:inherit}
+.product-detail-description{max-width:58ch;color:var(--muted);font-size:16px;line-height:1.65}
+.product-detail-actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 13px}
+.product-detail-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;text-decoration:none}
+.btn-telegram{background:#229ed9;color:#fff;border-radius:999px;font-weight:700}
+.product-detail-delivery{display:inline-flex;align-items:center;gap:6px;margin:0 0 18px;color:var(--muted);font-size:13px;font-weight:700}
+.product-detail-description-section{max-width:760px;margin:clamp(46px,8vw,88px) auto 0;padding-top:32px;border-top:1px solid var(--line)}
+.product-detail-description-section h2{margin:0 0 26px;font-family:var(--font-display);font-size:clamp(24px,3vw,34px)}
+.product-detail-description-section h3{margin:22px 0 7px;font-family:var(--font-display);font-size:18px}
+.product-detail-description-section p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+.product-detail-facts{display:grid;gap:12px;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+.product-detail-facts div{padding-top:13px}.product-detail-facts dt{font-weight:800;font-size:13px}.product-detail-facts dd{margin:4px 0 0;color:var(--muted);font-size:14px;line-height:1.5}
+.product-detail-loading,.product-detail-error{max-width:700px;margin:0 auto;text-align:center;padding:80px 20px;color:var(--muted)}
+.product-detail-error h1{color:var(--ink)}
+@media(max-width:760px){.product-detail-grid{grid-template-columns:1fr}.product-detail-actions{display:grid}.product-detail-actions .btn{width:100%;box-sizing:border-box}.product-detail-select{max-width:none}}
+
+/* cart button states */
+.btn-cart.loading{opacity:.6;pointer-events:none}
+.btn-cart.added{background:var(--lime);border-color:var(--lime)}
+.btn-cart.added svg{stroke:#10130a}
+.cart-count.pop{animation:cartPop .4s var(--ease)}
+@keyframes cartPop{0%{transform:scale(1)}45%{transform:scale(1.5)}100%{transform:scale(1)}}
+/* An empty badge must NEVER animate: cartPop sets transform:scale(1) and a running
+   animation beats the scale(0) that hides it, which flashed a green "0". */
+.cart-count:not(.on){animation:none!important;transform:scale(0)!important}
+
+/* ═══════ footer — simple bar (matches weewoo.in) ═══════ */
+.footer{
+  position:relative;overflow:hidden;background:var(--panel-2);color:var(--ink);
+}
+.footer-glow{position:absolute;top:-60px;left:50%;width:600px;height:120px;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(closest-side,rgba(163,217,58,.22),transparent);filter:blur(30px)}
+.footer-bar{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  padding:28px 0 32px;border-top:1px solid var(--line);
+}
+.footer-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.footer-links a{color:var(--muted);font-size:13.5px;font-weight:500;transition:color .3s}
+.footer-links a:hover{color:var(--lime-ink)}
+.ft-sep{width:1px;height:14px;background:var(--line);flex-shrink:0}
+.footer-copy{font-size:12.5px;color:var(--muted-2);width:100%;text-align:center;margin-top:4px}
+.ft-heart{color:#ff6b6b}
+@media(max-width:640px){
+  .footer-bar{flex-direction:column;text-align:center;gap:12px}
+  .footer-links{justify-content:center}
+}
+
+/* ═══════ product page (light body) ═══════ */
+.pdp{padding:120px 0 70px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-bottom:28px;flex-wrap:wrap}
+.breadcrumb a:hover{color:var(--lime-ink)}
+.breadcrumb i{font-style:normal;color:var(--muted-2)}
+.breadcrumb b{color:var(--ink);font-weight:600}
+.pdp-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(28px,4vw,64px);align-items:start}
+@media(max-width:900px){.pdp-grid{grid-template-columns:1fr}}
+.pdp-media{position:sticky;top:100px}
+@media(max-width:900px){.pdp-media{position:static}}
+.pdp-img-wrap{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-l);background:#f6f4ea}
+.pdp-img-wrap img{width:100%;transition:transform .8s var(--ease)}
+.pdp-img-wrap:hover img{transform:scale(1.04)}
+.pdp-img-chip{position:absolute;top:16px;left:16px;font-family:var(--font-display);font-weight:700;font-size:11px;
+  letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:#161a10;color:var(--lime)}
+.pdp-thumbs{display:flex;gap:12px;margin-top:14px}
+.pdp-thumb{width:76px;height:76px;border-radius:16px;overflow:hidden;border:2px solid transparent;
+  cursor:pointer;transition:border-color .3s;background:#f6f4ea}
+.pdp-thumb img{width:100%;height:100%;object-fit:cover}
+.pdp-thumb.active{border-color:var(--lime-deep)}
+.pdp-info .product-rating{margin-bottom:10px}
+.pdp-title{font-size:clamp(30px,3.6vw,44px)}
+.pdp-badges{display:flex;gap:8px;margin:14px 0 4px;flex-wrap:wrap}
+.pdp-badge{font-family:var(--font-display);font-weight:700;font-size:11px;letter-spacing:.06em;
+  padding:6px 12px;border-radius:999px;text-transform:uppercase}
+.pdp-badge.b1{background:var(--lime);color:#10130a}
+.pdp-badge.b2{background:var(--panel-2);color:var(--ink-2);border:1px solid var(--line)}
+.pdp-price{display:flex;align-items:baseline;gap:12px;margin:16px 0 4px}
+.pdp-price b{font-family:var(--font-display);font-size:clamp(30px,3.4vw,40px);font-weight:700}
+.pdp-price s{color:var(--muted-2);font-size:18px}
+.pdp-price .save{font-size:13px;font-weight:700;color:var(--lime-ink);background:rgba(194,240,104,.25);
+  padding:4px 11px;border-radius:999px}
+.pdp-note{font-size:13px;color:var(--muted)}
+.pdp-label{font-family:var(--font-display);font-weight:600;font-size:14px;margin:24px 0 10px;display:flex;justify-content:space-between}
+.pdp-label span{color:var(--muted);font-weight:500;font-size:13px}
+.dur-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:520px){.dur-grid{grid-template-columns:repeat(2,1fr)}}
+.dur-opt{
+  border:1.5px solid var(--line-strong);border-radius:14px;padding:12px 8px;text-align:center;
+  transition:all .3s var(--ease);position:relative;overflow:hidden;
+}
+.dur-opt:hover{border-color:var(--ink)}
+.dur-opt.active{border-color:#161a10;background:#161a10;color:#fff}
+.dur-opt b{display:block;font-family:var(--font-display);font-size:15px}
+.dur-opt span{font-size:12px;color:var(--muted)}
+.dur-opt.active span{color:var(--lime)}
+.dur-opt .dur-tag{position:absolute;top:0;right:0;font-size:8.5px;font-weight:800;letter-spacing:.04em;
+  background:var(--lime);color:#10130a;padding:2px 7px;border-bottom-left-radius:9px;font-style:normal}
+.pdp-features{list-style:none;display:grid;gap:10px;margin:6px 0 0}
+.pdp-features li{position:relative;padding-left:28px;color:var(--muted);font-size:14.5px}
+.pdp-features li b{color:var(--ink)}
+.pdp-features li::before{content:"";position:absolute;left:2px;top:7px;width:12px;height:7px;
+  border-left:2.2px solid var(--lime-deep);border-bottom:2.2px solid var(--lime-deep);transform:rotate(-45deg)}
+.pdp-buy-row{display:flex;gap:12px;margin-top:26px;align-items:stretch}
+.pdp-buy-row .qty{border-radius:16px;padding:0 6px;border-color:var(--line-strong)}
+.pdp-buy-row .qty button{width:34px;height:52px;font-size:17px;color:var(--muted)}
+.pdp-buy-row .qty button:hover{color:var(--ink)}
+.pdp-buy-row .qty b{min-width:26px;font-size:15px}
+.pdp-buy-row .btn{flex:1}
+@media(max-width:520px){.pdp-buy-row{flex-wrap:wrap}.pdp-buy-row .qty{order:1}.pdp-buy-row .btn{order:2;min-width:44%}}
+.pdp-meta-row{display:flex;gap:18px;margin-top:18px;flex-wrap:wrap}
+.pdp-meta-row span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.pdp-meta-row svg{width:15px;height:15px}
+.pdp-accordions{margin-top:30px}
+.pdp-accordions .faq-item{margin-bottom:10px}
+.related{background:var(--panel-2)}
+
+/* ═══════ checkout (light body) ═══════ */
+.checkout{padding:120px 0 80px;min-height:100svh}
+.co-steps{display:flex;align-items:center;gap:10px;margin-bottom:34px;flex-wrap:wrap}
+.co-step{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:600;font-size:13.5px;color:var(--muted-2)}
+.co-step span{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;
+  border:1.5px solid var(--line-strong);color:var(--muted-2)}
+.co-step.done span,.co-step.now span{background:#161a10;border-color:#161a10;color:var(--lime)}
+.co-step.now{color:var(--ink)}
+.co-step.done{color:var(--muted)}
+.co-arrow{color:var(--muted-2);font-size:14px}
+.co-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:start}
+@media(max-width:900px){.co-grid{grid-template-columns:1fr}}
+.co-card{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,3vw,34px)}
+.co-card h3{font-size:19px;margin-bottom:18px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:var(--font-display);font-weight:600;font-size:13.5px;margin-bottom:7px}
+.field label i{font-style:normal;color:var(--muted-2);font-weight:500;font-size:12px}
+.field input{
+  width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line-strong);
+  font:inherit;font-size:15px;color:var(--ink);background:var(--bg);outline:none;
+  transition:border-color .3s,box-shadow .3s;
+}
+.field input:focus{border-color:var(--lime-deep);box-shadow:0 0 0 4px rgba(194,240,104,.25);background:#fff}
+.phone-wrap{display:flex;border:1.5px solid var(--line-strong);border-radius:14px;overflow:hidden;background:var(--bg);
+  transition:border-color .3s,box-shadow .3s}
+.phone-wrap:focus-within{border-color:var(--lime-deep);box-shadow:0 0 0 4px rgba(194,240,104,.25);background:#fff}
+.phone-wrap b{padding:14px 12px 14px 16px;font-family:var(--font-display);font-size:15px;color:var(--muted);border-right:1px solid var(--line)}
+.phone-wrap input{border:0!important;box-shadow:none!important;background:transparent!important}
+.pay-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:6px 0 4px}
+@media(max-width:520px){.pay-methods{grid-template-columns:1fr 1fr}}
+.pay-opt{border:1.5px solid var(--line-strong);border-radius:14px;padding:13px 10px;text-align:center;
+  font-family:var(--font-display);font-weight:600;font-size:13.5px;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px}
+.pay-opt:hover{border-color:var(--ink)}
+.pay-opt.active{border-color:#161a10;background:#161a10;color:#fff}
+.co-note{display:flex;gap:9px;align-items:flex-start;font-size:12.5px;color:var(--muted);
+  background:rgba(194,240,104,.16);border:1px solid rgba(163,217,58,.4);padding:12px 14px;border-radius:13px;margin-top:16px}
+.co-note svg{width:15px;height:15px;flex-shrink:0;margin-top:2px}
+.co-summary{position:sticky;top:100px}
+@media(max-width:900px){.co-summary{position:static}}
+.co-item{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid var(--line)}
+.co-item img{width:56px;height:56px;border-radius:13px;object-fit:cover;background:var(--panel-2)}
+.co-item-info{flex:1}
+.co-item-info b{font-family:var(--font-display);font-size:14px;display:block}
+.co-item-info span{font-size:12px;color:var(--muted)}
+.co-item-price{font-family:var(--font-display);font-weight:700;font-size:14.5px;white-space:nowrap}
+.coupon-row{display:flex;gap:9px;margin:16px 0 4px}
+.coupon-row input{flex:1;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--line-strong);
+  font:inherit;font-size:13.5px;background:var(--bg);outline:none;text-transform:uppercase;letter-spacing:.06em}
+.coupon-row input:focus{border-color:var(--lime-deep)}
+.coupon-row .btn{padding:0 20px;font-size:13.5px}
+.coupon-msg{font-size:12px;margin-top:6px;color:var(--lime-ink);font-weight:600;min-height:16px}
+.coupon-msg.err{color:#c0392b}
+.co-totals{margin-top:14px;display:grid;gap:9px}
+.co-row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.co-row b{color:var(--ink);font-weight:600}
+.co-row.grand{border-top:1px solid var(--line);padding-top:12px;margin-top:5px;font-size:15px}
+.co-row.grand b{font-family:var(--font-display);font-size:24px;font-weight:700}
+.co-row .free{color:var(--lime-ink);font-weight:700}
+.co-trust{display:flex;justify-content:center;gap:16px;margin-top:18px;flex-wrap:wrap}
+.co-trust span{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--muted)}
+.co-trust svg{width:13px;height:13px}
+.success-overlay{position:fixed;inset:0;z-index:190;background:rgba(246,244,234,.97);backdrop-filter:blur(8px);
+  display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .5s}
+.success-overlay.show{opacity:1;pointer-events:auto}
+.success-card{text-align:center;max-width:420px;padding:30px;transform:translateY(24px);transition:transform .6s var(--ease)}
+.success-overlay.show .success-card{transform:none}
+.success-check{width:92px;height:92px;border-radius:50%;background:var(--lime);margin:0 auto 22px;
+  display:grid;place-items:center;box-shadow:0 20px 50px -15px rgba(163,217,58,.8)}
+.success-check svg{width:44px;height:44px;stroke:#10130a;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:60;stroke-dashoffset:60}
+.success-overlay.show .success-check svg{animation:checkDraw .7s .3s var(--ease-io) forwards}
+@keyframes checkDraw{to{stroke-dashoffset:0}}
+.success-card h2{font-size:28px;margin-bottom:10px}
+.success-card p{color:var(--muted);font-size:15px;margin-bottom:24px}
+.success-card p b{color:var(--ink)}
+
+.page-fade{animation:pageIn .7s var(--ease)}
+@keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* debug */
+html.noanim .reveal,html.noanim .product-card{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+html.noanim .hero-title .word{transform:none;transition:none}
+/* (preloader gone) */
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none;filter:none}
+  .hero-title .word{transform:none}
+  .marquee-track,.rev-track{animation:none}
+}
+
+/* ═══════ WordPress cleanup — hide leaked Minimog elements ═══════ */
+body.ww-homepage .site-header,
+body.ww-homepage .page-header,
+body.ww-homepage .page-header-inner,
+body.ww-homepage .site-footer,
+body.ww-homepage #page-title-bar,
+body.ww-homepage .page-title-bar-bg,
+body.ww-homepage .minimog-breadcrumb,
+body.ww-homepage .page-mobile-main-menu,
+body.ww-homepage .popup-search,
+body.ww-homepage .cookie-notice-container,
+body.ww-homepage .minimog-pre-loader,
+body.ww-homepage #popup-fly-cart,
+body.ww-homepage .popup-fly-cart,
+body.ww-homepage #popup-search,
+body.ww-homepage .page-search-popup,
+body.ww-homepage .mobile-nav-wrapper,
+body.ww-homepage .mobile-navigation,
+body.ww-homepage .header-mobile,
+body.ww-homepage .off-canvas-wrapper,
+body.ww-homepage #wpadminbar{display:none!important}
+
+/* ── nav: account link ── */
+.nav-acct{text-decoration:none!important;display:none!important}
+.nav-acct-label{display:none}
+#openSearch{background:none;border:none;cursor:pointer;padding:0}
+@media(min-width:961px){
+  .nav-acct{display:flex!important;align-items:center;gap:5px;width:auto!important;height:auto!important;padding:0 10px;border-radius:10px}
+  .nav-acct-label{display:inline;font-size:12px;font-weight:600;letter-spacing:.02em;
+    white-space:nowrap;color:var(--ink);font-family:var(--font-display)}
+  .nav-acct svg{width:18px!important;height:18px!important}
+}
+
+/* ── search overlay ── */
+.search-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:flex-start;justify-content:center;
+  padding:12vh 16px 0;opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s}
+.search-overlay.open{opacity:1;visibility:visible}
+
+/* No backdrop-filter. A full-viewport blur re-samples the whole page on every
+   frame of the open animation — the same cost that was removed from the drawer
+   scrim — and against this palette it turned the page into a flat olive smear
+   that hid where you were. A plain wash is cheaper and reads far cleaner. */
+.search-overlay-bg{position:absolute;inset:0;z-index:0;
+  background:linear-gradient(180deg,rgba(10,13,7,.60),rgba(10,13,7,.46))}
+
+.search-modal{position:relative;z-index:1;width:min(96vw,620px);background:#fdfcf7;
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 28px 70px -24px rgba(10,13,7,.55),0 0 0 1px rgba(22,26,16,.07);
+  transform:translateY(-10px) scale(.985);transition:transform .28s var(--ease);
+  /* Grid AREAS, not DOM order. "Cancel" is a sibling of the results list in the
+     markup but belongs beside the input, where every phone OS puts it. Placing
+     it by area moves it without touching a template — which matters because
+     this overlay ships from TWO different templates. */
+  display:grid;grid-template-columns:1fr auto;
+  grid-template-areas:"bar cancel" "results results"}
+.search-overlay.open .search-modal{transform:translateY(0) scale(1)}
+
+/* The divider moved off the input row and onto the results, which are
+   display:none while empty — so an empty search no longer shows a stray rule
+   hanging under the field. */
+.search-bar{grid-area:bar;display:flex;align-items:center;gap:11px;padding:17px 6px 17px 18px;min-width:0}
+.search-bar-icon{width:20px;height:20px;flex-shrink:0;fill:none;stroke:#8a8a7a;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+.search-modal:focus-within .search-bar-icon{stroke:#6b8f00}
+.search-bar input[type="search"]{flex:1;min-width:0;border:none;background:none;font-size:17px;font-weight:500;
+  color:#161a10;font-family:var(--font-display);outline:none;padding:0;
+  /* The placeholder is long and the field is narrow once Cancel sits beside it,
+     so without this it clipped mid-word ("...combos" cut through the s) and read
+     as a broken layout rather than as truncated copy. */
+  text-overflow:ellipsis}
+.search-bar input[type="search"]::placeholder{color:#aeae9e}
+.search-bar input[type="search"]::-webkit-search-cancel-button{display:none}
+.search-bar-clear{width:26px;height:26px;border-radius:50%;border:none;background:rgba(22,26,16,.07);
+  display:none;place-items:center;cursor:pointer;padding:0;flex-shrink:0;transition:background .2s}
+.search-bar-clear:hover{background:rgba(22,26,16,.13)}
+.search-bar-clear svg{width:13px;height:13px;fill:none;stroke:#161a10;stroke-width:2.4;stroke-linecap:round}
+.search-bar-clear.show{display:grid}
+
+/* Inline, beside the field — not a full-width row under it. As a row it read as
+   the first search result rather than as a control, and it cost a whole band of
+   height on the screen with least of it. */
+.search-close-btn{grid-area:cancel;display:none;align-self:center;
+  border:0;background:none;padding:10px 17px 10px 9px;
+  font-size:15.5px;font-weight:600;color:#6b8f00;font-family:var(--font-display);
+  cursor:pointer;white-space:nowrap;border-radius:10px;transition:background .2s}
+.search-close-btn:hover{background:rgba(107,143,0,.09)}
+@media(max-width:960px){
+  .search-close-btn{display:block}
+  /* Near the top on a phone, where the keyboard is about to take the bottom
+     half of the screen. */
+  .search-overlay{padding:10px 10px 0}
+}
+
+.search-results{grid-area:results;max-height:min(52vh,420px);overflow-y:auto;padding:6px;
+  border-top:1px solid rgba(22,26,16,.08)}
+.search-results:empty{display:none}
+.search-hint{text-align:center;padding:28px 16px;color:#aeae9e;font-size:14px;font-family:var(--font-display)}
+.search-result{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;
+  text-decoration:none;color:#161a10;transition:background .15s}
+.search-result:hover{background:rgba(22,26,16,.04)}
+.search-result-img{width:52px;height:52px;border-radius:10px;object-fit:cover;background:#eee;flex-shrink:0}
+.search-result-info{flex:1;min-width:0}
+.search-result-name{font-size:14px;font-weight:600;font-family:var(--font-display);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.search-result-price{font-size:13px;color:#6b8f00;font-weight:700;font-family:var(--font-display);margin-top:2px}
+.search-result-price del{color:#aeae9e;font-weight:400;margin-right:4px}
+.search-no-results{text-align:center;padding:32px 16px;color:#8a8a7a;font-size:14px;font-family:var(--font-display)}
+.search-loading{text-align:center;padding:24px;color:#aeae9e;font-size:13px;font-family:var(--font-display)}
+
+/* ── Drawer feel (homepage) ─────────────────────────────────────────────────
+   Same change as the block appended to weewoo-store.css, repeated here because
+   the homepage template loads THIS stylesheet instead — `.drawer` is declared
+   in both files and editing only one leaves the homepage slow.
+
+   The slide ran 500ms and the scrim faded 400ms; 260ms with a sharp ease-out
+   reads as immediate. The scrim's `backdrop-filter: blur(3px)` was the real
+   cost — a full-viewport backdrop blur makes the compositor re-blur everything
+   behind it on every frame of the slide, which is what produced the stutter.
+   At 3px it was barely visible, so a slightly deeper scrim reads the same.
+
+   `will-change` promotes the layer up front, so the first open of a session no
+   longer spends its opening frames rasterising. */
+.ww-homepage .drawer,
+body .drawer{
+  transition:transform .26s cubic-bezier(.32,.72,0,1);
+  will-change:transform;
+}
+.ww-homepage .drawer-overlay,
+body .drawer-overlay{
+  transition:opacity .18s linear;
+  -webkit-backdrop-filter:none;
+          backdrop-filter:none;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ww-homepage .drawer,
+  body .drawer,
+  .ww-homepage .drawer-overlay,
+  body .drawer-overlay{ transition:none; }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SoftMart">
+  <rect width="512" height="512" rx="112" fill="#161a10"/>
+  <circle cx="256" cy="256" r="174" fill="#c2f068"/>
+  <path d="M286 82 166 260h83l-23 170 120-190h-83z" fill="#161a10"/>
+  <path d="M151 334c27 27 59 41 96 41 42 0 79-17 108-51" fill="none" stroke="#161a10" stroke-width="20" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,1830 @@
+/* ══════════════════════════════════════════════════════════════
+   WeeWoo storefront — shop / category / single product pages.
+   Reuses the homepage header, drawers, footer and product cards.
+   LIGHT page, dark header/footer, white product cards (matches homepage).
+   Scoped under body.ww-shop so it never fights Minimog's own content
+   styling on single-product pages.
+   ═══════════════════════════════════════════════════════════ */
+
+body.ww-shop{
+  --bg:#f6f4ea;
+  --panel:#fdfcf7;
+  --panel-2:#edeadb;
+  --ink:#161a10;
+  --ink-2:#2b3021;
+  --muted:#606852;
+  --muted-2:#6f7560;
+  --lime:#c2f068;
+  --lime-bright:#d6ff7a;
+  --lime-deep:#a3d93a;
+  --lime-ink:#4f7a08;
+  --line:#e6e1cd;
+  --line-strong:#d3ccb2;
+  --shadow-s:0 6px 18px -8px rgba(22,26,16,.12);
+  --shadow-m:0 22px 50px -22px rgba(22,26,16,.22);
+  --shadow-l:0 40px 90px -30px rgba(22,26,16,.30);
+  --font-display:"Space Grotesk",sans-serif;
+  --font-serif:"Instrument Serif",serif;
+  --font-body:"Inter",system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --radius:20px;
+
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+}
+/* box-sizing only — LOW specificity so component paddings/margins always win */
+.ww-shop *,.ww-shop *::before,.ww-shop *::after{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
+/* MOBILE header: hamburger left · logo centre · cart right */
+.ww-shop .ww-nav-3 .nav-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px}
+.ww-shop .ww-nav-3 .hamburger{justify-self:start;grid-column:1}
+.ww-shop .ww-nav-3 .logo{justify-self:center;grid-column:2}
+.ww-shop .ww-nav-3 .nav-links{display:none}
+.ww-shop .ww-nav-3 .nav-right{justify-self:end;grid-column:3}
+/* force the hamburger to actually render — its inline SVG was collapsing to 0 width */
+.ww-shop .ww-nav-3 .hamburger{width:44px!important;height:44px!important;display:grid!important;place-items:center!important;padding:0!important;
+  border:none!important;outline:none!important;box-shadow:none!important;background:none!important;border-radius:12px}
+.ww-shop .ww-nav-3 .hamburger svg{width:24px!important;height:24px!important;stroke:#161a10!important;fill:none!important;stroke-width:2!important}
+/* the ⚡ INSTANT badge must sit UNDER the fixed nav, not float over it (plugin sets z-index:9999) */
+.ww-shop .ww-instant-badge{z-index:2!important}
+.ww-shop .cat-arrow:disabled{background:transparent!important;opacity:.3}
+
+/* ── EVERY inline-SVG icon needs an explicit size ──
+   LiteSpeed's CSS combine drops generic `svg{width}` rules, so icons collapse to
+   0-width and their buttons render as empty boxes (with a stray focus outline).
+   Force sizes + kill any border/outline on the icon buttons. */
+.ww-shop .drawer-close{
+  width:40px!important;height:40px!important;display:grid!important;place-items:center!important;padding:0!important;
+  border:none!important;outline:none!important;box-shadow:none!important;background:none!important;border-radius:11px;
+}
+.ww-shop .drawer-close:hover{background:var(--panel-2)!important}
+.ww-shop .drawer-close svg{width:20px!important;height:20px!important;stroke:var(--ink)!important;fill:none!important;stroke-width:2!important;stroke-linecap:round}
+.ww-shop .nav-icon svg{width:22px!important;height:22px!important;fill:none!important}
+.ww-shop .btn-cart svg{width:18px!important;height:18px!important;fill:none!important}
+.ww-shop .cart-empty svg{width:54px!important;height:54px!important;fill:none!important}
+.ww-shop .logo-bolt{width:15px!important;height:15px!important}
+.ww-shop .cart-remove{border:none!important;outline:none!important;background:none!important}
+/* DESKTOP: use the WordPress "Pc Menu" (primary) — logo left · menu · cart right */
+@media(min-width:961px){
+  .ww-shop .ww-nav-3 .nav-inner{display:flex;justify-content:space-between;align-items:center}
+  .ww-shop .ww-nav-3 .hamburger{display:none!important}
+  .ww-shop .ww-nav-3 .logo{justify-self:auto}
+  .ww-shop .ww-pc-menu{display:block!important;margin:0 auto}
+  .ww-shop .ww-pc-ul{display:flex;gap:2px;align-items:center;list-style:none;margin:0;padding:0}
+  /* margin:0 is load-bearing. Minimog puts a 6px top margin on menu items that
+     have a dropdown; in a center-aligned flex row that offsets them by 3px, so
+     "Home" (no dropdown) sat 3px above "Shop", "Login Terms" and "Quick Links".
+     It shows on every page EXCEPT the homepage, which renders its own nav. */
+  .ww-shop .ww-pc-ul > li{position:relative;list-style:none;margin:0}
+  .ww-shop .ww-pc-ul > li > a{display:block;padding:8px 14px;border-radius:10px;font-size:14.5px;font-weight:500;color:var(--muted);font-family:var(--font-body);white-space:nowrap;transition:color .25s,background .25s;background:none!important;border:none!important;box-shadow:none!important}
+  .ww-shop .ww-pc-ul > li > a:hover{color:var(--ink);background:rgba(22,26,16,.06)!important}
+  .ww-shop .ww-pc-ul .sub-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:210px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-m);padding:8px;list-style:none;margin:0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.25s;z-index:120}
+  .ww-shop .ww-pc-ul li:hover > .sub-menu{opacity:1;visibility:visible;transform:none}
+  .ww-shop .ww-pc-ul .sub-menu li{list-style:none}
+  .ww-shop .ww-pc-ul .sub-menu a{display:block;padding:9px 12px;border-radius:9px;font-size:14px;color:var(--ink)}
+  .ww-shop .ww-pc-ul .sub-menu a:hover{background:rgba(22,26,16,.06)}
+}
+/* MOBILE: the desktop menu stays hidden */
+.ww-shop .ww-pc-menu{display:none}
+/* drawer menu built from the WordPress "Mobile" menu — ACCORDION (collapsed by default) */
+.ww-shop .ww-mobile-ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.ww-shop .ww-mobile-ul li{list-style:none;border-bottom:1px solid var(--line)}
+.ww-shop .ww-mobile-ul > li > a{display:block;padding:14px 10px;margin:0 -6px;border-radius:10px;font-family:var(--font-display);font-weight:500;font-size:16px;color:var(--ink);transition:color .25s,background .25s}
+/* hover = DEEP green (#4f7a08), not the bright lime — lime text on a light drawer is unreadable */
+.ww-shop .ww-mobile-ul > li > a:hover{color:var(--lime-ink);background:rgba(22,26,16,.05)}
+/* sub-menus start CLOSED and animate open on tap */
+.ww-shop .ww-mobile-ul .sub-menu{
+  list-style:none;margin:0;padding:0 0 0 16px;
+  max-height:0;overflow:hidden;transition:max-height .35s var(--ease);
+}
+.ww-shop .ww-mobile-ul li.ww-open > .sub-menu{max-height:640px;padding-bottom:8px}
+.ww-shop .ww-mobile-ul .sub-menu li{border:none}
+.ww-shop .ww-mobile-ul .sub-menu a{display:block;padding:9px 4px;font-size:14.5px;color:var(--muted);transition:color .25s}
+.ww-shop .ww-mobile-ul .sub-menu a:hover{color:var(--lime-ink)}
+/* chevron on items that have children */
+.ww-shop .ww-mobile-ul li.menu-item-has-children > a{position:relative;padding-right:34px}
+.ww-shop .ww-mobile-ul li.menu-item-has-children > a::after{
+  content:"";position:absolute;right:8px;top:50%;width:9px;height:9px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s var(--ease);
+}
+.ww-shop .ww-mobile-ul li.menu-item-has-children.ww-open > a::after{transform:translateY(-20%) rotate(225deg)}
+body.ww-shop{margin:0}
+/* zero the UA margins on the few native elements our markup uses */
+.ww-shop.ww-own h1,.ww-shop.ww-own p,.ww-shop.ww-own ul,.ww-shop.ww-own h2,.ww-shop.ww-own h3{margin:0}
+body.ww-shop img,body.ww-shop svg{display:block;max-width:100%}
+body.ww-shop a{color:inherit;text-decoration:none}
+body.ww-shop ::selection{background:var(--lime);color:#10130a}
+
+.ww-container{width:min(1240px,92vw);margin:0 auto}
+
+/* buttons */
+.ww-shop .btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;
+  font-family:var(--font-display);font-weight:600;font-size:15px;line-height:1;
+  padding:13px 26px;border-radius:999px;border:1px solid transparent;
+  transition:background .3s,color .3s,box-shadow .3s,border-color .3s,transform .3s var(--ease);
+}
+.ww-shop .btn-sm{padding:10px 20px;font-size:14px}
+.ww-shop .btn-lg{padding:16px 30px;font-size:16px}
+/* Same treatment as the homepage. These are scoped to .ww-shop and therefore
+   beat the unscoped rules, so the shop and product pages would otherwise have
+   kept the old flat fills while the homepage got the new ones — the Buy now
+   button on a product page is the most important button on this site. */
+.ww-shop .btn-lime{background:linear-gradient(180deg,#cff581,var(--lime));color:#10130a;
+  box-shadow:0 1px 0 rgba(255,255,255,.55) inset,0 10px 26px -10px rgba(163,217,58,.7)}
+.ww-shop .btn-lime:hover{background:linear-gradient(180deg,#d9ff8f,var(--lime-bright));
+  box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 16px 40px -12px rgba(163,217,58,.85)}
+.ww-shop .btn-dark{background:linear-gradient(180deg,#232a1a,#12160d);color:#fff;
+  box-shadow:0 1px 0 rgba(255,255,255,.12) inset,0 10px 26px -12px rgba(22,26,16,.65)}
+.ww-shop .btn-dark:hover{background:linear-gradient(180deg,#2b3320,#0a0d06);
+  box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 16px 36px -12px rgba(22,26,16,.75)}
+.ww-shop .btn:active{transform:translateY(1px) scale(.988)}
+.ww-shop .btn-ghost{border:1.5px solid var(--line-strong);color:var(--ink);background:transparent}
+.ww-shop .btn-ghost:hover{border-color:var(--lime-deep);color:var(--lime-ink)}
+.ww-shop .btn-block{width:100%}
+
+/* ═══════ nav (identical to homepage) ═══════ */
+.ww-shop .nav{position:fixed;top:0;left:0;right:0;z-index:110;transition:transform .5s var(--ease)}
+.ww-shop .nav-inner{
+  width:min(1280px,94vw);margin:12px auto 0;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 10px 0 20px;border-radius:18px;
+  border:1px solid transparent;transition:background .4s,border-color .4s,box-shadow .4s,height .4s;
+}
+.ww-shop .nav.scrolled .nav-inner{
+  background:rgba(253,252,247,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-color:var(--line);height:58px;box-shadow:var(--shadow-s);
+}
+.ww-shop .nav.hidden{transform:translateY(-110%)}
+.ww-shop .logo{display:flex;align-items:center;gap:4px;font-family:var(--font-display);
+  font-weight:700;letter-spacing:.18em;font-size:15.5px;color:var(--ink)}
+.ww-shop .logo-bolt{width:15px;height:15px;fill:var(--lime-deep);filter:drop-shadow(0 0 8px rgba(194,240,104,.55))}
+.ww-shop .logo .woo{color:var(--lime-ink)}
+.ww-shop .nav-links{display:flex;gap:2px}
+.ww-shop .nav-links a{padding:8px 13px;border-radius:10px;font-size:14px;font-weight:500;color:var(--muted);
+  transition:color .3s,background .3s;background:none!important;border:none!important;box-shadow:none!important}
+.ww-shop .nav-links a:hover,.ww-shop .nav-links a.active{color:var(--ink);background:rgba(22,26,16,.06)!important}
+.ww-shop .nav-right{display:flex;align-items:center;gap:6px}
+.ww-shop .nav-icon{
+  position:relative;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  color:var(--ink);transition:background .3s;
+}
+.ww-shop .nav-icon:hover{background:rgba(22,26,16,.06)}
+.ww-shop .nav-icon svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ww-shop .cart-count{
+  position:absolute;top:4px;right:3px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;
+  background:var(--lime);color:#10130a;font-size:10.5px;font-weight:800;
+  display:grid;place-items:center;font-family:var(--font-display);
+  transform:scale(0);transition:transform .35s var(--ease);
+}
+.ww-shop .cart-count{
+  top:-3px;right:-3px;width:19px;height:19px;min-width:19px;padding:0;border-radius:50%;
+  font-size:11px;line-height:19px;text-align:center;font-weight:800;
+  border:2px solid var(--bg);box-sizing:content-box;
+}
+.ww-shop .cart-count.on{transform:scale(1)}
+.ww-shop .cart-count.pop{animation:wwCartPop .4s var(--ease)}
+/* An empty badge must NEVER animate: wwCartPop sets transform:scale(1) and a running
+   animation beats the scale(0) that hides it, which flashed a green "0". */
+.ww-shop .cart-count:not(.on){animation:none!important;transform:scale(0)!important}
+/* kill the black focus/click outline on icons, cards and buttons entirely */
+.ww-shop a:focus,.ww-shop button:focus,
+.ww-shop .nav-icon:focus,.ww-shop .cat-arrow:focus,.ww-shop .btn-cart:focus,
+.ww-shop .product-card:focus,.ww-shop .product-media:focus,.ww-shop .hamburger:focus{outline:none!important;box-shadow:none!important}
+/* The outline is suppressed because the default ring looked wrong on rounded
+   pills — but nothing replaced it, so keyboard focus was completely invisible
+   on every link and button in the shop. A box-shadow ring is not an outline, so
+   it survives the reset and follows the border-radius. */
+.ww-shop a:focus-visible,.ww-shop button:focus-visible{outline:none!important;
+  box-shadow:0 0 0 3px rgba(163,217,58,.6),0 0 0 6px rgba(22,26,16,.14)}
+@keyframes wwCartPop{0%{transform:scale(1)}45%{transform:scale(1.5)}100%{transform:scale(1)}}
+.ww-shop .hamburger{display:grid;background:none;border:none}
+.ww-shop .nav-links{display:none}
+
+/* header spacer so content clears the fixed nav */
+.ww-shop .ww-nav-spacer{height:96px}
+
+/* Shop/category listing pages have no title filling this space, so the shared 96px spacer looks
+   like a stray gap — but this element is NOT decorative padding, it is the flow placeholder for the
+   `position:fixed` header. At 16px the category chips started at y=38 while the nav pill ends at
+   y=70, so 32px of the chip row sat UNDER the header on first paint on every shop and category
+   page (measured live), until scrolling triggered the hide-on-scroll class.
+   76px is the true minimum: nav pill bottom (12 top margin + 58 height = 70) + 6px of air. */
+.archive.ww-shop .ww-nav-spacer{height:76px}
+
+/* drawers (identical to homepage) */
+.ww-shop .drawer-overlay{position:fixed;inset:0;background:rgba(22,26,16,.42);z-index:100040;
+  opacity:0;pointer-events:none;transition:opacity .4s;backdrop-filter:blur(3px)}
+.ww-shop .drawer-overlay.open{opacity:1;pointer-events:auto}
+/* LIGHT drawer (menu + cart) — matches the rest of the light storefront */
+.ww-shop .drawer{
+  position:fixed;top:0;bottom:0;width:min(380px,92vw);background:#fdfcf7;color:#161a10;z-index:100050;
+  display:flex;flex-direction:column;transition:transform .5s var(--ease);box-shadow:var(--shadow-l);
+  --ink:#161a10;--ink-2:#2b3021;--muted:#606852;--muted-2:#6f7560;
+  --line:#e6e1cd;--line-strong:#d3ccb2;
+  --panel-2:#edeadb;--lime-ink:#4f7a08;
+}
+.ww-shop .drawer-menu{left:0;transform:translateX(-105%)}
+.ww-shop .drawer-cart{right:0;transform:translateX(105%)}
+.ww-shop .drawer.open{transform:none}
+.ww-shop .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+.ww-shop .drawer-head b{font-family:var(--font-display);font-size:17px;letter-spacing:.02em}
+.ww-shop .drawer-close{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;transition:background .3s;background:none;border:none;cursor:pointer}
+.ww-shop .drawer-close:hover{background:var(--panel-2)}
+.ww-shop .drawer-close svg{width:18px;height:18px;stroke:var(--ink);stroke-width:2;fill:none;stroke-linecap:round}
+.ww-shop .drawer-body{flex:1;overflow-y:auto;padding:14px 22px 24px}
+.ww-shop .menu-list{display:flex;flex-direction:column;gap:2px}
+.ww-shop .menu-link{
+  display:block;padding:14px 4px;font-family:var(--font-display);font-weight:500;font-size:16px;
+  color:var(--ink);border-bottom:1px solid var(--line);transition:color .25s,padding-left .25s;
+}
+.ww-shop .menu-link:hover{color:var(--lime-ink);padding-left:8px}
+.ww-shop .menu-acc{border-bottom:1px solid var(--line)}
+.ww-shop .menu-acc summary{
+  list-style:none;display:flex;justify-content:space-between;align-items:center;
+  padding:14px 4px;font-family:var(--font-display);font-weight:500;font-size:16px;
+  color:var(--ink);cursor:pointer;transition:color .25s;
+}
+.ww-shop .menu-acc summary::-webkit-details-marker{display:none}
+.ww-shop .menu-acc summary:hover{color:var(--lime-ink)}
+.ww-shop .menu-acc summary svg{width:16px;height:16px;stroke:var(--muted);fill:none;stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease);flex-shrink:0}
+.ww-shop .menu-acc[open] summary svg{transform:rotate(180deg)}
+.ww-shop .menu-acc-body{padding:0 0 10px 16px;display:flex;flex-direction:column;gap:2px}
+.ww-shop .menu-acc-body a{display:block;padding:9px 4px;font-size:14.5px;color:var(--muted);border-radius:8px;transition:color .25s,padding-left .25s}
+.ww-shop .menu-acc-body a:hover{color:var(--lime-ink);padding-left:6px}
+.ww-shop .menu-bottom{padding:24px 0 0;margin-top:auto}
+.ww-shop .cart-loading{text-align:center;color:var(--muted);padding:56px 0;font-size:14px}
+.ww-shop .cart-empty{text-align:center;color:var(--muted);padding:60px 10px;font-size:15px}
+.ww-shop .cart-empty svg{width:54px;height:54px;margin:0 auto 14px;stroke:var(--muted-2);fill:none;stroke-width:1.5}
+.ww-shop .cart-item{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ww-shop .cart-item img{width:64px;height:64px;border-radius:14px;object-fit:cover;background:var(--panel-2)}
+.ww-shop .cart-item-info{flex:1;min-width:0}
+.ww-shop .cart-item-info b{font-family:var(--font-display);font-size:14.5px;display:block}
+.ww-shop .cart-item-info span{font-size:12.5px;color:var(--muted)}
+.ww-shop .cart-item-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.ww-shop .cart-item-price{font-family:var(--font-display);font-weight:700;font-size:15px}
+.ww-shop .cart-remove{color:var(--muted-2);font-size:12px;text-decoration:underline;margin-top:2px;background:none;border:none;cursor:pointer}
+.ww-shop .cart-remove:hover{color:#ff7b6b}
+.ww-shop .drawer-foot{padding:18px 22px 22px;border-top:1px solid var(--line)}
+.ww-shop .cart-total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.ww-shop .cart-total-row span{color:var(--muted);font-size:14px}
+.ww-shop .cart-total-row b{font-family:var(--font-display);font-size:22px}
+
+/* ═══════ store page head (eyebrow + title + toolbar) ═══════ */
+.ww-store-main{padding:8px 0 70px}
+.ww-store-head{margin:8px 0 26px}
+.ww-store-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--lime-ink);margin-bottom:14px;
+}
+.ww-store-eyebrow::before{content:"";width:26px;height:2px;background:var(--lime-deep);border-radius:2px}
+.ww-store-title{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,4.4vw,50px);color:var(--ink);line-height:1.05}
+.ww-store-title em{font-style:normal;color:var(--lime-ink)}
+.ww-store-sub{color:var(--muted);margin-top:12px;max-width:560px;font-size:16px;line-height:1.5}
+/* shop tools: sliding category chips (the inline search box was removed — the header
+   search overlay already covers it, and two search fields one above the other read as a bug) */
+.ww-shop-tools{margin:6px 0 22px}
+.ww-store-main > .ww-container > .ww-shop-tools:first-child{margin-top:14px}
+/* Category archive header — centred, display font, lime accent underline */
+.ww-store-head-cat{margin:18px 0 22px;text-align:center}
+.ww-store-head-cat .ww-store-title{
+  display:inline-block;
+  font-family:var(--font-display);
+  font-size:clamp(30px,5vw,46px);font-weight:700;
+  letter-spacing:-.02em;line-height:1.05;
+  background:linear-gradient(90deg,var(--ink) 0%,var(--lime-ink) 140%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.ww-store-head-cat .ww-store-title::after{
+  content:"";display:block;width:52px;height:4px;margin:12px auto 0;
+  border-radius:99px;background:linear-gradient(90deg,var(--lime),var(--lime-deep));
+}
+.ww-store-head-cat .ww-store-sub{margin:14px auto 0;text-align:center}
+/* .ww-shop-search removed — the header search overlay is the single search entry point. */
+.ww-shop-cats{
+  display:flex;gap:9px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  padding:2px 2px 4px;margin:0 -2px;
+}
+.ww-shop-cats::-webkit-scrollbar{display:none}
+.ww-cat-chip{
+  flex:none;display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;
+  background:#fff;border:1px solid var(--line-strong);color:var(--ink);
+  font-family:var(--font-display);font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap;
+  transition:background .18s,color .18s,border-color .18s,transform .14s cubic-bezier(.2,.7,.3,1);
+}
+.ww-cat-chip:active{transform:scale(.95)}
+.ww-cat-chip.on{background:#161a10;color:#fff;border-color:#161a10}
+.ww-store-toolbar{
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+  margin:22px 0 4px;padding-bottom:18px;border-bottom:1px solid var(--line);
+}
+.ww-store-count{color:var(--lime-ink);font-family:var(--font-display);font-weight:600;font-size:14px}
+.ww-store-toolbar .woocommerce-ordering{margin:0}
+.ww-store-toolbar select,
+.ww-store-toolbar .orderby{
+  background:var(--panel);color:var(--ink);border:1px solid var(--line-strong);
+  border-radius:999px;padding:10px 18px;font-family:var(--font-body);font-size:14px;cursor:pointer;
+  -webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23606852' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:38px;
+}
+
+/* ═══════ product cards (identical to homepage) ═══════ */
+.ww-catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:1100px){.ww-catalog-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.ww-catalog-grid{grid-template-columns:repeat(2,1fr);gap:13px}}
+.ww-shop .product-card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;position:relative;
+  transition:transform .45s var(--ease),box-shadow .45s,border-color .45s;
+}
+.ww-shop .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-m);border-color:var(--line-strong)}
+.ww-shop .product-media{position:relative;overflow:hidden;aspect-ratio:1/.9;background:#f6f4ea;display:block}
+.ww-shop .product-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.ww-shop .product-card:hover .product-media img{transform:scale(1.08) rotate(-.5deg)}
+.ww-shop .media-instant{position:absolute;top:12px;left:12px;z-index:2;
+  font-family:var(--font-display);font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--lime);background:rgba(16,19,10,.9);padding:5px 11px;border-radius:999px;white-space:nowrap;
+  box-shadow:0 4px 14px -4px rgba(0,0,0,.4)}
+.ww-shop .product-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+/* always reserve 2 lines for the name so cards never differ in height */
+.ww-shop .product-name{font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  line-height:1.3;min-height:2.6em}
+.ww-shop .product-price{display:flex;align-items:baseline;gap:7px;margin:12px 0 14px;flex-wrap:wrap}
+.ww-shop .product-price b{font-family:var(--font-display);font-size:24px;font-weight:700;color:var(--ink);line-height:1}
+.ww-shop .product-price span{font-size:12.5px;color:var(--muted);font-weight:600}
+.ww-shop .product-price s{color:var(--muted-2);font-size:13px;margin-left:2px}
+.ww-shop .product-actions{display:flex;gap:8px;margin-top:auto}
+.ww-shop .product-actions .btn{flex:1;padding:11px 8px;font-size:13.5px}
+.ww-shop .btn-cart{
+  flex:0 0 44px;width:44px;border-radius:14px;border:1.5px solid var(--line-strong);
+  display:grid;place-items:center;transition:all .3s;cursor:pointer;background:transparent;
+}
+.ww-shop .btn-cart:hover{background:var(--lime);border-color:var(--lime)}
+.ww-shop .btn-cart svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ww-shop .btn-cart:hover svg{stroke:#10130a}
+.ww-shop .btn-cart.loading{opacity:.6;pointer-events:none}
+.ww-shop .btn-cart.added{background:var(--lime);border-color:var(--lime)}
+.ww-shop .btn-cart.added svg{stroke:#10130a}
+@media(max-width:520px){
+  .ww-shop .product-body{padding:12px 12px 14px}
+  .ww-shop .product-name{font-size:14px}
+  .ww-shop .product-price b{font-size:20px}
+  .ww-shop .product-price span{font-size:11.5px}
+  .ww-shop .product-price{margin:9px 0 11px}
+  .ww-shop .product-actions .btn{padding:10px 6px;font-size:12px}
+  .ww-shop .btn-cart{flex-basis:38px;width:38px}
+}
+
+/* empty state */
+.ww-store-empty{padding:80px 0;text-align:center;color:var(--muted);font-size:16px}
+
+/* pagination */
+.ww-shop .woocommerce-pagination{margin-top:44px}
+.ww-shop .woocommerce-pagination ul{display:flex;gap:8px;justify-content:center;list-style:none;flex-wrap:wrap}
+.ww-shop .woocommerce-pagination a,
+.ww-shop .woocommerce-pagination span{
+  display:grid;place-items:center;min-width:42px;height:42px;padding:0 12px;border-radius:12px;
+  background:var(--panel);border:1px solid var(--line);color:var(--muted);font-family:var(--font-display);font-weight:600;
+}
+.ww-shop .woocommerce-pagination .current{background:var(--lime);border-color:var(--lime);color:#10130a}
+
+/* ═══════ footer (identical to homepage) ═══════ */
+/* LIGHT footer — the storefront hard-coded a dark bg + a dark token block here,
+   which is why shop / product / cart still showed the old black footer. */
+/* Sticky footer. Something already forces the document to min 100vh, so on short
+   pages (My Account, an orders tab with a few items) the footer sat mid-screen with
+   a band of empty page beneath it. Make the page a flex column and let the main
+   region grow, so the footer always rests on the bottom edge — no trailing gap. */
+body.ww-shop{display:flex;flex-direction:column;min-height:100vh}
+body.ww-shop > .ww-account-main,
+body.ww-shop > .ww-store-main,
+body.ww-shop > .ww-single-wrap,
+body.ww-shop > main{flex:1 0 auto}
+body.ww-shop > .footer{flex-shrink:0;margin-top:auto}
+.ww-shop .footer{
+  position:relative;overflow:hidden;background:var(--panel-2);color:var(--ink);
+}
+.ww-shop .footer-glow{position:absolute;top:-60px;left:50%;width:600px;height:120px;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(closest-side,rgba(163,217,58,.22),transparent);filter:blur(30px)}
+.ww-shop .footer-bar{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  padding:28px 0 32px;border-top:1px solid var(--line);
+}
+.ww-shop .footer .logo{color:var(--ink)}
+.ww-shop .footer .logo-bolt{fill:var(--lime-deep);filter:none}
+.ww-shop .footer-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ww-shop .footer-links a{color:var(--muted);font-size:13.5px;font-weight:500;transition:color .3s}
+.ww-shop .footer-links a:hover{color:var(--lime-ink)}
+.ww-shop .ft-sep{width:1px;height:14px;background:var(--line);flex-shrink:0}
+.ww-shop .footer-copy{font-size:12.5px;color:var(--muted-2);width:100%;text-align:center;margin-top:4px}
+.ww-shop .ft-heart{color:#ff6b6b}
+@media(max-width:640px){
+  .ww-shop .footer-bar{flex-direction:column;text-align:center;gap:12px}
+  .ww-shop .footer-links{justify-content:center}
+}
+
+/* ═══════ cart (fly) drawer — LIGHT theme (item 7) ═══════ */
+.ww-shop .drawer-cart{
+  background:#fdfcf7;color:#161a10;
+  --ink:#161a10;--muted:#606852;--muted-2:#9b9e87;
+  --line:#e6e1cd;--line-strong:#d3ccb2;--panel-2:#f2efe3;--lime-ink:#4f7a08;
+}
+.ww-shop .drawer-cart .drawer-head{border-bottom-color:var(--line)}
+.ww-shop .drawer-cart .drawer-close svg{stroke:#161a10}
+.ww-shop .drawer-cart .cart-item{border-bottom-color:var(--line)}
+.ww-shop .drawer-cart .cart-item img{background:#f2efe3}
+.ww-shop .drawer-cart .drawer-foot{border-top-color:var(--line)}
+.ww-shop .drawer-cart .cart-remove{color:var(--muted-2)}
+
+/* no gap below footer (item 5): Minimog still prints its mobile menu / fly cart /
+   search popup HTML in wp_footer; on archive pages we dequeue Minimog CSS so they
+   render inline and add empty space. Hide the leftovers. */
+.ww-shop .footer{margin-bottom:0}
+body.ww-shop{overflow-x:hidden}
+body.ww-shop .page-search-popup,
+body.ww-shop .page-mobile-main-menu,
+body.ww-shop .popup-fly-cart,
+body.ww-shop #popup-fly-cart,
+body.ww-shop .off-canvas-wrapper,
+body.ww-shop .mobile-nav-wrapper,
+body.ww-shop .page-overlay,
+body.ww-shop .widget_shopping_cart_live_region{display:none!important}
+
+/* ══════════════════════════════════════════════════════════════
+   CART (block) + CHECKOUT (classic) — premium light theme
+   ═══════════════════════════════════════════════════════════ */
+.ww-shop .ww-checkout-wrap{margin-top:8px}
+
+/* ---- generic form fields ---- */
+.ww-shop .ww-checkout-wrap input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+.ww-shop .ww-checkout-wrap textarea,
+.ww-shop .ww-checkout-wrap select,
+.ww-shop .ww-checkout-wrap .select2-selection{
+  background:#fff!important;border:1px solid var(--line-strong)!important;border-radius:12px!important;
+  color:var(--ink)!important;font-family:var(--font-body)!important;font-size:15px!important;
+  padding:13px 15px!important;min-height:52px!important;box-shadow:none!important;
+}
+.ww-shop .ww-checkout-wrap input:focus,
+.ww-shop .ww-checkout-wrap textarea:focus,
+.ww-shop .ww-checkout-wrap select:focus{border-color:var(--lime-deep)!important;outline:none!important}
+.ww-shop .ww-checkout-wrap label{color:var(--ink)!important;font-weight:500!important;font-family:var(--font-body)!important}
+
+/* ═══════ classic CHECKOUT — keep the imb gateway's own Bootstrap layout
+   (2-col desktop, stacks on mobile); we only theme, never re-grid it ═══════ */
+.ww-shop .row-checkout-wrap{box-sizing:border-box}
+.ww-shop .row-checkout-wrap > *{box-sizing:border-box}
+/* make sure nothing overflows its column on mobile */
+.ww-shop .col-checkout-forms-wrap,.ww-shop .col-checkout-review-order{min-width:0;max-width:100%}
+.ww-shop .col-checkout-forms-wrap *,.ww-shop .col-checkout-review-order *{max-width:100%}
+.ww-shop .woocommerce-checkout-review-order-table{width:100%!important;border-collapse:collapse!important;margin-bottom:16px!important}
+.ww-shop .woocommerce-checkout-review-order-table th,
+.ww-shop .woocommerce-checkout-review-order-table td{
+  padding:12px 0!important;border-bottom:1px solid var(--line)!important;color:var(--ink)!important;text-align:left!important;font-size:14.5px!important;
+}
+.ww-shop .woocommerce-checkout-review-order-table .order-total th,
+.ww-shop .woocommerce-checkout-review-order-table .order-total td{
+  font-family:var(--font-display)!important;font-weight:700!important;font-size:19px!important;border-bottom:none!important;padding-top:16px!important;
+}
+.ww-shop .woocommerce-checkout-review-order-table .amount{color:var(--ink)!important}
+
+/* payment box */
+.ww-shop #payment,.ww-shop .woocommerce-checkout-payment{background:transparent!important;border-radius:14px!important}
+.ww-shop #payment ul.payment_methods{border:none!important;padding:0!important;margin:0 0 14px!important}
+.ww-shop #payment ul.payment_methods li{background:#fff!important;border:1px solid var(--line-strong)!important;border-radius:12px!important;padding:14px 16px!important;margin-bottom:10px!important;list-style:none!important}
+.ww-shop #payment div.payment_box{background:var(--panel-2)!important;color:var(--ink-2)!important;border-radius:10px!important}
+.ww-shop #payment div.payment_box::before{border-bottom-color:var(--panel-2)!important}
+.ww-shop #place_order,
+.ww-shop .wc-block-components-checkout-place-order-button{
+  background:var(--lime)!important;color:#10130a!important;border:none!important;border-radius:999px!important;
+  font-family:var(--font-display)!important;font-weight:700!important;font-size:16px!important;
+  padding:16px 30px!important;width:100%!important;box-shadow:0 12px 34px -12px rgba(194,240,104,.6)!important;
+}
+.ww-shop #place_order:hover{background:var(--lime-bright)!important}
+
+/* imb gateway order-summary — stop the product name cramping into a narrow column */
+.ww-shop .wc-checkout-review-order-table{width:100%!important;table-layout:auto!important}
+.ww-shop .wc-checkout-review-order-table td,
+.ww-shop .wc-checkout-review-order-table th{white-space:normal!important;word-break:normal!important;overflow-wrap:anywhere}
+.ww-shop .wc-checkout-review-order-table .product-name,
+.ww-shop .wc-checkout-review-order-table td.product-name{min-width:160px!important;line-height:1.35!important}
+.ww-shop .woocommerce-order-details,.ww-shop .wc-order-summary,.ww-shop .imb-order-summary{width:100%!important}
+
+/* coupon / login notices */
+.ww-shop .woocommerce-form-coupon-toggle,
+.ww-shop .woocommerce-form-login-toggle,
+.ww-shop .woocommerce-info,.ww-shop .woocommerce-message{
+  background:var(--panel)!important;border:1px solid var(--line)!important;border-left:3px solid var(--lime-deep)!important;
+  border-radius:12px!important;color:var(--ink-2)!important;
+}
+
+/* ═══════ block CART ═══════ */
+.ww-shop .wp-block-woocommerce-cart{color:var(--ink)}
+.ww-shop .wc-block-cart{gap:34px}
+.ww-shop .wc-block-cart-items,
+.ww-shop table.wc-block-cart-items{background:transparent!important}
+.ww-shop .wc-block-cart-items__row,
+.ww-shop .wc-block-cart-items td{border-color:var(--line)!important;color:var(--ink)!important}
+.ww-shop .wc-block-cart-item__product-name,
+.ww-shop .wc-block-components-product-name{color:var(--ink)!important;font-family:var(--font-display)!important;font-weight:600!important}
+.ww-shop .wc-block-cart-item__prices,
+.ww-shop .wc-block-components-formatted-money-amount,
+.ww-shop .wc-block-components-product-price{color:var(--ink)!important;font-weight:700!important}
+/* BOX-IN-BOX FIX. These three selectors are ancestor→descendant in the block-cart DOM:
+   .wc-block-components-sidebar CONTAINS the totals wrappers, and the coupon
+   .wc-block-components-panel sits inside it too. Giving all three the same card treatment drew a
+   bordered, rounded box inside another bordered, rounded box (and a third for the coupon) — the
+   "2 box in box" the owner reported. Only the OUTER sidebar is a card now; the inner blocks are
+   transparent and separated by hairlines instead. */
+.ww-shop .wc-block-components-sidebar{
+  background:var(--panel)!important;border:1px solid var(--line)!important;border-radius:18px!important;color:var(--ink)!important;
+}
+.ww-shop .wc-block-cart__sidebar .wc-block-components-panel,
+.ww-shop .wc-block-components-totals-wrapper{
+  background:transparent!important;border:0!important;border-radius:0!important;
+  box-shadow:none!important;color:var(--ink)!important;
+}
+/* Separator between stacked totals blocks. The coupon element carries BOTH
+   `wc-block-components-totals-coupon` and `wc-block-components-panel` AND sits inside a
+   totals-wrapper, so listing the panel here drew TWO parallel hairlines with the wrapper's
+   16px padding between them. The wrapper sibling rule alone already separates it. */
+.ww-shop .wc-block-components-totals-wrapper + .wc-block-components-totals-wrapper{
+  border-top:1px solid var(--line)!important;
+}
+.ww-shop .wc-block-cart__sidebar .wc-block-components-totals-wrapper > .wc-block-components-panel{
+  border-top:0!important;
+}
+.ww-shop .wc-block-components-totals-item__label,
+.ww-shop .wc-block-components-totals-item__value{color:var(--ink)!important}
+.ww-shop .wc-block-cart__submit-button,
+.ww-shop .wc-block-cart__submit-container a,
+.ww-shop a.wc-block-cart__submit-button{
+  background:var(--lime)!important;color:#10130a!important;border-radius:999px!important;
+  font-family:var(--font-display)!important;font-weight:700!important;padding:16px!important;text-align:center!important;
+  box-shadow:0 12px 34px -12px rgba(194,240,104,.6)!important;
+}
+.ww-shop .wc-block-components-quantity-selector{border-color:var(--line-strong)!important;border-radius:10px!important}
+.ww-shop .wc-block-components-quantity-selector input,
+.ww-shop .wc-block-components-quantity-selector button{color:var(--ink)!important}
+/* the number input ships with 15px side padding but is only ~32px wide, which squeezed
+   the digit out of view. WooCommerce blocks use a doubled-class specificity hack, so we
+   need >=3 classes to win — kill the horizontal padding so the quantity actually shows */
+.ww-shop .wc-block-cart .wc-block-components-quantity-selector__input,
+.ww-shop .wc-block-components-quantity-selector .wc-block-components-quantity-selector__input{
+  padding-left:2px!important;padding-right:2px!important;
+  min-width:40px!important;font-weight:700!important;text-align:center!important;
+}
+
+/* ── coupon panel (cart sidebar) — on-brand, matches the checkout coupon card ── */
+.ww-shop .wc-block-components-totals-coupon .wc-block-components-panel__button{
+  color:var(--ink)!important;font-family:var(--font-display)!important;font-weight:700!important;font-size:15px!important;
+}
+/* Input and Apply must be the SAME height and sit on one baseline. The button previously declared
+   no height/padding/line-height at all, so it inherited WooCommerce Blocks' own sizing and ended up
+   a different height from the 12px-radius input beside it — the "apply button not proper" report. */
+.ww-shop .wc-block-components-totals-coupon__input input,
+.ww-shop .wc-block-components-totals-coupon__input .wc-block-components-text-input input{
+  border:1px solid var(--line-strong)!important;border-radius:12px!important;
+  background:#fff!important;color:var(--ink)!important;
+  height:46px!important;min-height:46px!important;padding:0 14px!important;
+  font-size:15px!important;line-height:46px!important;box-sizing:border-box!important;
+}
+/* Do NOT display:none this label. WooCommerce Blocks' ValidatedTextInput renders NO `placeholder`
+   attribute — the floating <label> IS the placeholder, and it is also the input's accessible name.
+   Hiding it left a blank white box with no hint of what to type, and an unlabelled edit field for
+   screen readers. Pin it so it reads as a placeholder, and fade it once the field is in use. */
+.ww-shop .wc-block-components-totals-coupon__input{position:relative!important;}
+.ww-shop .wc-block-components-totals-coupon__input label{
+  position:absolute!important;top:50%!important;left:14px!important;
+  transform:translateY(-50%)!important;margin:0!important;
+  font-size:15px!important;color:var(--muted)!important;pointer-events:none!important;
+  transition:opacity .15s!important;
+}
+.ww-shop .wc-block-components-totals-coupon__input:focus-within label,
+.ww-shop .wc-block-components-totals-coupon__input.is-active label{opacity:0!important;}
+.ww-shop .wc-block-components-totals-coupon__form{
+  /* flex-start, not center: when a validation error appears the input wrapper grows taller and
+     `center` drags the Apply button down, off the input's baseline. */
+  display:flex!important;align-items:flex-start!important;gap:10px!important;
+}
+.ww-shop .wc-block-components-totals-coupon__input{flex:1 1 auto!important;min-width:0!important;margin:0!important;}
+.ww-shop .wc-block-components-totals-coupon__button,
+.ww-shop button.wc-block-components-totals-coupon__button.contained{
+  background:#161A10!important;color:#fff!important;border:0!important;border-radius:12px!important;
+  font-family:var(--font-display)!important;font-weight:700!important;
+  flex:0 0 auto!important;width:auto!important;
+  height:46px!important;min-height:46px!important;max-height:46px!important;
+  padding:0 22px!important;margin:0!important;line-height:46px!important;
+  font-size:14.5px!important;box-sizing:border-box!important;box-shadow:none!important;
+}
+.ww-shop .wc-block-components-totals-coupon__button:hover{background:#242A1A!important;filter:none!important}
+.ww-shop .wc-block-components-totals-coupon__button:disabled{opacity:.5!important}
+/* applied-coupon chip + its remove ✕ */
+.ww-shop .wc-block-components-chip{
+  background:rgba(100,166,24,.14)!important;border:1px solid rgba(100,166,24,.4)!important;
+  color:var(--lime-ink)!important;border-radius:999px!important;font-weight:700!important;
+}
+.ww-shop .wc-block-components-chip__remove{color:var(--lime-ink)!important;opacity:.85}
+.ww-shop .wc-block-components-chip__remove:hover{opacity:1;color:#E11D0F!important}
+
+/* empty cart */
+.ww-shop .cart-empty,.ww-shop .wc-block-cart__empty-cart__title{color:var(--ink)!important;font-family:var(--font-display)!important}
+.ww-shop .return-to-shop .button,.ww-shop .wp-block-woocommerce-empty-cart-block .wc-block-button__link{
+  background:var(--lime)!important;color:#10130a!important;border-radius:999px!important;font-family:var(--font-display)!important;font-weight:700!important
+}
+
+/* ═══════ toast ═══════ */
+.ww-shop .toast{
+  position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--lime);color:#10130a;font-family:var(--font-display);font-weight:600;font-size:14px;
+  padding:13px 22px;border-radius:999px;z-index:180;display:flex;align-items:center;gap:9px;
+  box-shadow:0 20px 50px -12px rgba(194,240,104,.5);transition:transform .5s var(--ease);pointer-events:none;
+}
+.ww-shop .toast.show{transform:translateX(-50%) translateY(0)}
+.ww-shop .toast svg{width:16px;height:16px;fill:#10130a}
+
+/* ═══════ header extras: coin pill + mobile account hide + hamburger ═══════ */
+.ww-shop .ww-coin-pill{
+  display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px 0 8px;border-radius:999px;
+  background:linear-gradient(135deg,#fff7e0,#ffe9b0);border:1px solid #f0d98a;
+  font-family:var(--font-display);font-weight:700;font-size:13.5px;color:#6b4a06;
+  box-shadow:0 4px 14px -6px rgba(210,134,15,.5);
+}
+.ww-shop .ww-coin-pill .ww-coin-ico{width:20px;height:20px}
+.ww-shop .ww-coin-pill b{font-weight:800}
+.ww-shop .hamburger svg{stroke:var(--ink)!important}
+@media(max-width:960px){
+  .ww-shop .ww-nav-account{display:none}
+}
+
+/* ═══════ minimal header (checkout) ═══════ */
+.ww-shop .ww-minimal-bar{
+  display:flex;align-items:center;justify-content:center;height:66px;
+  border-bottom:1px solid var(--line);background:var(--surface,#fdfcf7);
+}
+.ww-shop.ww-minimal .nav-links,
+.ww-shop.ww-minimal .nav-right{display:none}
+.ww-shop .ww-nav-spacer-min{height:8px}
+.ww-shop.ww-minimal .ww-store-main{padding-top:0}
+.ww-shop.ww-minimal .ww-checkout-wrap{margin-top:0}
+/* remove the imb WhatsApp tip text on checkout (item 5) */
+.ww-shop.ww-checkout-page .ww-wa-tip{display:none!important}
+/* Minimog <m-image> starts at opacity:0 and needs JS to fade in — we strip
+   Minimog scripts on checkout, so force product thumbnails visible via CSS. */
+.ww-checkout-main m-image img,
+.wc-checkout-review-order-table .product-thumbnail img{opacity:1!important}
+
+/* ═══════ single-product page — full theme, light ═══════ */
+.ww-single-wrap{padding:8px 0 70px}
+.ww-single-top{display:grid;grid-template-columns:minmax(0,440px) 1fr;gap:48px;align-items:start}
+/* 14, not 24. Measured on a phone: the image ends at y=495 and the product
+   name starts at 543 — a 48px void between the artwork and the one line that
+   says what it is. */
+@media(max-width:900px){.ww-single-top{grid-template-columns:1fr;gap:14px}}
+/* cap the product image so it isn't huge on desktop */
+.ww-shop .ww-single-media{max-width:440px;margin:0 auto}
+
+/* Instant Delivery box — while the stock check is PENDING (or if the badge JS
+   never runs on a slow device) collapse it fully instead of leaving an empty gap.
+   The plugin JS removes .ww-badge-pending + sets display:block only when the
+   product is actually an in-stock instant plan, so real boxes still show. */
+.ww-shop .ww-delivery-box.ww-badge-pending{display:none!important}
+/* Instant Delivery box — better spacing + rhythm (item: proper top/bottom spacing) */
+.ww-shop .ww-delivery-box{padding:20px 24px!important;margin:26px 0 30px!important;border-radius:18px!important}
+.ww-shop .ww-delivery-box td{vertical-align:middle!important}
+.ww-shop .ww-delivery-box .ww-delivery-icon-wrap{width:44px!important;height:44px!important}
+
+/* our own clean product image (Minimog's gallery slider breaks in a custom
+   template and lets the image grow — we render a fixed frame instead) */
+.ww-shop .ww-single-media{
+  position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:#f6f4ea;aspect-ratio:1/1;
+}
+/* Square on every size — owner's call. A 4/3 crop on mobile was tried to lift
+   the product name ~86px up the screen; it made the frame read as a banner
+   rather than as product art, so it was reverted. Do not re-crop this without
+   asking. */
+.ww-shop .ww-single-media img{width:100%;height:100%;object-fit:cover;display:block}
+/* kill any Minimog gallery output that may still print */
+.ww-shop .woocommerce-product-gallery,
+.ww-shop .woo-single-gallery,
+.ww-shop .single-product-gallery{display:none!important}
+
+/* summary */
+.ww-shop .ww-single-summary{padding-top:4px}
+.ww-shop .ww-single-summary .product_title,
+.ww-shop .ww-single-summary h1{
+  font-family:var(--font-display)!important;font-weight:700!important;color:var(--ink)!important;
+  font-size:clamp(26px,3.4vw,40px)!important;line-height:1.1!important;margin:0 0 14px!important;
+}
+.ww-shop .ww-single-summary .price,
+.ww-shop .ww-single-summary .price .amount,
+.ww-shop .ww-single-summary .price ins .amount{
+  color:var(--ink)!important;font-family:var(--font-display)!important;font-weight:700!important;font-size:30px!important;
+}
+.ww-shop .ww-single-summary .price ins{text-decoration:none!important}
+/* the top price now reflects the chosen plan via JS — hide WC's duplicate variation price line */
+.ww-shop .woocommerce-variation-price{display:none!important}
+.ww-shop .ww-single-summary .price del,
+.ww-shop .ww-single-summary .price del .amount{color:var(--muted-2)!important;font-weight:500!important;font-size:18px!important}
+/* the STICKY mobile bar shows only the selling price — drop the crossed-out original (item 6, correct place) */
+.ww-sticky-buy .ww-sticky-price del,
+.ww-sticky-buy .ww-sticky-price del .amount{display:none!important}
+.ww-shop .ww-single-summary .woocommerce-product-details__short-description,
+.ww-shop .ww-single-summary .woocommerce-product-details__short-description p{color:var(--muted)!important;font-size:15px!important;line-height:1.6!important}
+/* variation description is relocated to the #wwHighlight callout above Description —
+   hide the awkward in-form copy that sat between the swatches and Add-to-cart */
+.ww-shop .ww-single-summary .woocommerce-variation-description{display:none!important}
+
+/* variation swatches / selects (keep Minimog swatch behaviour, just theme colours) */
+.ww-shop .variations th,.ww-shop .variations td,.ww-shop .variations label{color:var(--ink)!important;font-family:var(--font-body)!important}
+.ww-shop .variations select{background:var(--panel)!important;color:var(--ink)!important;border:1px solid var(--line-strong)!important;border-radius:12px!important;padding:12px 14px!important}
+.ww-shop .reset_variations{color:var(--muted)!important;font-size:13px}
+
+/* quantity + add to cart + buy now */
+.ww-shop .ww-single-summary .quantity input.qty{
+  background:var(--panel)!important;color:var(--ink)!important;border:1px solid var(--line-strong)!important;
+  border-radius:12px!important;height:52px!important;font-family:var(--font-display)!important;font-weight:700!important;
+}
+.ww-shop .ww-single-summary .single_add_to_cart_button,
+.ww-shop .ww-single-summary .buy-now-button,
+.ww-shop .ww-single-summary .wc-buy-now-button{
+  border-radius:999px!important;font-family:var(--font-display)!important;font-weight:700!important;
+  font-size:15px!important;padding:15px 30px!important;height:auto!important;line-height:1!important;letter-spacing:.01em!important;
+}
+.ww-shop .ww-single-summary .single_add_to_cart_button{
+  background:var(--lime)!important;color:#10130a!important;border:none!important;
+  box-shadow:0 10px 30px -10px rgba(194,240,104,.6)!important;
+}
+.ww-shop .ww-single-summary .single_add_to_cart_button:hover{background:var(--lime-bright)!important}
+.ww-shop .ww-single-summary .buy-now-button,
+.ww-shop .ww-single-summary .wc-buy-now-button{background:#161a10!important;color:#fff!important;border:none!important}
+
+/* product meta (sku / category) */
+.ww-shop .product_meta{color:var(--muted)!important;font-size:13px!important;border-top:1px solid var(--line);margin-top:22px;padding-top:16px}
+.ww-shop .product_meta a{color:var(--lime-ink)!important}
+
+/* hide Minimog's tabs — we render our own description/details sections */
+.ww-shop .woocommerce-tabs{display:none!important}
+
+/* our own description + details sections
+   NOTE: this used to be TWO overlapping declaration blocks for the same selectors (the second
+   silently overrode the first's margin-top and h2 size) — merged into one. */
+.ww-shop .ww-single-desc,.ww-shop .ww-single-attrs{margin-top:34px}
+/* Description is reference material, not a pitch: set it a step below the page's
+   voice so the plan name and price keep the hierarchy on both phone and desktop. */
+.ww-shop .ww-single-desc > h2,.ww-shop .ww-single-attrs > h2{
+  font-family:var(--font-display);font-weight:600;color:var(--ink);
+  font-size:clamp(18px,2vw,22px);margin:0 0 12px
+}
+.ww-shop .ww-single-desc-body,.ww-shop .ww-single-desc-body p,.ww-shop .ww-single-desc-body li{
+  color:var(--ink-2)!important;line-height:1.6;font-size:14px
+}
+/* Measure lives on the BODY, not the section. Capping the section at 900px inside a 1240px
+   container left ~340px of dead space to its right on a desktop — the section now spans the
+   column and only the text line-length is limited. */
+.ww-shop .ww-single-desc-body{max-width:68ch}
+
+/* DESKTOP — the real fix. There was previously no min-width breakpoint at all, so a phone-sized
+   14px/68ch column was rendered on a 1240px page and read as broken. Give the sections a proper
+   card, a comfortable reading size, and a measure that suits the width. */
+@media (min-width:901px){
+  .ww-shop .ww-single-desc,.ww-shop .ww-single-attrs{
+    margin-top:40px;padding:30px 34px;border-radius:20px;
+    background:#fff;border:1px solid var(--line,rgba(22,26,16,.08));
+    box-shadow:0 1px 2px rgba(22,26,16,.04),0 20px 44px -36px rgba(22,26,16,.55);
+  }
+  .ww-shop .ww-single-desc > h2,.ww-shop .ww-single-attrs > h2{font-size:23px;margin:0 0 16px}
+  .ww-shop .ww-single-desc-body,.ww-shop .ww-single-desc-body p,.ww-shop .ww-single-desc-body li{
+    font-size:15.5px;line-height:1.72
+  }
+  .ww-shop .ww-single-desc-body{max-width:74ch}
+  /* keep the excerpt card on the same rhythm as the sections below it */
+  .ww-shop .ww-single-highlight{max-width:none;margin-top:40px;padding:22px 26px}
+}
+.ww-shop .ww-single-desc-body p{margin:0 0 9px}
+.ww-shop .ww-single-desc-body p:last-child{margin-bottom:0}
+@media (max-width:900px){
+  .ww-shop .ww-single-desc,.ww-shop .ww-single-attrs{margin-top:26px}
+  .ww-shop .ww-single-desc-body,.ww-shop .ww-single-desc-body p,.ww-shop .ww-single-desc-body li{font-size:13.5px;line-height:1.55}
+  .ww-shop .ww-single-highlight{padding:14px 15px;gap:11px;margin-top:26px}
+  .ww-shop .ww-single-highlight-body,.ww-shop .ww-single-highlight-body p{font-size:14px!important;line-height:1.5!important}
+  .ww-shop .ww-single-highlight-ico{width:34px;height:34px;border-radius:10px}
+}
+.ww-shop .ww-single-desc-body h1,.ww-shop .ww-single-desc-body h2,.ww-shop .ww-single-desc-body h3,
+.ww-shop .ww-single-desc-body h4,.ww-shop .ww-single-desc-body strong{color:var(--ink)!important;font-family:var(--font-display)}
+.ww-shop .ww-single-desc-body ul{padding-left:20px;margin:12px 0}
+.ww-shop .ww-single-desc-body li{margin:6px 0}
+.ww-shop .ww-single-desc-body img{border-radius:14px;margin:14px 0}
+
+/* short-description callout (moved out of the summary, sits above Description) */
+/* class display:flex would otherwise beat the [hidden] attribute (author > UA), so the
+   JS box.hidden=true never took effect — this makes hide actually hide (empty + dupe cases) */
+.ww-shop .ww-single-highlight[hidden]{display:none!important}
+.ww-shop .ww-single-highlight{
+  display:flex;gap:14px;align-items:flex-start;max-width:900px;
+  margin:40px 0 0;padding:18px 20px;border-radius:16px;
+  background:linear-gradient(180deg,rgba(100,166,24,.10),rgba(100,166,24,.05));
+  border:1px solid rgba(100,166,24,.28);
+}
+.ww-shop .ww-single-highlight-ico{
+  flex:0 0 auto;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:rgba(100,166,24,.16);border:1px solid rgba(100,166,24,.30);
+}
+.ww-shop .ww-single-highlight-body,
+.ww-shop .ww-single-highlight-body p{
+  margin:0;color:var(--ink)!important;font-size:15.5px!important;line-height:1.6!important;
+  font-weight:600!important;font-family:var(--font-body)!important;
+}
+.ww-shop .ww-single-highlight-body p + p{margin-top:8px}
+
+/* legacy tabs styling (kept in case core tabs render somewhere) */
+.ww-shop .woocommerce-tabs-legacy{margin-top:56px}
+.ww-shop .woocommerce-tabs ul.tabs{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px;padding:0;border-bottom:1px solid var(--line)}
+.ww-shop .woocommerce-tabs ul.tabs::before,.ww-shop .woocommerce-tabs ul.tabs::after{display:none}
+.ww-shop .woocommerce-tabs ul.tabs li{background:transparent!important;border:none!important;margin:0!important;padding:0!important}
+.ww-shop .woocommerce-tabs ul.tabs li a{
+  display:block;padding:12px 18px;font-family:var(--font-display);font-weight:600;font-size:15px;
+  color:var(--muted)!important;border-radius:12px 12px 0 0;
+}
+.ww-shop .woocommerce-tabs ul.tabs li.active a{color:var(--ink)!important;border-bottom:2px solid var(--lime-deep)}
+.ww-shop .woocommerce-tabs .panel{background:transparent!important;color:var(--ink)!important;padding:0!important}
+.ww-shop .woocommerce-tabs .panel h2{font-family:var(--font-display);color:var(--ink);font-size:22px;margin:0 0 14px}
+.ww-shop .woocommerce-tabs .panel p,.ww-shop .woocommerce-tabs .panel li{color:var(--ink-2)!important;line-height:1.7}
+.ww-shop .shop_attributes{width:100%;border-collapse:collapse;margin-top:8px}
+.ww-shop .shop_attributes th,.ww-shop .shop_attributes td{padding:12px 16px;border:1px solid var(--line);text-align:left;color:var(--ink-2)}
+.ww-shop .shop_attributes th{background:var(--panel-2);font-family:var(--font-display);font-weight:600;color:var(--ink);width:30%}
+
+/* Minimog renders related products as a broken Swiper carousel — hide it, we
+   render our own grid (.ww-related) below. */
+.ww-shop .related.products,
+.ww-shop .upsells.products,
+.ww-shop .entry-product-section{display:none!important}
+
+/* our related — horizontal scroll carousel (5 per view PC, 2 mobile) with arrows */
+.ww-shop .ww-related{margin-top:64px}
+.ww-shop .ww-related-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 24px}
+.ww-shop .ww-related-head h2{
+  font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:clamp(24px,3vw,34px);margin:0
+}
+.ww-shop .ww-related-nav{display:flex;gap:10px;flex-shrink:0}
+.ww-shop .cat-arrow{width:44px!important;height:44px!important;flex:0 0 44px;border-radius:50%!important;border:1.5px solid var(--line-strong);
+  display:grid!important;place-items:center!important;padding:0!important;background:transparent;cursor:pointer;transition:background .3s,border-color .3s,opacity .3s}
+.ww-shop .cat-arrow:hover{background:var(--lime);border-color:var(--lime)}
+.ww-shop .cat-arrow:disabled{opacity:.35;cursor:default}
+.ww-shop .cat-arrow:disabled:hover{background:transparent;border-color:var(--line-strong)}
+.ww-shop .cat-arrow svg{width:20px!important;height:20px!important;fill:none!important;stroke:var(--ink)!important;stroke-width:2.4!important;stroke-linecap:round;stroke-linejoin:round}
+.ww-shop .cat-arrow:hover svg{stroke:#10130a!important}
+/* related arrows stay visible on mobile so users know to slide */
+.ww-shop .ww-related-scroll{
+  display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding:2px 2px 16px;margin:0 -2px;
+  scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent;
+}
+.ww-shop .ww-related-scroll::-webkit-scrollbar{height:8px}
+.ww-shop .ww-related-scroll::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:99px}
+.ww-shop .ww-related-scroll::-webkit-scrollbar-track{background:transparent}
+.ww-shop .ww-related-item{
+  flex:0 0 calc((100% - (18px * 4)) / 5);scroll-snap-align:start;display:flex;
+}
+/* every card the same height — stretch the item and let the card fill it */
+.ww-shop .ww-related-scroll{align-items:stretch}
+.ww-shop .ww-related-item .product-card{width:100%;height:100%}
+@media(max-width:1100px){.ww-shop .ww-related-item{flex:0 0 calc((100% - (18px * 3)) / 4)}}
+@media(max-width:860px){.ww-shop .ww-related-item{flex:0 0 calc((100% - (13px * 2)) / 3)}}
+@media(max-width:640px){
+  .ww-shop .ww-related-scroll{gap:13px}
+  .ww-shop .ww-related-item{flex:0 0 calc((100% - 13px) / 2)}
+}
+
+/* ═══════ sticky add-to-cart bar (mobile) ═══════ */
+.ww-sticky-buy{
+  position:fixed;left:0;right:0;bottom:0;z-index:120;display:none;
+  align-items:center;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(253,252,247,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);box-shadow:0 -10px 30px -18px rgba(22,26,16,.4);
+}
+.ww-sticky-buy .ww-sticky-price{font-family:var(--font-display);font-weight:800;font-size:20px;color:var(--ink);white-space:nowrap}
+.ww-sticky-buy .ww-sticky-price s{color:var(--muted-2);font-weight:500;font-size:13px;margin-left:6px}
+.ww-sticky-buy .btn{flex:1;background:var(--lime);color:#10130a;border-radius:999px;font-family:var(--font-display);
+  font-weight:700;font-size:15px;padding:14px;border:none;cursor:pointer;box-shadow:0 8px 24px -10px rgba(194,240,104,.6)}
+@media(max-width:900px){
+  .ww-sticky-buy.on{display:flex}
+  body.single-product.ww-shop{padding-bottom:78px}
+}
+
+/* ── nav: account link ── */
+.ww-shop .nav-acct{text-decoration:none!important;display:none!important}
+.ww-shop .nav-acct-label{display:none}
+#openSearch{background:none;border:none;cursor:pointer;padding:0}
+@media(min-width:961px){
+  .ww-shop .nav-acct{display:flex!important;align-items:center;gap:5px;width:auto!important;height:auto!important;padding:0 10px!important;border-radius:10px}
+  .ww-shop .nav-acct-label{display:inline!important;font-size:12px;font-weight:600;letter-spacing:.02em;
+    white-space:nowrap;color:var(--ink);font-family:var(--font-display)}
+  .ww-shop .nav-acct svg{width:18px!important;height:18px!important;stroke:currentColor!important;stroke-width:1.8!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+}
+
+/* ── search overlay ── */
+.search-overlay{position:fixed;inset:0;z-index:9999;display:flex;align-items:flex-start;justify-content:center;
+  padding:12vh 16px 0;opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s}
+.search-overlay.open{opacity:1;visibility:visible}
+
+/* No backdrop-filter. A full-viewport blur re-samples the whole page on every
+   frame of the open animation — the same cost that was removed from the drawer
+   scrim — and against this palette it turned the page into a flat olive smear
+   that hid where you were. A plain wash is cheaper and reads far cleaner. */
+.search-overlay-bg{position:absolute;inset:0;z-index:0;
+  background:linear-gradient(180deg,rgba(10,13,7,.60),rgba(10,13,7,.46))}
+
+.search-modal{position:relative;z-index:1;width:min(96vw,620px);background:#fdfcf7;
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 28px 70px -24px rgba(10,13,7,.55),0 0 0 1px rgba(22,26,16,.07);
+  transform:translateY(-10px) scale(.985);transition:transform .28s var(--ease);
+  /* Grid AREAS, not DOM order. "Cancel" is a sibling of the results list in the
+     markup but belongs beside the input, where every phone OS puts it. Placing
+     it by area moves it without touching a template — which matters because
+     this overlay ships from TWO different templates. */
+  display:grid;grid-template-columns:1fr auto;
+  grid-template-areas:"bar cancel" "results results"}
+.search-overlay.open .search-modal{transform:translateY(0) scale(1)}
+
+/* The divider moved off the input row and onto the results, which are
+   display:none while empty — so an empty search no longer shows a stray rule
+   hanging under the field. */
+.search-bar{grid-area:bar;display:flex;align-items:center;gap:11px;padding:17px 6px 17px 18px;min-width:0}
+.search-bar-icon{width:20px;height:20px;flex-shrink:0;fill:none;stroke:#8a8a7a;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
+.search-modal:focus-within .search-bar-icon{stroke:#6b8f00}
+.search-bar input[type="search"]{flex:1;min-width:0;border:none;background:none;font-size:17px;font-weight:500;
+  color:#161a10;font-family:var(--font-display);outline:none;padding:0;
+  /* The placeholder is long and the field is narrow once Cancel sits beside it,
+     so without this it clipped mid-word ("...combos" cut through the s) and read
+     as a broken layout rather than as truncated copy. */
+  text-overflow:ellipsis}
+.search-bar input[type="search"]::placeholder{color:#aeae9e}
+.search-bar input[type="search"]::-webkit-search-cancel-button{display:none}
+.search-bar-clear{width:26px;height:26px;border-radius:50%;border:none;background:rgba(22,26,16,.07);
+  display:none;place-items:center;cursor:pointer;padding:0;flex-shrink:0;transition:background .2s}
+.search-bar-clear:hover{background:rgba(22,26,16,.13)}
+.search-bar-clear svg{width:13px;height:13px;fill:none;stroke:#161a10;stroke-width:2.4;stroke-linecap:round}
+.search-bar-clear.show{display:grid}
+
+/* Inline, beside the field — not a full-width row under it. As a row it read as
+   the first search result rather than as a control, and it cost a whole band of
+   height on the screen with least of it. */
+.search-close-btn{grid-area:cancel;display:none;align-self:center;
+  border:0;background:none;padding:10px 17px 10px 9px;
+  font-size:15.5px;font-weight:600;color:#6b8f00;font-family:var(--font-display);
+  cursor:pointer;white-space:nowrap;border-radius:10px;transition:background .2s}
+.search-close-btn:hover{background:rgba(107,143,0,.09)}
+@media(max-width:960px){
+  .search-close-btn{display:block}
+  /* Near the top on a phone, where the keyboard is about to take the bottom
+     half of the screen. */
+  .search-overlay{padding:10px 10px 0}
+}
+
+.search-results{grid-area:results;max-height:min(52vh,420px);overflow-y:auto;padding:6px;
+  border-top:1px solid rgba(22,26,16,.08)}
+.search-results:empty{display:none}
+.search-hint{text-align:center;padding:28px 16px;color:#aeae9e;font-size:14px;font-family:var(--font-display)}
+.search-result{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;
+  text-decoration:none;color:#161a10;transition:background .15s}
+.search-result:hover{background:rgba(22,26,16,.04)}
+.search-result-img{width:52px;height:52px;border-radius:10px;object-fit:cover;background:#eee;flex-shrink:0}
+.search-result-info{flex:1;min-width:0}
+.search-result-name{font-size:14px;font-weight:600;font-family:var(--font-display);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.search-result-price{font-size:13px;color:#6b8f00;font-weight:700;font-family:var(--font-display);margin-top:2px}
+.search-result-price del{color:#aeae9e;font-weight:400;margin-right:4px}
+.search-no-results{text-align:center;padding:32px 16px;color:#8a8a7a;font-size:14px;font-family:var(--font-display)}
+.search-loading{text-align:center;padding:24px;color:#aeae9e;font-size:13px;font-family:var(--font-display)}
+
+/* pagination arrows — next/prev use Font Awesome icons, which the storefront does
+   NOT load, so those buttons rendered blank. Hide the empty icon and draw a
+   chevron with CSS instead (2026-07-30). */
+.ww-shop .woocommerce-pagination a.next [class*="fa-"],
+.ww-shop .woocommerce-pagination a.prev [class*="fa-"]{display:none!important}
+.ww-shop .woocommerce-pagination a.next,
+.ww-shop .woocommerce-pagination a.prev{font-size:0}
+.ww-shop .woocommerce-pagination a.next::after{content:"\203A";font-size:23px;line-height:1;color:var(--ink);font-family:var(--font-display)}
+.ww-shop .woocommerce-pagination a.prev::before{content:"\2039";font-size:23px;line-height:1;color:var(--ink);font-family:var(--font-display)}
+
+/* ══════════════════════════════════════════════════════════════
+   PRODUCT DESCRIPTION — compact layout (ww-product-description.php)
+   The stored copy is a list of points plus a Q&A tail, so it renders as
+   exactly that: one tight card of ticked lines, and a collapsed FAQ.
+   Deliberately short — this sits below the buy button and must not turn
+   the page into a scroll marathon on a phone. No emoji, no per-point cards.
+   ═══════════════════════════════════════════════════════════ */
+
+.ww-shop .wwd-block + .wwd-block{margin-top:20px}
+
+.ww-shop .wwd-prose{max-width:70ch;margin:0 0 16px}
+.ww-shop .wwd-prose p{margin:0 0 7px;color:var(--muted)!important;line-height:1.55;font-size:13.5px}
+.ww-shop .wwd-prose p:last-child{margin-bottom:0}
+
+/* ── eyebrow ── */
+.ww-shop .wwd-eyebrow{
+  display:flex;align-items:center;gap:8px;margin:0 0 10px;
+  font-family:var(--font-display);
+  font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--lime-ink)!important;
+}
+.ww-shop .wwd-eyebrow::before{
+  content:"";width:16px;height:2px;border-radius:2px;flex:0 0 auto;
+  background:linear-gradient(90deg,var(--lime-deep),rgba(163,217,58,.25));
+}
+
+/* ── points ── */
+.ww-shop ul.wwd-list{
+  list-style:none;margin:0;padding:13px 15px;
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 1px 2px rgba(22,26,16,.04);
+  display:grid;gap:9px;                       /* phone: one tight column */
+}
+@media (min-width:760px){
+  .ww-shop ul.wwd-list{
+    padding:19px 22px;gap:13px;column-gap:32px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+.ww-shop li.wwd-pt{
+  margin:0;display:grid;gap:9px;align-items:start;
+  grid-template-columns:auto minmax(0,1fr);   /* minmax(0,…) lets long words wrap */
+}
+.ww-shop .wwd-tick{width:16px;height:16px;margin-top:2px}
+.ww-shop .wwd-tick circle{fill:rgba(163,217,58,.20)}
+.ww-shop .wwd-tick path{
+  fill:none;stroke:var(--lime-ink);stroke-width:2.2;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+/* Label and detail share one line and wrap together, so a point stays two lines
+   at most on a phone instead of stacking into a tall block. */
+.ww-shop .wwd-pt-x{
+  min-width:0;font-size:13.5px;line-height:1.5;color:var(--muted)!important;
+  text-wrap:pretty;overflow-wrap:break-word;
+}
+.ww-shop .wwd-pt-t{font-family:var(--font-display);font-weight:600;color:var(--ink)!important}
+.ww-shop .wwd-pt-s{color:var(--line-strong)!important}
+@media (min-width:760px){
+  .ww-shop .wwd-pt-x{font-size:14.5px;line-height:1.55}
+}
+
+/* ── FAQ — collapsed until asked for ── */
+.ww-shop .wwd-faq{
+  background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(22,26,16,.04);
+}
+.ww-shop .wwd-q + .wwd-q{border-top:1px solid var(--line)}
+.ww-shop .wwd-q > summary{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:12px 15px;cursor:pointer;list-style:none;
+  transition:background .2s var(--ease);
+}
+.ww-shop .wwd-q > summary::-webkit-details-marker{display:none}
+.ww-shop .wwd-q > summary::marker{content:""}
+@media (hover:hover){.ww-shop .wwd-q > summary:hover{background:rgba(163,217,58,.06)}}
+.ww-shop .wwd-q > summary:focus-visible{
+  outline:none;background:rgba(163,217,58,.10);
+  box-shadow:inset 0 0 0 2px rgba(163,217,58,.55);
+}
+.ww-shop .wwd-q-t{
+  font-family:var(--font-display);font-size:13.5px;font-weight:600;line-height:1.4;
+  color:var(--ink)!important;min-width:0;text-wrap:pretty;
+}
+.ww-shop .wwd-chev{
+  flex:0 0 auto;width:17px;height:17px;
+  fill:none;stroke:var(--muted);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+  transition:transform .3s var(--ease),stroke .2s var(--ease);
+}
+.ww-shop .wwd-q[open] > summary .wwd-chev{transform:rotate(180deg);stroke:var(--lime-ink)}
+.ww-shop .wwd-a{padding:0 15px 13px}
+.ww-shop .wwd-a p{margin:0 0 7px;font-size:13.5px;line-height:1.55;color:var(--muted)!important;text-wrap:pretty}
+.ww-shop .wwd-a p:last-child{margin-bottom:0}
+@media (min-width:760px){
+  .ww-shop .wwd-q > summary{padding:14px 20px}
+  .ww-shop .wwd-q-t{font-size:14.5px}
+  .ww-shop .wwd-a{padding:0 20px 15px}
+  .ww-shop .wwd-a p{font-size:14px}
+}
+/* <details> swaps display, so height can't transition — reveal the panel instead. */
+.ww-shop .wwd-q[open] > .wwd-a{animation:wwdReveal .3s var(--ease) both}
+@keyframes wwdReveal{
+  from{opacity:0;transform:translateY(-4px)}
+  to{opacity:1;transform:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .ww-shop .wwd-q[open] > .wwd-a{animation:none}
+  .ww-shop .wwd-chev{transition:none}
+}
+
+/* The old desktop rule wrapped the description in its own white card. The point
+   and FAQ cards are the surfaces now, so that outer card would be white on white. */
+.ww-shop .ww-single-desc--rich{
+  background:none!important;border:0!important;box-shadow:none!important;padding:0!important;
+}
+.ww-shop .ww-single-desc--rich > h2{margin-bottom:14px}
+
+/* The legacy 68ch cap suits one column of prose, but the rich layout is a
+   2-up grid — at 68ch it left ~450px of dead space to its right on a desktop.
+   Wider container, and each COLUMN still lands at a comfortable measure. */
+@media (min-width:760px){
+  /* Full container width, so the description's right edge lines up with the plan
+     cards and the Buy-now button above it. A narrower cap read as misalignment. */
+  .ww-shop .ww-single-desc--rich .ww-single-desc-body{max-width:none}
+}
+
+/* At full container width two columns give a ~550px line — far past a comfortable
+   measure for 14.5px text. Three columns land near 60 characters and read like a
+   spec sheet instead of a wall. */
+@media (min-width:1100px){
+  .ww-shop ul.wwd-list{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+}
+
+/* SOURCE-ORDER BUG: the @media(min-width:901px) block that sets max-width:none on
+   .ww-single-highlight sits ~20 lines ABOVE the base rule that caps it at 900px.
+   Same specificity, so the later (capped) rule won and the callout stopped 278px
+   short of the container on desktop. Re-asserted here, at the end of the file. */
+@media (min-width:901px){
+  .ww-shop .ww-single-highlight{max-width:none}
+}
+
+/* The quantity stepper was hidden here on 2026-08-08 and RESTORED the same day
+   at the owner's request — it sits beside Add-to-cart as WooCommerce renders it.
+   Nothing to override: this block intentionally left empty so the theme's own
+   layout applies. (The sold-out panel still hides the whole row via
+   ww-oos-ux.php when the selected plan is out of stock.) */
+
+/* The sold-out pill above the title is redundant now that the sold-out PANEL says
+   it properly, and it collided with the header. Safe to hide the whole container:
+   on this theme .entry-product-badges only ever holds the out-of-stock badge on a
+   single-product page — sale badges render on shop cards, not here (verified on an
+   in-stock sale product, where the container renders empty). */
+.single-product .entry-product-badges{display:none !important}
+
+/* ══════════════════════════════════════════════════════════════
+   CHECKOUT POLISH
+   The page had drifted off the storefront's design language: a cool-grey
+   surface, a square-bordered box nested inside each rounded payment card,
+   a muddy slab behind the method description, and one field label styled
+   completely differently from the one above it.
+   ═══════════════════════════════════════════════════════════ */
+
+/* 1. Same warm surface as every other page (was a cool #f2f4f7 grey). */
+html body.ww-shop.ww-checkout-page{background:var(--bg) !important}
+
+/* 2. WhatsApp Number was 16px sentence case while EMAIL ADDRESS directly
+      above it was a 10.5px uppercase micro-label. Match the established one. */
+.ww-checkout-page form.checkout label.ww-phone-label{
+  font-size:10.5px !important;
+  font-weight:500 !important;
+  text-transform:uppercase !important;
+  letter-spacing:.84px !important;
+}
+
+/* 3. Each payment method was a ROUNDED card containing a SQUARE black-bordered
+      box — two nested frames. The card is the frame; the inner one goes. */
+.ww-checkout-page li.wc_payment_method{overflow:hidden}
+.ww-checkout-page li.wc_payment_method > .payment-title-wrap{
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+.ww-checkout-page li.wc_payment_method{border-color:var(--line-strong) !important}
+.ww-checkout-page li.wc_payment_method:has(input:checked){
+  border-color:var(--ink) !important;
+  background:rgba(163,217,58,.05) !important;
+}
+
+/* 4. The method description sat on a muddy #edeadb slab. Quiet lime note instead. */
+.ww-checkout-page .payment_box{
+  background:rgba(163,217,58,.10) !important;
+  border:1px solid rgba(163,217,58,.26) !important;
+  border-radius:12px !important;
+}
+.ww-checkout-page .payment_box,
+.ww-checkout-page .payment_box p{
+  color:var(--muted) !important;
+  font-size:13.5px !important;
+  line-height:1.5 !important;
+}
+.ww-checkout-page .payment_box::before{display:none !important}
+
+/* The gateway ships its own !important rule for .payment_box, so the plain
+   .ww-checkout-page .payment_box above loses. Mirror its depth here — this file
+   loads later, so at equal weight the last one wins. (Styling only; the gateway
+   plugin itself is never edited.) */
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method div.payment_box,
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method div.payment_box p{
+  background:rgba(163,217,58,.10) !important;
+  color:var(--muted) !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method div.payment_box{
+  border:1px solid rgba(163,217,58,.26) !important;
+  border-radius:12px !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method div.payment_box p{
+  border:0 !important;
+}
+
+/* ── payment methods: drop the description, even out the rows ──
+   The description (Pay instantly with any UPI app.) added 42px to ONE method
+   and nothing to the other, so the two rows were 127px vs 75px — that mismatch
+   was the size is not proper. Hidden per-gateway rather than globally, so a
+   future gateway that puts real FIELDS in .payment_box is unaffected. */
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method div.payment_box.payment_method_weewoo_imb,
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method div.payment_box.payment_method_weewoo_upi{
+  display:none !important;
+}
+/* equal, comfortable rows */
+.ww-checkout-page li.wc_payment_method > .payment-title-wrap{
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  min-height:58px !important;
+  padding:12px 16px !important;
+}
+.ww-checkout-page li.wc_payment_method{margin-bottom:10px !important}
+.ww-checkout-page li.wc_payment_method:last-child{margin-bottom:0 !important}
+/* the two gateway logos rendered at different sizes (26x31 vs 34x30) */
+.ww-checkout-page .payment-title-icon{
+  display:flex !important; align-items:center !important; justify-content:flex-end !important;
+  height:26px !important; flex:0 0 auto !important;
+}
+.ww-checkout-page .payment-title-icon svg{height:20px !important; width:auto !important}
+.ww-checkout-page .payment_title{
+  display:flex !important; align-items:center !important; gap:10px !important;
+  flex:1 1 auto !important; margin:0 !important; font-size:14.5px !important;
+}
+
+/* ── quantity stepper ↔ Add-to-cart alignment ────────────────
+   The stepper pill rendered 65px tall against a 56px Add-to-cart, and their
+   bottom edges sat 5px apart, so the pair read as misaligned. Match the button
+   height exactly and zero the stray margins so flex-end lines the bottoms up. */
+.ww-shop .ww-single-summary .entry-product-quantity-wrapper{
+  align-items:flex-end !important;
+}
+.ww-shop .ww-single-summary .quantity-button-wrapper{
+  margin:0 !important; padding:0 !important;
+}
+.ww-shop .ww-single-summary .entry-product-quantity-wrapper .quantity{
+  height:56px !important; min-height:56px !important; max-height:56px !important;
+  margin:0 !important;
+  display:inline-flex !important; align-items:center !important;
+}
+/* keep the -/+ controls centred inside the shorter pill */
+.ww-shop .ww-single-summary .entry-product-quantity-wrapper .quantity > *{
+  align-self:center !important;
+}
+
+/* The 5px gap that survived: .quantity-button-wrapper carries a margin-bottom:5px
+   that the shorter selector above could not beat. With align-items:flex-end that
+   margin lifts the stepper 5px off the Add-to-cart baseline. Deeper selector wins. */
+html body.ww-shop .ww-single-summary .entry-product-quantity-wrapper > div.quantity-button-wrapper{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   FLY-CART line items
+   A single item rendered 145px tall next to a 72px upsell card, because the
+   info column was loose and Remove was being laid out as a 116x45 BUTTON
+   (Minimog's global button{height:45px;line-height:43px} — declare both or the
+   label drops to the bottom of the box). Tightened to match the upsell.
+   ═══════════════════════════════════════════════════════════ */
+.ww-shop .cart-item{
+  display:flex !important; gap:12px !important; align-items:flex-start !important;
+  padding:12px 0 !important;
+}
+.ww-shop .cart-item > img{
+  width:48px !important; height:48px !important; flex:0 0 48px !important;
+  border-radius:12px !important; object-fit:cover !important;
+}
+.ww-shop .cart-item-info{min-width:0 !important; flex:1 1 auto !important}
+.ww-shop .cart-item-info > b{
+  display:block !important; font-size:14px !important; line-height:1.3 !important;
+  color:var(--ink) !important;
+  overflow:hidden !important; text-overflow:ellipsis !important; white-space:nowrap !important;
+}
+.ww-shop .cart-item-info > span{
+  display:block !important; margin-top:2px !important;
+  font-size:12px !important; line-height:1.3 !important; color:var(--muted) !important;
+}
+.ww-shop .cart-item-row{
+  display:flex !important; align-items:center !important; justify-content:space-between !important;
+  gap:10px !important; margin:6px 0 0 !important;
+}
+.ww-shop .cart-item-price{
+  font-size:14.5px !important; font-weight:700 !important;
+  color:var(--ink) !important; line-height:1.2 !important; margin:0 !important;
+}
+/* Remove reads as a quiet text action, not a slab */
+.ww-shop button.cart-remove{
+  width:auto !important; min-width:0 !important;
+  height:auto !important; min-height:0 !important; line-height:1.2 !important;
+  margin:0 !important; padding:4px 0 !important;
+  background:none !important; border:0 !important; box-shadow:none !important;
+  font-size:12px !important; font-weight:600 !important;
+  color:var(--muted-2) !important; text-decoration:none !important;
+  cursor:pointer !important; flex:0 0 auto !important;
+}
+.ww-shop button.cart-remove:hover{color:#b91c1c !important}
+
+/* ── payment methods: flat compact rows, no card per method ──
+   Each method was its own 106px bordered/rounded card sitting inside the
+   payment panel — a box inside a box. They are now plain rows split by a
+   hairline, ~50px each. The radio itself carries the selected state, so the
+   tinted background and ink border are dropped too. */
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method,
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method:has(input:checked){
+  border:0 !important;
+  border-radius:0 !important;
+  background:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:visible !important;
+  box-shadow:none !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method + li.wc_payment_method{
+  border-top:1px solid var(--line) !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method > .payment-title-wrap{
+  min-height:0 !important;
+  padding:13px 2px !important;
+  gap:12px !important;
+}
+/* selected reads through weight, since there is no longer a box to tint */
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method:has(input:checked) .payment_title{
+  font-weight:700 !important;
+}
+/* the logos sat on their own little white plates — strip those too */
+html body.ww-checkout-page #payment .payment-title-icon,
+html body.ww-checkout-page #payment .payment-title-icon *{
+  background:none !important;
+  box-shadow:none !important;
+  border:0 !important;
+}
+
+/* label.payment_title was 52px tall on its own (theme label sizing), which kept
+   the row at ~78px even after the card was removed. Collapse it to its text. */
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method label.payment_title{
+  height:auto !important; min-height:0 !important;
+  line-height:1.3 !important;
+  padding:0 !important; margin:0 !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method input.input-radio{
+  width:18px !important; height:18px !important; margin:0 !important; flex:0 0 18px !important;
+}
+
+/* ── payment methods: compact CARDS, not edge-to-edge rows ──
+   Flattening them removed the box but also removed all breathing room — the
+   radio sat on the panel edge and the divider ran the full width. Each method
+   is a light card again (border all round + inner padding), with a gap between
+   them, but still ~56px instead of the original 106px. */
+html body.ww-checkout-page #payment ul.payment_methods{
+  padding:14px !important;
+  margin:0 !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method,
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method + li.wc_payment_method,
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method:has(input:checked){
+  border:1px solid var(--line) !important;
+  border-radius:14px !important;
+  background:#fff !important;
+  margin:0 0 10px !important;
+  padding:0 !important;
+  overflow:hidden !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method:last-child{
+  margin-bottom:0 !important;
+}
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method > .payment-title-wrap{
+  padding:15px 16px !important;
+  gap:12px !important;
+  min-height:0 !important;
+}
+/* selected: ink outline, no fill — keeps the row calm */
+html body.ww-checkout-page #payment ul.payment_methods li.wc_payment_method:has(input:checked){
+  border-color:var(--ink) !important;
+  box-shadow:0 0 0 1px var(--ink) inset !important;
+}
+
+/* ── WP admin bar vs the fixed nav ──────────────────────────────────────────
+   #wpadminbar is z-index 99999 and, on phones, WordPress leaves it in the
+   document flow with html{margin-top:46px}. Our .nav is position:fixed;top:0,
+   so it ignored that margin and sat UNDERNEATH the bar — elementFromPoint at
+   the hamburger's centre returned an admin-bar <a>, so the tap never reached
+   the button. Only ever affected logged-in users (customers have no admin
+   bar), which is why it went unnoticed for so long. */
+body.admin-bar .nav{ top:32px; }
+@media screen and (max-width:782px){
+  body.admin-bar .nav{ top:46px; }
+}
+
+/* ── No footer on checkout ──────────────────────────────────────────────────
+   Checkout is a single-task page: the only thing reachable below Place Order
+   should be Place Order. The site footer put a second WEE-WOO logo and a row
+   of exit links directly under the pay button. The cart keeps its footer — it
+   is still a browsing surface. Legal links stay reachable from the hamburger
+   menu on this page. */
+body.ww-checkout-page .footer,
+body.ww-checkout-page .footer-glow{ display:none !important; }
+
+/* ── Drawer feel: make it answer instantly ──────────────────────────────────
+   The menu felt slow for two separate reasons, and only one of them was time.
+
+   1. The slide ran for 500ms and the scrim faded for 400ms. Half a second is a
+      long time to wait for a navigation menu; 260ms with a sharp ease-out reads
+      as immediate while still looking deliberate.
+
+   2. The scrim carried `backdrop-filter: blur(3px)`. A full-viewport backdrop
+      blur forces the compositor to re-blur everything behind it on EVERY frame
+      of the slide, which is what produced the stutter — the jank was the blur,
+      not the transform. At 3px it was barely perceptible anyway, so a slightly
+      deeper scrim reads the same and costs nothing.
+
+   `will-change` promotes the drawer to its own layer up front. Without it the
+   very first open spends its opening frames rasterising, which is why the first
+   tap of a session always felt worse than the rest. */
+.ww-shop .drawer{
+  transition:transform .26s cubic-bezier(.32,.72,0,1);
+  will-change:transform;
+}
+.ww-shop .drawer-overlay{
+  transition:opacity .18s linear;
+  -webkit-backdrop-filter:none;
+          backdrop-filter:none;
+  background:rgba(22,26,16,.5);
+}
+
+@media (prefers-reduced-motion:reduce){
+  .ww-shop .drawer,
+  .ww-shop .drawer-overlay{ transition:none; }
+}
+
+/* ── Quantity off the product page, buttons side by side ────────────────────
+   Owner, 17 Aug 2026: a subscription plan is bought one per order, so the
+   stepper was a decision nobody needed to make. Removing it frees the row, and
+   Add-to-cart / Buy-now share it equally at every width instead of Buy-now
+   dropping to a second line on a phone.
+
+   The stepper's "Quantity" label lives INSIDE .quantity-button-wrapper, so
+   hiding that one container takes the label with it.
+
+   Depth note: the theme styles these with selectors as deep as
+   `html body.single-product div.product form.cart …`, so these mirror that
+   depth rather than relying on source order. */
+html body.single-product div.product form.cart .quantity-button-wrapper,
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .quantity,
+html body.single-product div.product form.cart .entry-product-quantity-wrapper > label{
+  display:none !important;
+}
+
+html body.single-product div.product form.cart .entry-product-quantity-wrapper{
+  display:flex !important;
+  flex-wrap:nowrap !important;      /* was wrap — that is what pushed Buy Now down */
+  align-items:stretch !important;
+  gap:10px !important;
+  width:100% !important;
+}
+
+/* Equal halves. min-width:0 lets a flex item shrink below its content width,
+   without which the longer label ("Add to cart") would force an overflow. */
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .single_add_to_cart_button{
+  flex:1 1 0 !important;
+  width:auto !important;
+  min-width:0 !important;
+  max-width:none !important;
+  margin:0 !important;
+  white-space:nowrap !important;
+}
+
+/* Narrow phones: two 52px-tall buttons in ~345px is ~167px each. Trim the
+   horizontal padding and tighten the label so neither truncates. */
+@media (max-width:420px){
+  html body.single-product div.product form.cart .entry-product-quantity-wrapper .single_add_to_cart_button{
+    padding-left:10px !important; padding-right:10px !important;
+    font-size:14px !important; letter-spacing:-.01em !important;
+  }
+}
+
+/* ── Sold out beats the buy row ─────────────────────────────────────────────
+   REGRESSION FIX (17 Aug). The "quantity off, buttons side by side" block above
+   sets `display:flex !important` on .entry-product-quantity-wrapper at
+   specificity (0,4,4). ww-oos-ux.php hides that same wrapper when a sold-out
+   plan is picked, but only at (0,3,2) — so mine won and Add-to-cart / Buy-now
+   stayed visible on a plan nobody can buy, right above the "Sold out" panel.
+
+   This re-asserts the hide at equal specificity and later in the file, which is
+   what actually decides it. Anything that styles the buy row from here on MUST
+   sit above this rule, or it will resurrect the buttons on sold-out plans. */
+html body.ww-oos-on.single-product div.product form.cart .entry-product-quantity-wrapper,
+html body.ww-oos-on.single-product div.product form.cart .single_add_to_cart_button,
+html body.ww-oos-on.single-product .ww-sticky-buy{
+  display:none !important;
+}
+
+/* ═══ checkout / cart form fields — iOS zoom guard ═══
+   Safari zooms the entire page in when a focused input renders below 16px, and
+   it does NOT zoom back out on blur. billing_email, billing_phone and the
+   coupon field were all 14px, so tapping any of them threw the checkout out of
+   alignment mid-purchase — on the one page where that costs an order.
+   16px is the threshold, not a preference; desktop keeps its tighter size.
+   The `html` prefix is deliberate. Two rules already set these fields to 14px
+   !important — one of them `body.woocommerce-checkout #customer_details
+   .input-text` (1,3,1), which also beats an existing 15px rule in this very
+   file. Specificity wins over source order, so the extra element bumps this to
+   (1,3,2) and it lands regardless of where the competing style is printed. */
+@media(max-width:900px){
+  html body.woocommerce-checkout #customer_details .input-text,
+  html body.woocommerce-checkout .form-row input.input-text,
+  html body.woocommerce-checkout .form-row select,
+  html body.woocommerce-checkout .form-row textarea,
+  html body.woocommerce-checkout .woocommerce-form__input,
+  html body.ww-shop .ww-checkout-wrap input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+  html body.woocommerce-cart input[type=text],
+  html body.woocommerce-cart input[type=email],
+  html body.woocommerce-cart input[type=tel]{font-size:16px!important}
+}
+
+/* ═══ product page: icon-only cart + wide Buy Now ═══
+   Two equal 168px halves gave the same weight to "add and keep browsing" and
+   "buy". Buy Now is the action this page exists for, so the cart becomes a
+   square icon and Buy Now takes the rest of the row. */
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .button-2{
+  flex:0 0 56px !important;width:56px !important;min-width:56px !important;
+  padding:0 !important;border-radius:16px !important;gap:0 !important}
+/* The label is hidden, not deleted — it stays in the accessibility tree, so the
+   button is still announced as "Add to cart" with no visible text. */
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .button-2 > span{
+  position:absolute !important;width:1px !important;height:1px !important;
+  overflow:hidden !important;clip:rect(1px,1px,1px,1px) !important;white-space:nowrap !important}
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .button-2::before{
+  margin:0 !important}
+html body.single-product div.product form.cart .entry-product-quantity-wrapper .button-buy-now{
+  flex:1 1 auto !important;border-radius:999px !important}
+
+/* Lime bolt. The icon is a data-URI background on ::after, so the colour lives
+   INSIDE the SVG — `color`/`fill` from here cannot reach it.
+   The selector carries `button.single_add_to_cart_button` because the white
+   version is set in wp-content/uploads/ww-css/custom-*.css with exactly that
+   shape; a shorter selector lost and the bolt stayed white. */
+html body.single-product div.product form.cart .entry-product-quantity-wrapper button.single_add_to_cart_button.button-buy-now::after{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c2f068'%3E%3Cpath d='M13 2 4.5 14h6L10 22l9.5-12h-6L13 2z'/%3E%3C/svg%3E") !important;
+  background-repeat:no-repeat !important;background-position:center !important;
+  background-size:contain !important}
+
+/* The price row was `justify-content:space-between` with a THIRD, zero-width
+   child (.entry-rating-wrap) pinned at the far right — so all the free space
+   landed between the price and the discount chip, holding them 74px apart. */
+html body.single-product div.product .entry-price-wrap{justify-content:flex-start !important}
+
+/* ═══ footer: homepage only ═══
+   Keyed on .ww-homepage, NOT .home — the front page is a static template and
+   WordPress does not put a `home` class on it here (verified on the live page).
+   Two footers exist on some pages: ours from ww_store_foot() and Minimog's own,
+   so this hides the element rather than one source. */
+body:not(.ww-homepage) footer{display:none!important}
+
+/* ═══ checkout header ═══
+   Same bar, same height, none of the exits. */
+.ww-shop .nav-inner-co{display:flex;align-items:center;gap:10px}
+.ww-shop .ww-co-back{flex:0 0 auto}
+/* Matches the Secure badge's width so the title lands centred, not merely
+   "centred within whatever is left". */
+.ww-shop .ww-co-sp{flex:0 0 74px}
+@media(max-width:340px){ .ww-shop .ww-co-sp{flex-basis:34px} }
+.ww-shop .ww-co-back svg{width:22px;height:22px;fill:none;stroke:currentColor;
+  stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.ww-shop .ww-co-title{flex:1;text-align:center;font-family:var(--font-display);
+  font-weight:700;font-size:16.5px;letter-spacing:-.01em;color:var(--ink)}
+.ww-shop .ww-co-secure{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;
+  padding:6px 11px;border-radius:999px;background:#eaf7d2;
+  border:1px solid rgba(163,217,58,.5);color:#4f7a08}
+.ww-shop .ww-co-secure svg{width:14px;height:14px;fill:none;stroke:currentColor;
+  stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ww-shop .ww-co-secure b{font-family:var(--font-display);font-size:11.5px;
+  font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+@media(max-width:340px){
+  /* Only on genuinely tiny screens. 380px was too eager — it hid the word on a
+     375px iPhone, which is the single most common width there is, so "Secure"
+     would effectively never have been seen. */
+  .ww-shop .ww-co-secure b{display:none}
+  .ww-shop .ww-co-secure{padding:6px}
+}
+
+/* ═══ WP admin bar on phones ═══
+   The 46px offset above is correct only while the page is at the top. Below
+   782px WordPress renders #wpadminbar in the document FLOW, so it scrolls away
+   — and the fixed nav was left hanging 46px down with page content showing
+   above it for the whole scroll. The offset now tracks the bar (see
+   ww-adminbar-nav.php); this just stops the CSS fighting that. */
+@media screen and (max-width:782px){
+  body.admin-bar .nav{ transition:none }
+}
+
+/* ═══ checkout: re-point it at the site's design system ═══
+   The checkout snippet declares its OWN token set on <body> — cold navy
+   #0B1622, blue-grey borders #e2e8f0, grey text #6b7a8d, and Plus Jakarta Sans
+   — inside a warm cream site running Space Grotesk + Inter. That mismatch, not
+   the layout, is why the page read as foreign.
+   All 72 of its var() uses have NO fallback, so redefining the variables
+   retones the whole page without touching one line of the snippet. Declared on
+   `html body.woocommerce-checkout` (0,2,2) to beat the snippet's `body` (0,0,1). */
+html body.woocommerce-checkout{
+  --ww-navy:#161a10;        /* ink — warm near-black, was cold navy       */
+  --ww-text:#161a10;
+  --ww-off:#f6f4ea;         /* page cream, was #F2F4F7                    */
+  --ww-white:#fdfcf7;       /* panel, was pure #ffffff                    */
+  --ww-border:#e6e1cd;      /* warm hairline, was blue-grey               */
+  --ww-muted:#606852;       /* warm muted — the site's WCAG-checked pair   */
+  --ww-lime-soft:#eaf7d2;
+  --ww-lime-dk:#a3d93a;
+  --ww-r:18px;              /* matches the card radius used sitewide      */
+  /* Inter, already loaded for the whole site. Plus Jakarta Sans was a fourth
+     webfont family downloaded for this page alone. */
+  --ww-f:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+/* The section headers and the total are display type everywhere else on the
+   site, so they keep the display face rather than dropping to body text. */
+html body.woocommerce-checkout .woocommerce-billing-fields h3,
+html body.woocommerce-checkout .checkout-order-review-heading,
+html body.woocommerce-checkout h3#order_review_heading,
+html body.woocommerce-checkout .checkout-payment-info-heading,
+html body.woocommerce-checkout #payment h3{
+  font-family:"Space Grotesk",var(--ww-f)!important}
+/* 89px of empty page sat between the fixed header and the first field. On a
+   checkout the form should be the first thing under the bar, not something you
+   scroll to. */
+@media(max-width:900px){
+  html body.woocommerce-checkout .ww-store-main,
+  html body.woocommerce-checkout .ww-checkout-wrap{padding-top:8px!important}
+  html body.woocommerce-checkout .woocommerce-billing-fields{margin-top:0!important}
+}
+
+/* ═══ My Account ═══
+   The rows carried SIX different icon tints (is-lime / is-blue / is-gold /
+   is-violet / is-slate / is-green) inside a two-colour brand. Six accents mean
+   none of them mean anything, and that randomness is what made the page read as
+   a generic template rather than as this shop.
+   One neutral tile for every row, and lime reserved for the VALUE chips — the
+   order count and the wallet balance — so the accent marks live data instead of
+   decorating the furniture. */
+html body .wa-row-ic,
+html body .wa-row-ic.is-lime,
+html body .wa-row-ic.is-blue,
+html body .wa-row-ic.is-gold,
+html body .wa-row-ic.is-violet,
+html body .wa-row-ic.is-slate,
+html body .wa-row-ic.is-green{
+  background:#efedE1!important;color:#2b3021!important;
+  border-radius:12px!important;width:36px!important;height:36px!important}
+html body .wa-row-v{background:#eaf7d2!important;color:#4f7a08!important;
+  font-weight:700!important}
+
+/* Cards: the page used pure #ffffff on a cream ground, which reads as a
+   slightly wrong white rather than as a deliberate surface. */
+html body .wa-group,
+html body .wa-signout{
+  background:#fdfcf7!important;border:1px solid #e6e1cd!important;
+  border-radius:18px!important;
+  box-shadow:0 6px 18px -12px rgba(22,26,16,.28)!important}
+
+/* The identity block was floating loose above the first card with nothing to
+   sit on. Giving it the same surface makes it the header of the page rather
+   than a stray line of text. */
+/* ── membership card ──
+   Ink, not cream. Every other surface on this page is a pale card; making the
+   identity block dark is what turns it from "another row" into the header of
+   the account — and it is the one place the lime is allowed to be loud, because
+   it is marking money. */
+html body .wa-id.wa-hero{
+  /* display:block is load-bearing. .wa-id is already display:flex from the
+     original identity row, so the two new blocks became side-by-side flex
+     children and the stats landed beside the name instead of under it. */
+  display:block!important;
+  background:linear-gradient(160deg,#232a1a 0%,#12160d 68%);
+  border:1px solid rgba(255,255,255,.08);border-radius:20px;
+  padding:16px 16px 6px;margin-bottom:14px;color:#fff;
+  box-shadow:0 18px 40px -22px rgba(22,26,16,.75),0 1px 0 rgba(255,255,255,.07) inset}
+html body .wa-hero-top{display:flex;align-items:center;gap:12px}
+html body .wa-hero .wa-id-txt b{color:#fff}
+html body .wa-hero .wa-id-txt i{color:rgba(255,255,255,.62);font-style:normal}
+html body .wa-hero-stats{display:flex;gap:10px;margin-top:14px;
+  border-top:1px solid rgba(255,255,255,.10);padding-top:4px}
+html body .wa-stat{flex:1;display:block;padding:10px 2px 12px;text-decoration:none;
+  border-radius:12px;transition:background .18s ease}
+html body .wa-stat:active{background:rgba(255,255,255,.06)}
+html body .wa-stat + .wa-stat{border-left:1px solid rgba(255,255,255,.10);padding-left:12px}
+html body .wa-stat-k{display:block;font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
+html body .wa-stat-v{display:block;margin-top:4px;font-family:"Space Grotesk",sans-serif;
+  font-weight:700;font-size:clamp(20px,5.4vw,26px);letter-spacing:-.02em;color:#c2f068}
+html body .wa-id-av{width:52px!important;height:52px!important;
+  background:#eaf7d2!important;border:1px solid rgba(163,217,58,.55)!important;
+  font-family:"Space Grotesk",sans-serif!important;font-weight:700!important}
+
+html body .wa-row{transition:background .18s ease}
+html body .wa-row:active{background:rgba(22,26,16,.04)}
+
+/* ═══ My Creds ═══ same surface language as the rest of the site ═══ */
+html body .wws-card{background:#fdfcf7!important;border:1px solid #e6e1cd!important;
+  border-radius:18px!important;
+  box-shadow:0 8px 22px -16px rgba(22,26,16,.35)!important}
+html body .wws-creds-box{background:#f2efe2!important;border:1px solid #e6e1cd!important;
+  border-radius:14px!important}
+/* Decorative blurred orbs behind the cards — a leftover from a different visual
+   language, and they cost a full-page blur on every scroll for nothing. */
+html body .wws-orb{display:none!important}
+
+/* ═══ My Orders ═══
+   Cards onto the site's surface, and — the actual fix — status pills that mean
+   something. Every state rendered in the same lime, so the one piece of
+   information a customer scans an order list for (did it go through?) carried
+   no signal at all: a cancelled order looked exactly like a completed one.
+   Colour is not the only carrier — the word is always there too — so this stays
+   readable for anyone who cannot separate the hues. */
+html body .wa-ord{background:#fdfcf7!important;border:1px solid #e6e1cd!important;
+  border-radius:18px!important;
+  box-shadow:0 8px 22px -16px rgba(22,26,16,.32)!important}
+html body .wa-ord:active{background:#faf8ef!important}
+
+html body .wa-pill{font-weight:700!important;letter-spacing:.01em!important}
+/* done */
+html body .wa-pill-completed{background:#eaf7d2!important;color:#3f6b0a!important}
+/* in flight — amber reads as "not finished" without reading as an error */
+html body .wa-pill-processing,
+html body .wa-pill-pending,
+html body .wa-pill-on-hold{background:#fdf1d8!important;color:#8a6100!important}
+/* stopped */
+html body .wa-pill-cancelled,
+html body .wa-pill-failed{background:#fbe6e4!important;color:#a3301f!important}
+/* money returned — neutral, because it is neither good news nor a failure */
+html body .wa-pill-refunded{background:#eceadd!important;color:#5b6150!important}
+
+/* The name was truncating to "Prime Video 4K - 1 M…" because the status pill
+   took whatever width it liked. The pill is the shorter, more repetitive
+   string, so it yields first. */
+html body .wa-ord-name{min-width:0}
+html body .wa-ord-head .wa-pill{flex:0 0 auto;white-space:nowrap}
+html body .wa-ord-info{min-width:0;flex:1 1 auto}
+
+/* "TOTAL" in caps competed with the figure beside it. */
+html body .wa-ord-flabel{font-size:10.5px!important;letter-spacing:.12em!important;
+  color:#83887c!important;font-weight:600!important}
+
+/* ═══ View order ═══
+   Same surface language as everything else, and an overview that reads in one
+   glance instead of running status → total → date down the page. */
+html body .wa-card{background:#fdfcf7!important;border:1px solid #e6e1cd!important;
+  border-radius:18px!important;
+  box-shadow:0 8px 22px -16px rgba(22,26,16,.32)!important}
+
+/* :has() targets the overview card by what it CONTAINS, so it does not depend on
+   the card being first — and where :has() is unsupported the block simply stays
+   stacked, which still reads fine. */
+html body .wa-card:has(.wa-ovw-tot){
+  display:grid;grid-template-columns:auto 1fr;align-items:center;gap:4px 12px}
+html body .wa-card:has(.wa-ovw-tot) .wa-pill{grid-column:1;grid-row:1;justify-self:start}
+html body .wa-card:has(.wa-ovw-tot) .wa-ovw-tot{grid-column:2;grid-row:1;
+  justify-self:end;text-align:right}
+html body .wa-card:has(.wa-ovw-tot) .wa-ovw-date{grid-column:1/-1;grid-row:2}
+
+/* The order total was the same weight as the subtotal above it, so the figure a
+   customer is checking had no more presence than the arithmetic leading to it. */
+html body .wa-tot:last-of-type{border-top:1px solid #e6e1cd;padding-top:10px;
+  margin-top:2px;font-weight:700}
+html body .wa-tot:last-of-type b,
+html body .wa-tot:last-of-type .woocommerce-Price-amount{
+  font-family:"Space Grotesk",sans-serif;font-size:17px;color:#161a10}
+/* WooCommerce ships these labels with a trailing colon; the value sits on the
+   opposite edge, so the colon points at nothing. */
+html body .wa-tot{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+
+/* ═══ view order — access block ═══ */
+html body .wa-creds .wa-cred{display:grid;grid-template-columns:auto 1fr auto;
+  align-items:center;gap:6px 12px;padding:12px 0}
+html body .wa-creds .wa-cred + .wa-cred{border-top:1px dashed #e6e1cd}
+html body .wa-cred-k{grid-column:1;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:#83887c;font-weight:600;white-space:nowrap}
+html body .wa-cred-v{grid-column:2;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:14px;color:#161a10;word-break:break-all;min-width:0}
+html body .wa-cred-btn{grid-column:3;justify-self:end;border:1px solid #e6e1cd;
+  background:#f2efe2;color:#2b3021;border-radius:999px;padding:7px 14px;
+  font-family:var(--font-display);font-weight:700;font-size:12.5px;cursor:pointer;
+  white-space:nowrap;transition:background .18s ease}
+html body .wa-cred-btn:hover{background:#eaf7d2}
+html body .wa-cred-btn.is-go{background:#c2f068;border-color:transparent;text-decoration:none}
+/* The "no login to copy" cases span the row — there is no key/value pair to align. */
+html body .wa-cred-note{grid-column:1/3;display:block}
+html body .wa-cred-note b{display:block;font-family:var(--font-display);font-size:14.5px;color:#161a10}
+html body .wa-cred-note i{display:block;font-style:normal;font-size:12.5px;
+  color:#606852;margin-top:3px;line-height:1.45}
+html body .wa-cred-all{display:inline-block;margin-top:10px;font-family:var(--font-display);
+  font-weight:700;font-size:13px;color:#4f7a08;text-decoration:none}

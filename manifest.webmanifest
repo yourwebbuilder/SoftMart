@@ -1,0 +1,17 @@
+{
+  "name": "SoftMart",
+  "short_name": "SoftMart",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f4ea",
+  "theme_color": "#c2f068",
+  "description": "SoftMart digital products and subscriptions",
+  "icons": [
+    {
+      "src": "/images/softmart-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
